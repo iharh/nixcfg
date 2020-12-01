@@ -5,12 +5,6 @@
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
-  # Enable the Plasma 5 Desktop Environment.
-  services.xserver.enable = true;
-
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
-
   # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput.enable = true;
   

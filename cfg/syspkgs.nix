@@ -10,8 +10,22 @@
      git
      wget
 
-     vim
+     home-manager
+
+     fd
+     ripgrep
+     tree
 
      firefox
+
+     kitty
+
+     vim
+     zsh
+     zsh-powerlevel10k
+
+     # awesome
+     #lua5_2
+     #(lua5_2.withPackages(ps: with ps; [ lgi vicious ]))
    ];
 }
