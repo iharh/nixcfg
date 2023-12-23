@@ -88,3 +88,9 @@ sudo nixos-rebuild dry-build --flake .#ih-nixos
 sudo nixos-install -v --show-trace --flake .#ih-nixos
 sudo nixos-install -v --show-trace --no-root-passwd --flake .#ih-nixos
 ```
+## Disko
+
+* [github](https://github.com/nix-community/disko/)
+* [wiki](https://nixos.wiki/wiki/Disko)
+* [quickstart](https://github.com/nix-community/disko/blob/master/docs/quickstart.md)
+* [reference](https://github.com/nix-community/disko/blob/master/docs/reference.md)
