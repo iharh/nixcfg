@@ -3,6 +3,7 @@
 One day I realized, that it would be good to have step-by-step tutorial for installing NixOS.
 Of cause, the standard one is a pretty good starting, point:
 * [Installing NixOS](https://nixos.org/manual/nixos/unstable/index.html#sec-installation)
+* [virt-install](https://max-ko.ru/56-kvm-sozdanie-i-udalenie-vm-s-pomoschju-virsh-i-virt-install.html)
 
 But it lacks a some modern/advanced features, listed below.
 So, I decided to start from the ground up and move slowly to the modern state of the art approaches, like:
