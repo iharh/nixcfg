@@ -1,16 +1,15 @@
 # NixOS Installation
 
-One day I realized, that it would be good to have step-by-step tutorial for nstalling NixOS.
-Of cause, the standard one (TBD: link) is a pretty good starting, point:
+One day I realized, that it would be good to have step-by-step tutorial for installing NixOS.
+Of cause, the standard one is a pretty good starting, point:
 * [Installing NixOS](https://nixos.org/manual/nixos/unstable/index.html#sec-installation)
 
 But it lacks a some modern/advanced features, listed below.
 So, I decided to start from the ground up and move slowly to the modern state of the art approaches, like:
 * [flakes](https://github.com/NixOS/nix/blob/master/src/nix/flake.md)
 * modularity
-* flake-utils and flake-utils-plus
-
-TBD: mention branching approach.
+* [flake-parts](https://flake.parts)
+* flake-utils and flake-utils-plus ?
 
 # Obtaining installation medium
 
@@ -40,7 +39,7 @@ TBD: describe
 
 ## Preparing disks
 
-In order to execute all preparational steps befor installation, execute 
+In order to execute all preparational steps before installation, execute 
 ```
 sh/prepare-all.sh
 ```
@@ -88,9 +87,3 @@ sudo nixos-rebuild dry-build --flake .#ih-nixos
 sudo nixos-install -v --show-trace --flake .#ih-nixos
 sudo nixos-install -v --show-trace --no-root-passwd --flake .#ih-nixos
 ```
-## Disko
-
-* [github](https://github.com/nix-community/disko/)
-* [wiki](https://nixos.wiki/wiki/Disko)
-* [quickstart](https://github.com/nix-community/disko/blob/master/docs/quickstart.md)
-* [reference](https://github.com/nix-community/disko/blob/master/docs/reference.md)
