@@ -11,7 +11,6 @@ So, I decided to start from the ground up and move slowly to the modern state of
 * [flake-parts](https://flake.parts)
 * flake-utils and flake-utils-plus ?
 * [kvm](https://github.com/iharh/notes/tree/main/devops/virt/kvm)
-* [qemu](https://github.com/iharh/notes/tree/main/devops/virt/qemu)
 
 # Obtaining installation medium
 
