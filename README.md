@@ -8,6 +8,10 @@ Of cause, the standard one is a pretty good starting, point:
 * [Creating Guests with virt-install](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/virtualization_deployment_and_administration_guide/sect-guest_virtual_machine_installation_overview-creating_guests_with_virt_install)
 * [virt-install](https://max-ko.ru/56-kvm-sozdanie-i-udalenie-vm-s-pomoschju-virsh-i-virt-install.html)
 * [my-nixos](https://github.com/iharh/notes/blob/main/os/linux/nixos/inst/ih/my-nixos.txt)
+* [nixos-in-libvirt-21](https://www.technicalsourcery.net/posts/nixos-in-libvirt/)
+
+Exiting the console
+* To exit the console, hold the CTRL key and press ], then press Enter.
 
 But it lacks a some modern/advanced features, listed below.
 So, I decided to start from the ground up and move slowly to the modern state of the art approaches, like:
@@ -16,6 +20,14 @@ So, I decided to start from the ground up and move slowly to the modern state of
 * [flake-parts](https://flake.parts)
 * flake-utils and flake-utils-plus ?
 * [kvm](https://github.com/iharh/notes/tree/main/devops/virt/kvm)
+
+Eric Tossel Sample Config
+* [dots](https://github.com/erictossell/nixflakes)
+* [usage-flake-templates](https://github.com/erictossell/nixflakes/blob/main/docs/usage.md)
+* [minimal-install](https://github.com/erictossell/nixflakes/blob/main/docs/minimal-install.md)
+
+Labeling FS:
+*  sudo tune2fs -L "<label>" /dev/sd<N>
 
 # Obtaining installation medium
 
