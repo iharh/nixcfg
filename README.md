@@ -3,7 +3,11 @@
 One day I realized, that it would be good to have step-by-step tutorial for installing NixOS.
 Of cause, the standard one is a pretty good starting, point:
 * [Installing NixOS](https://nixos.org/manual/nixos/unstable/index.html#sec-installation)
+* [ih-libvirt](https://github.com/iharh/notes/blob/main/os/linux/nixos/inst/ih/ih-libvirt.txt)
+* [virt-install-nixos](https://github.com/wstein/virt-install-nixos)
+* [Creating Guests with virt-install](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/virtualization_deployment_and_administration_guide/sect-guest_virtual_machine_installation_overview-creating_guests_with_virt_install)
 * [virt-install](https://max-ko.ru/56-kvm-sozdanie-i-udalenie-vm-s-pomoschju-virsh-i-virt-install.html)
+* [my-nixos](https://github.com/iharh/notes/blob/main/os/linux/nixos/inst/ih/my-nixos.txt)
 
 But it lacks a some modern/advanced features, listed below.
 So, I decided to start from the ground up and move slowly to the modern state of the art approaches, like:
