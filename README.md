@@ -4,11 +4,14 @@ One day I realized, that it would be good to have step-by-step tutorial for inst
 Of cause, the standard one is a pretty good starting, point:
 * [Installing NixOS](https://nixos.org/manual/nixos/unstable/index.html#sec-installation)
 * [ih-libvirt](https://github.com/iharh/notes/blob/main/os/linux/nixos/inst/ih/ih-libvirt.txt)
-* [virt-install-nixos](https://github.com/wstein/virt-install-nixos)
 * [Creating Guests with virt-install](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/virtualization_deployment_and_administration_guide/sect-guest_virtual_machine_installation_overview-creating_guests_with_virt_install)
 * [virt-install](https://max-ko.ru/56-kvm-sozdanie-i-udalenie-vm-s-pomoschju-virsh-i-virt-install.html)
 * [my-nixos](https://github.com/iharh/notes/blob/main/os/linux/nixos/inst/ih/my-nixos.txt)
 * [nixos-in-libvirt-21](https://www.technicalsourcery.net/posts/nixos-in-libvirt/)
+
+good samples to check
+* [virt-install-nixos](https://github.com/wstein/virt-install-nixos)
+* [virt-install-examples](https://www.golinuxcloud.com/virt-install-examples-kvm-virt-commands-linux/)
 
 Exiting the console
 * To exit the console, hold the CTRL key and press ], then press Enter.
@@ -28,6 +31,13 @@ Eric Tossel Sample Config
 
 Labeling FS:
 *  sudo tune2fs -L "<label>" /dev/sd<N>
+
+Taraday - macos
+* https://www.tweag.io/blog/2023-02-09-nixos-vm-on-macos/
+
+Inst via ssh
+* https://joshrosso.com/c/nix-k8s/
+* [nixos-bisect](https://euank.com/2022/05/11/nixos-bisect.html)
 
 # Obtaining installation medium
 
