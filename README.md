@@ -39,6 +39,9 @@ Inst via ssh
 * https://joshrosso.com/c/nix-k8s/
 * [nixos-bisect](https://euank.com/2022/05/11/nixos-bisect.html)
 
+set console font size
+* setfont ter-v32n t
+
 # Obtaining installation medium
 
 Feel free to skip not-suitable steps to your specific case
