@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 NIXOS_ISO=`find $HOME/Downloads/dist/nixos -name "nixos-*.iso"`
-vish change-media \
+# --source $NIXOS_ISO \
+virsh change-media \
   --domain nixos \
-  --path sr0 \
-  --source $NIXOS_ISO \
+  --path $NIXOS_ISO \
   --insert \
   --config
