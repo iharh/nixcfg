@@ -48,6 +48,9 @@ So, I decided to start from the ground up and move slowly to the modern state of
 * flake-utils and flake-utils-plus ?
 * [kvm](https://github.com/iharh/notes/tree/main/devops/virt/kvm)
 
+find https://github.com/search?q=%22nix+flake+new%22&type=code
+* https://github.com/rencire/flake-templates
+
 Eric Tossel Sample Config
 * [dots](https://github.com/erictossell/nixflakes)
 * [minimal-install-no-flakes](https://github.com/erictossell/nixflakes/blob/main/docs/minimal-install.md)
@@ -59,7 +62,41 @@ sudo sh/build.sh
 git init
 git add .
 nix --extra-experimental-features "nix-command flakes" flake check
+sudo nixos-rebuild switch --flake '.#hostname'
+sudo nixos-rebuild switch --flake '.#ihnixos'
 sudo nixos-rebuild switch --flake .
+
+https://github.com/NixOS/nix/issues/9165
+    --show-trace
+https://github.com/NixOS/nix/issues/3872#issuecomment-1637052258
+
+!! other templatized flakes
+https://github.com/Misterio77/nix-starter-configs
+    git init nixaaa
+    cd nixaaa
+    nix --extra-experimental-features "nix-command flakes" flake init -t github:misterio77/nix-starter-config#minimal
+    ...
+    edit flake.nix
+    nixos-generate-config --root /mnt
+https://github.com/cruel-intentions/devshell-files
+    nix develop github:cruel-intentions/devshell-files --build
+https://github.com/konradmalik/dotfiles
+https://github.com/ivi-vink/flake/blob/master/templates/rust/flake.nix
+https://github.com/alex007sirois/nix-config
+https://github.com/dojo-developpement-paris/dojo-developpement-paris.github.io/blob/main/2023/12/22/molkky/flake.nix
+https://github.com/schromp/nixconfig
+https://github.com/schromp/nixconfig/blob/master/flake.nix
+    ! ypr, ..
+https://github.com/LongerHV/nixos-configuration
+https://github.com/colemickens/nixos-flake-example
+    ! old, but using nixos-rebuild
+    sh <(curl -L https://nixos.org/nix/install) --no-daemon
+https://github.com/adfaure/nix_configuration
+    ! not templates
+https://github.com/dmadisetti/.dots/tree/template
+    ! templating via github
+    https://github.com/dmadisetti/.dots/blob/template/nix/machines/momento.nix
+    https://github.com/dmadisetti/.dots/actions/workflows/iso.yml
 
 Labeling FS:
 *  sudo tune2fs -L "<label>" /dev/sd<N>
