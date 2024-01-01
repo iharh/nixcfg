@@ -73,19 +73,6 @@ https://github.com/NixOS/nix/issues/3872#issuecomment-1637052258
 ! with flake-parts !
 https://github.com/hercules-ci/flake-parts
     https://github.com/hercules-ci/flake-parts/tree/main/template/default
-https://github.com/linuxmobile/kaku/
-    sudo git clone --depth 1 https://github.com/linuxmobile/kaku /mnt/etc/nixos
-    sudo nixos-generate-config --force --dir /mnt/etc/nixos/hosts/aesthetic
-    sudo rm -rf /mnt/etc/nixos/hosts/aesthetic/configuration.nix
-    cd /mnt/etc/nixos/
-    sudo nixos-install --flake .#aesthetic
-        warning: input 'nh' has an override for a non-existent input 'flake-parts'
-
-        git config --global --add safe.directory /mnt/etc/nixos
-
-        https://github.com/linuxmobile/kaku/blob/main/home/software/vscode.nix
-        unocss
-        sha256 = "sha256-KgwhPK19B+PBFeMhUOtfUtW14QUBc4yMIA80SToqomQ=";
 
 https://github.com/moni-dz/nix-config
     https://github.com/moni-dz/nix-config/tree/master/modules/parts
@@ -257,7 +244,7 @@ nixos-help
 ## Preparing environment
 
 ```
-nix-env -iA nixos.nixFlakes nixos.gitMinimal nixos.gh
+nix-env -iA nixos.ripgrep nixos.nixFlakes nixos.gitMinimal nixos.gh
 ```
 
 ## Cloning this configuration repository
@@ -269,6 +256,31 @@ cd nixcfg
 gh repo sync
 sh/prepare-all.sh <vda|...>
 ```
+## Installing kaku
+
+https://github.com/linuxmobile/kaku/
+    git clone --depth 1 https://github.com/linuxmobile/kaku
+    nixos-generate-config --force --dir $HOME/kaku/hosts/aesthetic
+    rm -rf $HOME/kaku/hosts/aesthetic/configuration.nix
+    cd kaku
+    sudo nixos-install --flake .#aesthetic
+        warning: input 'nh' has an override for a non-existent input 'flake-parts'
+
+        git config --global --add safe.directory /mnt/etc/nixos
+
+        error: hash mismatch in fixed-output derivation '/nix/store/vszqrsf7wylfr1b7akagc5l70idv5v4y-antfu-unocss.zip.drv':
+            specified: sha256-diwvMl88Nfq3QPm6AygiQpoFm82hSelpnU5KCOSU0pE=
+            got:       sha256-fl7uJFjrCKfQy3YkpttA0N6GRtFsqw82m2w4hQ2xRsE=
+
+        https://github.com/linuxmobile/kaku/blob/main/home/software/vscode.nix
+        name = "copilot-chat";
+        sha256 = "sha256-KgwhPK19B+PBFeMhUOtfUtW14QUBc4yMIA80SToqomQ=";
+        name = "unocss";
+        sha256 = "sha256-fl7uJFjrCKfQy3YkpttA0N6GRtFsqw82m2w4hQ2xRsE=";
+
+        vim pkgs/xwaylandvideobridge/default.nix
+        repo = "xwaylandvideobridge";
+        hash = "sha256-0HD5++cPvsx+bsdgCzn515KPtS1bj6JTKldxKdWEcKs=";
 
 ## Generating hardware description
 
