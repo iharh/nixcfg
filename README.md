@@ -70,6 +70,25 @@ https://github.com/NixOS/nix/issues/9165
     --show-trace
 https://github.com/NixOS/nix/issues/3872#issuecomment-1637052258
 
+! with flake-parts !
+https://github.com/hercules-ci/flake-parts
+    https://github.com/hercules-ci/flake-parts/tree/main/template/default
+https://github.com/linuxmobile/kaku/
+    sudo git clone --depth 1 https://github.com/linuxmobile/kaku /mnt/etc/nixos
+    sudo nixos-generate-config --force --dir /mnt/etc/nixos/hosts/aesthetic
+    sudo rm -rf /mnt/etc/nixos/hosts/aesthetic/configuration.nix
+    cd /mnt/etc/nixos/
+    sudo nixos-install --flake .#aesthetic
+
+https://github.com/moni-dz/nix-config
+    https://github.com/moni-dz/nix-config/tree/master/modules/parts
+https://github.com/fufexan/dotfiles
+    https://github.com/fufexan/dotfiles/blob/main/hosts/default.nix
+
+! with-hyprland
+https://github.com/wochap/nix-config
+    https://github.com/wochap/nix-config/blob/main/flake.nix#L117
+
 !! other templatized flakes
 https://github.com/Misterio77/nix-starter-configs
     git init nixaaa
@@ -97,6 +116,17 @@ https://github.com/dmadisetti/.dots/tree/template
     ! templating via github
     https://github.com/dmadisetti/.dots/blob/template/nix/machines/momento.nix
     https://github.com/dmadisetti/.dots/actions/workflows/iso.yml
+https://github.com/MCotocel/nixdots/tree/master/hosts/lithium#installing
+https://github.com/chadcat7/crystal
+    https://github.com/chadcat7/crystal/blob/main/flake.nix
+    ! simple
+https://github.com/johnk1917/nixrland
+    ! flakes, but no good readme
+https://github.com/enchanted-coder/nix-config/blob/main/nixos/configuration.nix
+    ! mini
+https://github.com/Icy-Thought/Snowflake
+https://github.com/justinlime/dotfiles/blob/main/flake.nix
+    !!! good abstractions and hyprland
 
 Labeling FS:
 *  sudo tune2fs -L "<label>" /dev/sd<N>
@@ -220,7 +250,7 @@ nixos-help
 ## Preparing environment
 
 ```
-nix-env -iA nixos.gitMinimal nixos.gh
+nix-env -iA nixos.nixFlakes nixos.gitMinimal nixos.gh
 ```
 
 ## Cloning this configuration repository
