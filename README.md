@@ -24,9 +24,8 @@ One day I realized, that it would be good to have step-by-step tutorial for inst
 Of cause, the standard one is a pretty good starting, point:
 * [Installing NixOS](https://nixos.org/manual/nixos/unstable/index.html#sec-installation)
 * [ih-libvirt](https://github.com/iharh/notes/blob/main/os/linux/nixos/inst/ih/ih-libvirt.txt)
-* [Creating Guests with virt-install](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/virtualization_deployment_and_administration_guide/sect-guest_virtual_machine_installation_overview-creating_guests_with_virt_install)
-* [virt-install](https://max-ko.ru/56-kvm-sozdanie-i-udalenie-vm-s-pomoschju-virsh-i-virt-install.html)
 * [my-nixos](https://github.com/iharh/notes/blob/main/os/linux/nixos/inst/ih/my-nixos.txt)
+* [Creating Guests with virt-install](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/virtualization_deployment_and_administration_guide/sect-guest_virtual_machine_installation_overview-creating_guests_with_virt_install)
 * [nixos-in-libvirt-21](https://www.technicalsourcery.net/posts/nixos-in-libvirt/)
 
 good samples to check
@@ -107,6 +106,7 @@ https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Bo
 * change-media <domain> --path sda --source $ISO --insert --config
 * attach-disk --driver file --type cdrom --mode readonly --domain guest01 --source /root/disc1.iso --target hdc --config
 * start <domain>
+* net-dhcp-leases default
 * console <domain>
 * undefine --nvram <domain>
 * destroy
@@ -128,6 +128,10 @@ https://github.com/cockpit-project/cockpit/issues/13454
   <address type="drive" controller="0" bus="0" target="0" unit="0"/>
 </disk>
 ```
+
+To log in over ssh you must set a password for either "nixos" or "root" with `passwd`
+(prefix with `sudo` for "root"), or add your public key to
+/home/nixos/.ssh/authorized_keys or /root/.ssh/authorized_keys.
 
 # Obtaining installation medium
 
