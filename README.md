@@ -42,6 +42,10 @@ Inst via ssh
 set console font size
 * setfont ter-v32n t
 
+misc
+* https://nixos.org/manual/nixos/stable/#sec-installation-manual
+* https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/image/repart.nix
+
 # Obtaining installation medium
 
 Feel free to skip not-suitable steps to your specific case

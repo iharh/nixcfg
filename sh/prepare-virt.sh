@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 NIXOS_ISO=`find $HOME/Downloads/dist/nixos -name "nixos-*.iso"`
 
-echo virt-install -v \
+# --autoconsole
+# --noautoconsole
+
+virt-install -v \
   --name=nixos \
   --connect qemu:///system \
   --virt-type kvm \
