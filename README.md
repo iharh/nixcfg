@@ -1,4 +1,24 @@
+# Prereq
+
+Install the following
+* ovmf
+* qemu-utils
+* virt-viewer
+* libxapp-dev
+* dnsmasq
+
+https://askubuntu.com/questions/722034/permission-error-in-virtual-machine-manager
+* setfacl -m u:libvirt-qemu:x $HOME
+* getfacl $HOME
+
+setting up the network bridge
+* sudo virsh net-start default
+* virsh net-list --all
+* brctl show
+
 # NixOS Installation
+
+/usr/share/virt-manager/virtinst/virtinstall.py
 
 One day I realized, that it would be good to have step-by-step tutorial for installing NixOS.
 Of cause, the standard one is a pretty good starting, point:
@@ -12,6 +32,11 @@ Of cause, the standard one is a pretty good starting, point:
 good samples to check
 * [virt-install-nixos](https://github.com/wstein/virt-install-nixos)
 * [virt-install-examples](https://www.golinuxcloud.com/virt-install-examples-kvm-virt-commands-linux/)
+
+https://www.youtube.com/watch?v=fDxhkSnFSPw
+* customize configuration before install
+* firmware - UEFI
+* boot device order -> SATA CDROM 1
 
 Exiting the console
 * To exit the console, hold the CTRL key and press ], then press Enter.
@@ -45,6 +70,64 @@ set console font size
 misc
 * https://nixos.org/manual/nixos/stable/#sec-installation-manual
 * https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/image/repart.nix
+
+## UEFI shell
+
+* S-F12 - to exit capture cursor mode
+* https://superuser.com/questions/1412403/how-to-scroll-up-and-down-in-efi-shell
+* help -b
+* PgUp, S-PgUp
+* mode col row
+* drivers
+* drvcfg
+* drvdiag
+* devices
+* devtree
+* dh -b
+* cd
+* ls -r -a ... blkN:
+* map
+* getmtc - display current monotonic counter value
+* bcfg boot dump -v
+* reset -w | -s | -c  -- reboot
+
+BLK0
+
+fs0:\EFI\boot
+
+https://habr.com/ru/articles/680270/
+https://habr.com/ru/articles/314412/
+https://www.rodsbooks.com/efi-bootloaders/installation.html
+https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot
+
+## virsh
+
+* list --all
+* virsh dumpxml <domain>
+* attach-disk --driver file --type cdrom --mode readonly --domain guest01 --source /root/disc1.iso --target hdc --config
+* change-media <domain> --path sr0 --source $ISO --insert --config
+* start <domain>
+* console <domain>
+* undefine --nvram <domain>
+* destroy
+
+/dev/vda
+
+SATA CDROM 1 - no media selected
+https://superuser.com/questions/239870/change-cd-rom-via-virsh
+https://github.com/cockpit-project/cockpit/issues/13454
+
+```
+<disk type="file" device="cdrom">
+  <driver name="qemu" type="raw"/>
+  <source file="/home/iharh/Downloads/dist/nixos/nixos-minimal-23.11.2413.32f63574c85f-x86_64-linux.iso" index="1"/>
+  <backingStore/>
+  <target dev="sda" bus="sata"/>
+  <readonly/>
+  <alias name="sata0-0-0"/>
+  <address type="drive" controller="0" bus="0" target="0" unit="0"/>
+</disk>
+```
 
 # Obtaining installation medium
 
