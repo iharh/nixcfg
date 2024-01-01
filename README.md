@@ -104,8 +104,8 @@ https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Bo
 
 * list --all
 * virsh dumpxml <domain>
+* change-media <domain> --path sda --source $ISO --insert --config
 * attach-disk --driver file --type cdrom --mode readonly --domain guest01 --source /root/disc1.iso --target hdc --config
-* change-media <domain> --path sr0 --source $ISO --insert --config
 * start <domain>
 * console <domain>
 * undefine --nvram <domain>
