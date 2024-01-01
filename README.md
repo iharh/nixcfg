@@ -79,6 +79,13 @@ https://github.com/linuxmobile/kaku/
     sudo rm -rf /mnt/etc/nixos/hosts/aesthetic/configuration.nix
     cd /mnt/etc/nixos/
     sudo nixos-install --flake .#aesthetic
+        warning: input 'nh' has an override for a non-existent input 'flake-parts'
+
+        git config --global --add safe.directory /mnt/etc/nixos
+
+        https://github.com/linuxmobile/kaku/blob/main/home/software/vscode.nix
+        unocss
+        sha256 = "sha256-KgwhPK19B+PBFeMhUOtfUtW14QUBc4yMIA80SToqomQ=";
 
 https://github.com/moni-dz/nix-config
     https://github.com/moni-dz/nix-config/tree/master/modules/parts
