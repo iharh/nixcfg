@@ -50,8 +50,16 @@ So, I decided to start from the ground up and move slowly to the modern state of
 
 Eric Tossel Sample Config
 * [dots](https://github.com/erictossell/nixflakes)
+* [minimal-install-no-flakes](https://github.com/erictossell/nixflakes/blob/main/docs/minimal-install.md)
 * [usage-flake-templates](https://github.com/erictossell/nixflakes/blob/main/docs/usage.md)
-* [minimal-install](https://github.com/erictossell/nixflakes/blob/main/docs/minimal-install.md)
+
+nix --extra-experimental-features "nix-command flakes" flake new -t 'github:erictossell/nixflakes' ./nixflakes && cd nixflakes
+chmod +x sh/build.sh
+sudo sh/build.sh
+git init
+git add .
+nix --extra-experimental-features "nix-command flakes" flake check
+sudo nixos-rebuild switch --flake .
 
 Labeling FS:
 *  sudo tune2fs -L "<label>" /dev/sd<N>
@@ -185,6 +193,7 @@ export GH_TOKEN=...your-own-token...
 gh repo clone iharh/nixcfg
 cd nixcfg
 gh repo sync
+sh/prepare-all.sh <vda|...>
 ```
 
 ## Generating hardware description
