@@ -172,6 +172,7 @@ https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Bo
 
 * list --all
 * virsh dumpxml <domain>
+* change-media <domain> --path sda --eject
 * change-media <domain> --path sda --source $ISO --insert --config
 * attach-disk --driver file --type cdrom --mode readonly --domain guest01 --source /root/disc1.iso --target hdc --config
 * start <domain>
@@ -273,6 +274,11 @@ https://github.com/linuxmobile/kaku/
             got:       sha256-fl7uJFjrCKfQy3YkpttA0N6GRtFsqw82m2w4hQ2xRsE=
 
         https://github.com/linuxmobile/kaku/blob/main/home/software/vscode.nix
+
+        vim home/software/vscode.nix
+        name = "catpuccin-perfect-icons";
+        sha256 = "sha256-aTQCIqwBTvd0oARcgAnsp6FQY6R51DqJ/HLgNxsLPjk=";
+
         name = "copilot-chat";
         sha256 = "sha256-KgwhPK19B+PBFeMhUOtfUtW14QUBc4yMIA80SToqomQ=";
         name = "unocss";
