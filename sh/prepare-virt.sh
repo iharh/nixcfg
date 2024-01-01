@@ -10,5 +10,5 @@ echo virt-install -v \
   --graphics vnc \
   --console pty,target_type=virtio \
   --os-variant nixos-unstable \
-  --cdrom ~/Downloads/dist/nixos-plasma5-23.05pre451105.06999209d7a-x86_64-linux.iso \
+  --cdrom $HOME/Downloads/dist/nixos/nixos-plasma5-23.05pre451105.06999209d7a-x86_64-linux.iso \
   --disk /var/lib/libvirt/images/nixos.qcow2,size=50,bus=virtio
