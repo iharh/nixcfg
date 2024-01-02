@@ -24,7 +24,7 @@
 #     # /dev/vda
       devices = [ "nodev" ];
       efiSupport = true;
-      useOSProber = true;
+      # useOSProber = true;
     };
     # Use the systemd-boot EFI boot loader.
     # systemd-boot.enable = true;

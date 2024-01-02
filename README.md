@@ -304,27 +304,21 @@ Installing for i386-pc platform.
 /nix/store/3wqpdkgms96f36n1sgnps6hvwcdinrwy-grub-2.12/sbin/grub-install: error: will not proceed with blocklists.
 /nix/store/lp1mv1r919ncwm3f23apvxxb728zi6i9-install-grub.pl: installation of GRUB on /dev/vda failed: No such file or directory
 installation finished!
-```
 
-## Systemd-boot stuff
-```
+
 installing the boot loader...
 setting up /etc...
-removing obsolete symlink ‘/etc/pulse/client.conf’...
-Initializing machine ID from VM UUID.
-Created "/boot/EFI".
-Created "/boot/EFI/systemd".
-Created "/boot/EFI/BOOT".
-Created "/boot/loader".
-Created "/boot/loader/entries".
-Created "/boot/EFI/Linux".
-Copied "/nix/store/iidxwcyp8pqhrq3iji17shs4m6gin0kv-systemd-254.6/lib/systemd/boot/efi/systemd-bootx64.efi" to "/boot/EFI/systemd/systemd-bootx64.efi".
-Copied "/nix/store/iidxwcyp8pqhrq3iji17shs4m6gin0kv-systemd-254.6/lib/systemd/boot/efi/systemd-bootx64.efi" to "/boot/EFI/BOOT/BOOTX64.EFI".
-⚠️ Mount point '/boot' which backs the random seed file is world accessible, which is a security hole! ⚠️
-⚠️ Random seed file '/boot/loader/.#bootctlrandom-seedeaa221694d7755e6' is world accessible, which is a security hole! ⚠️
-Random seed file /boot/loader/random-seed successfully written (32 bytes).
-Not booted with EFI, skipping EFI variable setup.
-Not booted with EFI, skipping EFI variable setup.
+updating GRUB 2 menu...
+Warning: os-prober will be executed to detect other bootable partitions.
+Its output will be used to detect bootable binaries on them and create new boot entries.
+ERROR: mkdir /var/lock/dmraid
+installing the GRUB 2 boot loader into /boot...
+Installing for x86_64-efi platform.
+modprobe: can't change directory to '/lib/modules': No such file or directory
+EFI variables are not supported on this system.
+EFI variables are not supported on this system.
+/nix/store/bjxcfnv97fi6flnkyj1dha5p4h5072qd-grub-2.12/sbin/grub-install: error: efibootmgr failed to register the boot entry: No such file or directory.
+/nix/store/lp1mv1r919ncwm3f23apvxxb728zi6i9-install-grub.pl: installation of GRUB EFI into /boot failed: No such file or directory
 installation finished!
 ```
 
