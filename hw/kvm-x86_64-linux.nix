@@ -64,11 +64,11 @@
     wget
   ];
 
-  console = {
-    font = "Lat2-Terminus16";
-    keyMap = "us";
-    useXkbConfig = true; # use xkb.options in tty.
-  };
+  #console = {
+  #  font = "Lat2-Terminus16";
+  #  keyMap = "us";
+  #  useXkbConfig = true; # use xkb.options in tty.
+  #};
 
   system.stateVersion = "23.11";
 }
