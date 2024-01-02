@@ -1,4 +1,3 @@
-# comment just for correct highlighting in a SpaceVim
 {
   description = "iharh nix config";
 
