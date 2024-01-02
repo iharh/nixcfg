@@ -16,12 +16,12 @@
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
-  # boot.loader.grub.enable = true;
+  boot.loader.grub.enable = true;
   # "nodev" for efi only
-  # boot.loader.grub.device = "/dev/vda";
+  boot.loader.grub.device = "/dev/vda";
 
   # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
+  # boot.loader.systemd-boot.enable = true;
 
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -63,6 +63,12 @@
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
   ];
+
+  console = {
+    font = "Lat2-Terminus16";
+    keyMap = "us";
+    useXkbConfig = true; # use xkb.options in tty.
+  };
 
   system.stateVersion = "23.11";
 }

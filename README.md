@@ -258,9 +258,8 @@ gh repo clone iharh/nixcfg
 cd nixcfg
 gh repo sync
 sh/prepare-all.sh <vda|...>
-mkdri tmp
-nixos-generate-config --force --dir $HOME/nixcfg/tmp
-cat tmp/hardware-configuration.nix
+cat /mnt/etc/nixos/hardware-configuration.nix
+cat /mnt/etc/nixos/configuration.nix
 ```
 ## Installing kaku
 
