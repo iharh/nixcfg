@@ -16,12 +16,12 @@
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
-  boot.loader.grub.enable = true;
+  # boot.loader.grub.enable = true;
   # "nodev" for efi only
-  boot.loader.grub.device = "/dev/vda";
+  # boot.loader.grub.device = "/dev/vda";
 
   # Use the systemd-boot EFI boot loader.
-  # boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.enable = true;
 
   boot.loader.efi.canTouchEfiVariables = true;
 
