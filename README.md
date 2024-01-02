@@ -314,8 +314,10 @@ sudo nixos-generate-config --root /mnt
 ```
 # Update flake
 ```
-nix flake lock update --commit-lock-file
+nix --extra-experimental-features "nix-command flakes" flake update
 ```
+??? lock --commit-lock-file
+
 # Installation itself
 
 ## Dry Run
