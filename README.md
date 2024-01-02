@@ -171,7 +171,7 @@ https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Bo
 ## virsh
 
 * list --all
-* virsh dumpxml <domain>
+* dumpxml <domain>
 * change-media <domain> --path sda --eject
 * change-media <domain> --path sda --source $ISO --insert --config
 * attach-disk --driver file --type cdrom --mode readonly --domain guest01 --source /root/disc1.iso --target hdc --config
@@ -180,6 +180,8 @@ https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Bo
 * console <domain>
 * undefine --nvram <domain>
 * destroy
+
+virt-manager --connect qemu:///system --show-domain-console <domain>
 
 /dev/vda
 
@@ -256,6 +258,9 @@ gh repo clone iharh/nixcfg
 cd nixcfg
 gh repo sync
 sh/prepare-all.sh <vda|...>
+mkdri tmp
+nixos-generate-config --force --dir $HOME/nixcfg/tmp
+cat tmp/hardware-configuration.nix
 ```
 ## Installing kaku
 
