@@ -16,14 +16,19 @@
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
-  boot.loader.grub.enable = true;
-  # "nodev" for efi only
-  boot.loader.grub.device = "/dev/vda";
-
-  # Use the systemd-boot EFI boot loader.
-  # boot.loader.systemd-boot.enable = true;
-
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+    efi.canTouchEfiVariables = true;
+    grub = {
+      enable = true;
+      # "nodev" for efi only 
+#     # /dev/vda
+      devices = [ "nodev" ];
+      efiSupport = true;
+      useOSProber = true;
+    };
+    # Use the systemd-boot EFI boot loader.
+    # systemd-boot.enable = true;
+  };
 
   # hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
@@ -33,8 +38,6 @@
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
   # networking.interfaces.enp1s0.useDHCP = lib.mkDefault true;
-
-
 
   # TODO: reuse in some way
   networking.hostName = "ih-nixos";

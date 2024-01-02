@@ -294,13 +294,15 @@ https://github.com/linuxmobile/kaku/
 
 ## Grub stuff
 ```
+installing the boot loader...
+setting up /etc...
 updating GRUB 2 menu...
 installing the GRUB 2 boot loader on /dev/vda...
 Installing for i386-pc platform.
-/nix/store/08xn7kfvprqbj811p69bww1100njy42c-grub-2.06/sbin/grub-install: warning: this GPT partition label contains no BIOS Boot Partition; embedding won't be possible.
-/nix/store/08xn7kfvprqbj811p69bww1100njy42c-grub-2.06/sbin/grub-install: warning: Embedding is not possible.  GRUB can only be installed in this setup by using blocklists.  However, blocklists are UNRELIABLE and their use is discouraged..
-/nix/store/08xn7kfvprqbj811p69bww1100njy42c-grub-2.06/sbin/grub-install: error: will not proceed with blocklists.
-/nix/store/b4cxqcnr1yhmjijlrj879jhig04aa52p-install-grub.pl: installation of GRUB on /dev/vda failed: No such file or directory
+/nix/store/3wqpdkgms96f36n1sgnps6hvwcdinrwy-grub-2.12/sbin/grub-install: warning: this GPT partition label contains no BIOS Boot Partition; embedding won't be possible.
+/nix/store/3wqpdkgms96f36n1sgnps6hvwcdinrwy-grub-2.12/sbin/grub-install: warning: Embedding is not possible.  GRUB can only be installed in this setup by using blocklists.  However, blocklists are UNRELIABLE and their use is discouraged..
+/nix/store/3wqpdkgms96f36n1sgnps6hvwcdinrwy-grub-2.12/sbin/grub-install: error: will not proceed with blocklists.
+/nix/store/lp1mv1r919ncwm3f23apvxxb728zi6i9-install-grub.pl: installation of GRUB on /dev/vda failed: No such file or directory
 installation finished!
 ```
 
