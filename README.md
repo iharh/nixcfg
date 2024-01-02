@@ -305,6 +305,28 @@ Installing for i386-pc platform.
 installation finished!
 ```
 
+## Systemd-boot stuff
+```
+installing the boot loader...
+setting up /etc...
+removing obsolete symlink ‘/etc/pulse/client.conf’...
+Initializing machine ID from VM UUID.
+Created "/boot/EFI".
+Created "/boot/EFI/systemd".
+Created "/boot/EFI/BOOT".
+Created "/boot/loader".
+Created "/boot/loader/entries".
+Created "/boot/EFI/Linux".
+Copied "/nix/store/iidxwcyp8pqhrq3iji17shs4m6gin0kv-systemd-254.6/lib/systemd/boot/efi/systemd-bootx64.efi" to "/boot/EFI/systemd/systemd-bootx64.efi".
+Copied "/nix/store/iidxwcyp8pqhrq3iji17shs4m6gin0kv-systemd-254.6/lib/systemd/boot/efi/systemd-bootx64.efi" to "/boot/EFI/BOOT/BOOTX64.EFI".
+⚠️ Mount point '/boot' which backs the random seed file is world accessible, which is a security hole! ⚠️
+⚠️ Random seed file '/boot/loader/.#bootctlrandom-seedeaa221694d7755e6' is world accessible, which is a security hole! ⚠️
+Random seed file /boot/loader/random-seed successfully written (32 bytes).
+Not booted with EFI, skipping EFI variable setup.
+Not booted with EFI, skipping EFI variable setup.
+installation finished!
+```
+
 ## Generating hardware description
 
 TODO: fix in order to avoid disks stuff
