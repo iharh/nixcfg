@@ -311,6 +311,13 @@ https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/installer/tools/nixos
 https://github.com/NixOS/nixpkgs/issues/244643
 https://docs.fedoraproject.org/en-US/quick-docs/grub2-bootloader/
 
+!!!
+https://github.com/mcdonc/.nixconfig/tree/master/hosts/profiles/grub
+https://github.com/mcdonc/.nixconfig/blob/master/hosts/profiles/grub/efi.nix
+https://github.com/mcdonc/.nixconfig/blob/master/videos/ardour/configuration.nix
+https://github.com/mcdonc/.nixconfig/blob/master/flake.nix
+https://github.com/mcdonc/.nixconfig/blob/master/prepsystem.sh
+
 ## Generating hardware description
 
 TODO: fix in order to avoid disks stuff

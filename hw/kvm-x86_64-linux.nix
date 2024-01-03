@@ -17,14 +17,18 @@
   boot.extraModulePackages = [ ];
 
   boot.loader = {
+    timeout = 60;
     efi.canTouchEfiVariables = true;
     grub = {
       enable = true;
       # "nodev" for efi only 
 #     # /dev/vda
+      device = "nodev";
       devices = [ "nodev" ];
       efiSupport = true;
       # useOSProber = true;
+      efiInstallAsRemovable = true;
+      copyKernels = true;
     };
     # Use the systemd-boot EFI boot loader.
     # systemd-boot.enable = true;
