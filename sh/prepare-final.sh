@@ -1,10 +1,5 @@
 #!/usr/bin/env bash
-NIXOS_ISO=`find $HOME/Downloads/dist/nixos -name "nixos-*.iso"`
 
-# virt-install --osinfo list
-# nixos-23.11
-#
-# --autoconsole
 # --noautoconsole
 # --boot=cdrom
 # --boot=uefi
@@ -27,11 +22,6 @@ NIXOS_ISO=`find $HOME/Downloads/dist/nixos -name "nixos-*.iso"`
 # virsh define
 # https://unix.stackexchange.com/questions/716469/virt-install-virsh-create-tries-to-launch-vm-after-install
 #
-# --noautoconsole
-#
-# --print-xml
-# --dry-run
-#
 # sudo ls -la /var/lib/libvirt/images
 #
 # virsh --connect qemu:///system start nixos
@@ -44,7 +34,6 @@ virt-install -v \
   --name=nixos \
   --connect qemu:///system \
   --os-variant nixos-unstable \
-  --cdrom $NIXOS_ISO \
   --hvm \
   --memory=16392 \
   --vcpus=4 \
@@ -53,7 +42,5 @@ virt-install -v \
   --disk /var/lib/libvirt/images/nixos.qcow2,size=50,bus=virtio \
   --graphics vnc \
   --console pty,target_type=virtio \
-  --boot=cdrom,menu=on \
-  --noreboot
-
-#  --print-xml
+  --boot uefi,firmware.feature0.name=secure-boot,firmware.feature0.enabled=no \
+  --import

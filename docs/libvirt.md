@@ -123,6 +123,38 @@ https://manjaro.ru/manjaro-xfce-edition/qemu-kvm-virt-manager-ovmf.html
 
 https://ubs_csse.gitlab.io/secu_os/tutorials/virtual_env.html
 
+https://discuss.linuxcontainers.org/t/lxd-3-21-vm-efi-boot-error/6917
+FS0:\> \efi\boot\bootx64.efi
+    Command Error Status: Access Denied
+
+security.secureboot=false
+
+https://andreaskaris.github.io/blog/linux/libvirt-uefi-without-secureboot/
+https://bbs.archlinux.org/viewtopic.php?id=275691
+https://wiki.archlinux.org/title/QEMU#VM_does_not_boot_when_using_a_Secure_Boot_enabled_OVMF
+
+https://github.com/virt-manager/virt-manager/blob/main/virtinst/guest.py#L555
+https://github.com/virt-manager/virt-manager/blob/main/virtinst/guest.py#L591
+    log.debug("Setting default UEFI path=%s", path)
+https://github.com/virt-manager/virt-manager/blob/main/virtinst/guest.py#L846
+    _lookup_default_uefi_path
+        ...
+        path = domcaps.find_uefi_path_for_arch()
+https://github.com/virt-manager/virt-manager/blob/main/virtinst/domcapabilities.py#L296
+    find_uefi_path_for_arch
+
+https://libvirt.org/kbase/secureboot.html
+    <os firmware='efi'>
+      <firmware>
+        <feature enabled='no' name='secure-boot'/>
+      </firmware>
+    </os>
+    ... the NVRAM file associated with the VM has to be regenerated from its template as well.
+    virsh start vm --reset-nvram
+
+https://github.com/virt-manager/virt-manager/blob/main/man/virt-install.rst
+    --boot uefi,firmware.feature0.name=secure-boot,firmware.feature0.enabled=no
 ## grub-install
 
 https://bbs.archlinux.org/viewtopic.php?id=264954
+
