@@ -18,7 +18,7 @@
 
   boot.loader = {
     timeout = 60;
-    efi.canTouchEfiVariables = true;
+    # efi.canTouchEfiVariables = true;
     grub = {
       enable = true;
       # "nodev" for efi only 
