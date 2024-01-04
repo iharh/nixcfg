@@ -5,6 +5,7 @@ NIXOS_ISO=`find $HOME/Downloads/dist/nixos -name "nixos-*.iso"`
 # --noautoconsole
 # --boot=cdrom
 # --boot=uefi
+#  -d, --debug ~/.cache/virt-manager/virt-install.log
 
 virt-install -v \
   --name=nixos \
@@ -17,6 +18,6 @@ virt-install -v \
   --disk /var/lib/libvirt/images/nixos.qcow2,size=50,bus=virtio \
   --graphics vnc \
   --console pty,target_type=virtio \
-  --boot=cdrom,hd \
   --cdrom $NIXOS_ISO \
+  --boot=cdrom,hd \
   --noautoconsole

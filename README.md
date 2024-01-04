@@ -231,6 +231,17 @@ TBD: describe
 
 ## Preparing disks
 
+https://www.technicalsourcery.net/posts/nixos-in-libvirt/
+
+https://github.com/gabyx/dotfiles/blob/main/nixos/hosts/vm/boot.nix
+https://github.com/gabyx/dotfiles/blob/main/nixos/hosts/desktop/boot.nix
+https://github.com/gabyx/nixos-configuration/blob/main/configuration-desktop-init.nix
+    boot.loader.grub.enable = true;
+    boot.loader.grub.version = 2;
+
+systemd
+https://github.com/erictossell/nixflakes/blob/main/modules/boot/systemd/default.nix
+
 sh/prepare-virt.sh
 https://libvirt.org/formatdomain.html
 
