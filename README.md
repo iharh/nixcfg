@@ -159,8 +159,6 @@ misc
 * bcfg boot dump -v
 * reset -w | -s | -c  -- reboot
 
-BLK0
-
 fs0:\EFI\boot
 
 https://habr.com/ru/articles/680270/
@@ -232,6 +230,23 @@ TBD: describe
 # System Preparation
 
 ## Preparing disks
+
+sh/prepare-virt.sh
+https://libvirt.org/formatdomain.html
+
+```
+    <bootmenu enable='yes' timeout='3000'/>
+
+  <os firmware="efi">
+    <type arch="x86_64" machine="pc-q35-8.1">hvm</type>
+    <firmware>
+      <feature enabled="yes" name="enrolled-keys"/>
+      <feature enabled="yes" name="secure-boot"/>
+    </firmware>
+    <loader readonly="yes" secure="yes" type="pflash">/usr/share/OVMF/OVMF_CODE_4M.ms.fd</loader>
+    <nvram template="/usr/share/OVMF/OVMF_VARS_4M.ms.fd">/var/lib/libvirt/qemu/nvram/nixos_VARS.fd</nvram>
+  </os>
+```
 
 In order to execute all preparational steps before installation, execute 
 ```

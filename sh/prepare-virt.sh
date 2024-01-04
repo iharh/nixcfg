@@ -17,6 +17,6 @@ virt-install -v \
   --disk /var/lib/libvirt/images/nixos.qcow2,size=50,bus=virtio \
   --graphics vnc \
   --console pty,target_type=virtio \
-  --boot=uefi \
+  --boot=cdrom,hd \
   --cdrom $NIXOS_ISO \
   --noautoconsole
