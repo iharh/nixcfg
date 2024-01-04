@@ -20,13 +20,21 @@ NIXOS_ISO=`find $HOME/Downloads/dist/nixos -name "nixos-*.iso"`
 # https://github.com/libvirt/libvirt/blob/master/tests/qemuxml2argvdata/boot-menu-enable-with-timeout.xml
 # virt-install --boot uefi --machine q35 --name focal --memory 1024 --vcpus 1 --disk none --print-xml | grep OVMF
 # --reinstall <domain>
-# --no-boot
+# --noreboot
 # --install no_install=yes \
 #
+#  --virt-type kvm \
 # virsh define
 # https://unix.stackexchange.com/questions/716469/virt-install-virsh-create-tries-to-launch-vm-after-install
 #
 # --noautoconsole
+#
+# --print-xml
+# --dry-run
+#
+# sudo ls -la /var/lib/libvirt/images
+#
+# virsh --connect qemu:///system start nixos
 
 virt-install -v \
   --name=nixos \
@@ -34,14 +42,14 @@ virt-install -v \
   --os-variant nixos-unstable \
   --cdrom $NIXOS_ISO \
   --hvm \
-  --virt-type kvm \
   --memory=16392 \
   --vcpus=4 \
+  --machine q35 \
   --network bridge=virbr0,model=virtio \
   --disk /var/lib/libvirt/images/nixos.qcow2,size=50,bus=virtio \
   --graphics vnc \
   --console pty,target_type=virtio \
-  --machine q35 \
-  --boot=cdrom,hd,menu=on \
-  --noautoconsole \
-  --print-xml
+  --boot=cdrom,menu=on \
+  --noreboot
+
+#  --print-xml
