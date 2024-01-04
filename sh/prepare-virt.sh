@@ -26,14 +26,14 @@ NIXOS_ISO=`find $HOME/Downloads/dist/nixos -name "nixos-*.iso"`
 # virsh define
 # https://unix.stackexchange.com/questions/716469/virt-install-virsh-create-tries-to-launch-vm-after-install
 #
-# --connect qemu:///system \
 # --noautoconsole
 
 virt-install -v \
   --name=nixos \
+  --connect qemu:///system \
   --os-variant nixos-unstable \
   --cdrom $NIXOS_ISO \
-  --hvm
+  --hvm \
   --virt-type kvm \
   --memory=16392 \
   --vcpus=4 \
@@ -43,4 +43,5 @@ virt-install -v \
   --console pty,target_type=virtio \
   --machine q35 \
   --boot=cdrom,hd,menu=on \
+  --noautoconsole \
   --print-xml
