@@ -71,6 +71,10 @@ https://github.com/virt-manager/virt-manager/blob/main/virtinst/cli.py#L4841
     run_all_parsers
 https://github.com/virt-manager/virt-manager/blob/main/virtinst/virtinstall.py#L648
     build_guest_instance
+https://github.com/virt-manager/virt-manager/blob/main/virtinst/virtinstall.py#L944
+    start_install
+https://github.com/virt-manager/virt-manager/blob/main/virtinst/install/installer.py#L692
+    start_install
 https://github.com/virt-manager/virt-manager/blob/main/virtinst/virtinstall.py#L1191
     main
         ...
