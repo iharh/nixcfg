@@ -30,3 +30,5 @@ sudo nixos-generate-config --root /mnt
 #
 sudo mkdir -p /mnt/data
 sudo chown nixos:users /mnt/data
+#
+lsblk

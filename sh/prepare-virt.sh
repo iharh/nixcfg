@@ -28,5 +28,5 @@ virt-install -v \
   --graphics vnc \
   --console pty,target_type=virtio \
   --cdrom $NIXOS_ISO \
-  --boot=cdrom,hd,menu=on \
+  --boot=uefi,cdrom,hd,menu=on \
   --noautoconsole
