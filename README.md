@@ -293,6 +293,19 @@ https://github.com/linuxmobile/kaku/
         hash = "sha256-0HD5++cPvsx+bsdgCzn515KPtS1bj6JTKldxKdWEcKs=";
 
 ## Grub stuff
+
+boot.loader.grub.efiInstallAsRemovable = true;
+```
+installing the boot loader...
+setting up /etc...
+updating GRUB 2 menu...
+installing the GRUB 2 boot loader into /boot...
+Installing for x86_64-efi platform.
+Installation finished. No error reported.
+installation finished!
+```
+boot.loader.efi.canTouchEfiVariables = true;
+
 ```
 installing the boot loader...
 setting up /etc...
