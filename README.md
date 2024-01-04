@@ -159,7 +159,10 @@ misc
 * bcfg boot dump -v
 * reset -w | -s | -c  -- reboot
 
-fs0:\EFI\boot
+fs0:
+cd EFI
+cd BOOT
+BOOTX64.EFI
 
 https://habr.com/ru/articles/680270/
 https://habr.com/ru/articles/314412/
@@ -230,6 +233,14 @@ TBD: describe
 # System Preparation
 
 ## Preparing disks
+
+https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/system/boot/loader/grub/grub.nix
+https://nixos.wiki/wiki/Bootloader
+https://discourse.nixos.org/t/systemd-boot-keeps-starting-even-if-grub-is-installed/23065
+
+!!!
+https://unix.stackexchange.com/questions/671966/booting-from-real-uefi-disk-image-on-qemu
+     -machine type=q35,accel=kvm \
 
 https://www.technicalsourcery.net/posts/nixos-in-libvirt/
 
@@ -355,6 +366,15 @@ EFI variables are not supported on this system.
 /nix/store/lp1mv1r919ncwm3f23apvxxb728zi6i9-install-grub.pl: installation of GRUB EFI into /boot failed: No such file or directory
 installation finished!
 ```
+
+## problems
+
+https://community.synology.com/enu/forum/1/post/151326
+Stops at "Booting from hard disk..."
+Resolved the issue, changed BIOS from legacy to UEFI.
+
+## Other
+
 https://forums.opensuse.org/t/grub2-install-error-with-efi-on-raid1-error-at-boot-verification-requested-but-nobody-cares/143506/23
 https://www.linux.org.ru/forum/general/16404940
     mount -t efivarfs efivarfs /sys/firmware/efi/efivars
