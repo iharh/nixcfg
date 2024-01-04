@@ -15,6 +15,7 @@ NIXOS_ISO=`find $HOME/Downloads/dist/nixos -name "nixos-*.iso"`
 # --machine type=q35,accel=kvm \
 # https://linux.die.net/man/1/virt-install
 # https://github.com/libvirt/libvirt/blob/master/tests/qemuxml2argvdata/boot-menu-enable-with-timeout.xml
+# virt-install --boot uefi --machine q35 --name focal --memory 1024 --vcpus 1 --disk none --print-xml | grep OVMF
 
 virt-install -v \
   --name=nixos \

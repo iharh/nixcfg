@@ -67,6 +67,20 @@ https://github.com/virt-manager/virt-manager/blob/main/man/virt-install.rst#--bo
 https://github.com/virt-manager/virt-manager/blob/main/virtinst/cli.py#L2731
     # --boot parsing #
 https://github.com/virt-manager/virt-manager/blob/main/virtinst/cli.py#L2830
+https://github.com/virt-manager/virt-manager/blob/main/virtinst/cli.py#L4841
+    run_all_parsers
+https://github.com/virt-manager/virt-manager/blob/main/virtinst/virtinstall.py#L648
+    build_guest_instance
+https://github.com/virt-manager/virt-manager/blob/main/virtinst/virtinstall.py#L1191
+    main
+        ...
+        guest, installer = build_guest_instance(conn, options)
+            if options.xmlonly or options.dry:
+                xml = xml_to_print(guest, installer, options.xmlonly, options.dry)
+                if xml:
+                    print_stdout(xml, do_force=True)
+            else:
+                start_install(guest, installer, options)
 
 https://docs.virtuozzo.com/virtuozzo_hybrid_server_7_users_guide/advanced-tasks/creating-virtual-environments-with-virt-install.html
     --disk 'path=/vz/mywindowsvm/harddisk.hdd,bus=scsi,startup_policy=optional,boot_order=1,size=64' \
@@ -96,3 +110,15 @@ https://wiki.debian.org/SecureBoot/VirtualMachine
 https://github.com/virt-manager/virt-manager/issues/216
     --machine q35
     --boot uefi,loader=/usr/share/edk2/ovmf/OVMF_CODE.secboot.fd,loader_ro=yes,loader_type=pflash,nvram_template=/usr/share/edk2/ovmf/OVMF_VARS.secboot.fd,loader_secure=yes
+
+## ovmf
+
+https://manjaro.ru/manjaro-xfce-edition/qemu-kvm-virt-manager-ovmf.html
+
+## SecureBoot
+
+https://ubs_csse.gitlab.io/secu_os/tutorials/virtual_env.html
+
+## grub-install
+
+https://bbs.archlinux.org/viewtopic.php?id=264954
