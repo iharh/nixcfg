@@ -294,6 +294,17 @@ https://github.com/linuxmobile/kaku/
 
 ## Grub stuff
 
+https://unix.stackexchange.com/questions/612813/virt-manager-change-firmware-after-installation
+    --boot uefi
+    https://superuser.com/questions/1571326/how-to-boot-a-uefi-image-from-a-kvm-virtual-machine-without-virt-manager-e-g
+    https://andreaskaris.github.io/blog/linux/libvirt-uefi-without-secureboot/
+    https://docs.fedoraproject.org/en-US/quick-docs/uefi-with-qemu/
+    https://www.howtoforge.com/enable-uefi-support-on-kvm-virtualization/
+
+https://www.howtoforge.com/enable-uefi-support-on-kvm-virtualization/
+    --boot uefi
+https://serverfault.com/questions/899290/kvm-gets-stuck-at-booting-from-hard-disk
+
 boot.loader.grub.efiInstallAsRemovable = true;
 ```
 installing the boot loader...
