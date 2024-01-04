@@ -35,6 +35,8 @@ NIXOS_ISO=`find $HOME/Downloads/dist/nixos -name "nixos-*.iso"`
 # sudo ls -la /var/lib/libvirt/images
 #
 # virsh --connect qemu:///system start nixos
+#
+# man ... --install ... alias
 
 virt-install -v \
   --name=nixos \
