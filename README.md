@@ -172,7 +172,9 @@ https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Bo
 ## virsh
 
 * list --all
+* edit <domain>
 * dumpxml <domain>
+* domblklist --domain <domain>
 * change-media <domain> --path sda --eject
 * change-media <domain> --path sda --source $ISO --insert --config
 * attach-disk --driver file --type cdrom --mode readonly --domain guest01 --source /root/disc1.iso --target hdc --config
@@ -234,6 +236,8 @@ TBD: describe
 
 ## Preparing disks
 
+https://access.redhat.com/documentation/ru-ru/red_hat_enterprise_linux/7/html/virtualization_deployment_and_administration_guide/sect-guest_virtual_machine_installation_overview-creating_guests_with_virt_install
+    virt-install --option=?
 https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/system/boot/loader/grub/grub.nix
 https://nixos.wiki/wiki/Bootloader
 https://discourse.nixos.org/t/systemd-boot-keeps-starting-even-if-grub-is-installed/23065

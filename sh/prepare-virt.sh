@@ -13,6 +13,8 @@ NIXOS_ISO=`find $HOME/Downloads/dist/nixos -name "nixos-*.iso"`
 # https://jihuni.github.io/jekyll/update/2016/10/07/using-libvird-as-non-root-user.html
 # https://unix.stackexchange.com/questions/671966/booting-from-real-uefi-disk-image-on-qemu
 # --machine type=q35,accel=kvm \
+# https://linux.die.net/man/1/virt-install
+# https://github.com/libvirt/libvirt/blob/master/tests/qemuxml2argvdata/boot-menu-enable-with-timeout.xml
 
 virt-install -v \
   --name=nixos \
