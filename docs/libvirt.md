@@ -59,6 +59,7 @@ https://libvirt.org/manpages/virsh.html
 
 https://linux.die.net/man/1/virt-install
 https://github.com/virt-manager/virt-manager/
+https://github.com/virt-manager/virt-manager/blob/main/man/virt-install.rst#--boot
 https://github.com/virt-manager/virt-manager/blob/main/virtinst/cli.py#L2731
     # --boot parsing #
 https://github.com/virt-manager/virt-manager/blob/main/virtinst/cli.py#L2830
@@ -80,3 +81,14 @@ virtinstall.runcli()
 ```
 https://github.com/virt-manager/virt-manager/tree/main/virtinst
 https://github.com/virt-manager/virt-manager/blob/main/virtinst/virtinstall.py
+
+https://that.guru/blog/uefi-secure-boot-in-libvirt/
+    virsh dumpxml alpinelinux-q35-uefi-experiment | xmllint --xpath '//os'
+https://unix.stackexchange.com/questions/612813/virt-manager-change-firmware-after-installation
+https://ru.linux-console.net/?p=3249
+    ! all the info is at .efi-file at esp-partition
+https://wiki.debian.org/SecureBoot/VirtualMachine
+    /usr/share/OVMF/OVMF_CODE_4M.ms.fd
+https://github.com/virt-manager/virt-manager/issues/216
+    --machine q35
+    --boot uefi,loader=/usr/share/edk2/ovmf/OVMF_CODE.secboot.fd,loader_ro=yes,loader_type=pflash,nvram_template=/usr/share/edk2/ovmf/OVMF_VARS.secboot.fd,loader_secure=yes

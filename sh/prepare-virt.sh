@@ -19,6 +19,7 @@ NIXOS_ISO=`find $HOME/Downloads/dist/nixos -name "nixos-*.iso"`
 virt-install -v \
   --name=nixos \
   --connect qemu:///system \
+  --hvm
   --virt-type kvm \
   --memory=16392 \
   --vcpus=4 \
@@ -28,5 +29,6 @@ virt-install -v \
   --graphics vnc \
   --console pty,target_type=virtio \
   --cdrom $NIXOS_ISO \
-  --boot=uefi,cdrom,hd,menu=on \
+  --machine q35 \
+  --boot=cdrom,hd,menu=on \
   --noautoconsole
