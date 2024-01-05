@@ -16,14 +16,6 @@
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
-  boot = {
-    loader.grub.enable = true;
-    loader.grub.mirroredBoots = [{
-      path = "/nix/boot";
-      devices = [ "/dev/vda" ];
-    }];
-  };
-
   boot.loader = {
     timeout = 60;
     # efi.canTouchEfiVariables = true;
