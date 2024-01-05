@@ -12,6 +12,8 @@
 
 
   boot = {
+    # "uuid", "label", "provided"
+    fsIdentifier = "provided";
     # kvm-intel kvm-amd
     kernelModules = [ "kvm-amd" ];
     initrd = {
