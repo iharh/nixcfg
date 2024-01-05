@@ -10,33 +10,29 @@
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
-  boot.initrd.availableKernelModules = [ "ahci" "xhci_pci" "virtio_pci" "sr_mod" "virtio_blk" ];
-  boot.initrd.kernelModules = [ ];
-  # kvm-intel kvm-amd
-  boot.kernelModules = [ "kvm-amd" ];
-  boot.extraModulePackages = [ ];
 
-  boot.loader = {
-    timeout = 60;
-    # efi.canTouchEfiVariables = true;
-    grub = {
-      enable = true;
-      # mirroredBoots = [{
-      #  path = "/nix/boot";
-      #  devices = [ "/dev/vda" ];
-      #}];
-      ## "nodev" for efi only 
-#     ## /dev/vda
-      ## device = "nodev";
-      #devices = [ "/dev/vda" ];
-      devices = [ "nodev" ];
-      efiSupport = true;
-      # useOSProber = true;
-      efiInstallAsRemovable = true;
-      # copyKernels = true;
+  boot = {
+    initrd = {
+      availableKernelModules = [ "ahci" "xhci_pci" "virtio_pci" "sr_mod" "virtio_blk" ];
+      # kvm-intel kvm-amd
+      kernelModules = [ "kvm-amd"];
     };
-    # Use the systemd-boot EFI boot loader.
-    # systemd-boot.enable = true;
+    loader = {
+      timeout = 60;
+      # efi.canTouchEfiVariables = true;
+      grub = {
+        enable = true;
+        ## "nodev" for efi only 
+        ## /dev/vda
+        device = "nodev";
+        efiSupport = true;
+        # useOSProber = true;
+        efiInstallAsRemovable = true;
+        # copyKernels = true;
+      };
+      # Use the systemd-boot EFI boot loader.
+      # systemd-boot.enable = true;
+    };
   };
 
   # hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
@@ -53,14 +49,15 @@
 
   swapDevices = [ ];
 
-  fileSystems."/" = {
-    device = "/dev/disk/by-label/nixos";
-    fsType = "ext4";
-  };
-
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-label/boot";
-    fsType = "vfat";
+  fileSystems = {
+    "/" = {
+      device = "/dev/disk/by-label/nixos";
+      fsType = "ext4";
+    };
+    "/boot" = {
+      device = "/dev/disk/by-label/boot";
+      fsType = "vfat";
+    };
   };
 
   users.users.iharh = {
@@ -74,6 +71,7 @@
     gitMinimal
     gh
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    neovim
     wget
   ];
 
