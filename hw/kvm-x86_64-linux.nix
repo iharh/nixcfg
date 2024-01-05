@@ -24,13 +24,14 @@
       grub = {
         enable = true;
         # "uuid", "label", "provided"
-        fsIdentifier = "uuid";
+        fsIdentifier = "provided";
         ## "nodev" for efi only 
         ## /dev/vda
         device = "nodev";
         efiSupport = true;
         # useOSProber = true;
-        efiInstallAsRemovable = true;
+        # efiInstallAsRemovable = true;
+        # efiInstallAsRemovable = true;
         # copyKernels = true;
       };
       # Use the systemd-boot EFI boot loader.

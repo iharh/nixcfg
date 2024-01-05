@@ -26,5 +26,6 @@ Installing for x86_64-efi platform.
 /nix/store/lp1mv1r919ncwm3f23apvxxb728zi6i9-install-grub.pl: installation of GRUB EFI into /boot failed: No such file or directory
 installation finished!
 
+! need to read - tons of cool stuff
 https://github.com/NixOS/nixpkgs/issues/61718
-    ! need to read - tons of cool stuff
+https://bbs.archlinux.org/viewtopic.php?id=279602
