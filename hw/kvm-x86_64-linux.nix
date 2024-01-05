@@ -28,7 +28,8 @@
       ## "nodev" for efi only 
 #     ## /dev/vda
       ## device = "nodev";
-      devices = [ "/dev/vda" ];
+      #devices = [ "/dev/vda" ];
+      devices = [ "nodev" ];
       efiSupport = true;
       # useOSProber = true;
       efiInstallAsRemovable = true;

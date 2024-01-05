@@ -288,7 +288,7 @@ nixos-help
 ## Preparing environment
 
 ```
-nix-env -iA nixos.ripgrep nixos.nixFlakes nixos.gitMinimal nixos.gh
+nix-env -iA nixos.ripgrep nixos.nixFlakes nixos.gitMinimal nixos.gh nixos.neovim
 ```
 
 ## Cloning this configuration repository
@@ -373,6 +373,14 @@ installation finished!
 ```
 https://github.com/NixOS/nixpkgs/issues/130125
 https://discourse.nixos.org/t/solved-mirroredboots-with-on-tmpfs-build-error-failed-to-get-blkid-info-for-on-tmpfs-at-install-grub-pl/14065
+https://gist.github.com/byrongibson/ff2a6befdf53b94d9ea50fc8441fd35d
+https://stackoverflow.com/questions/10373100/blkid-not-giving-output-in-linux-when-run-in-file
+blkid -o export /dev/vda
+? https://discourse.nixos.org/t/nixos-rebuild-switch-is-failing-to-install-grub-boot-partition-disappeared/30773
+
+
+sudo grub-install /dev/vda
+grub-install: error: /nix/store/3wqpdkgms96f36n1sgnps6hvwcdinrwy-grub-2.12/lib/grub/x86_64-efi/modinfo.sh doesn't exist. Please specify --target or --directory.
 
 ## Other
 
