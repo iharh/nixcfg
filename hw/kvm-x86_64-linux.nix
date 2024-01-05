@@ -24,7 +24,7 @@
       grub = {
         enable = true;
         # "uuid", "label", "provided"
-        fsIdentifier = "label";
+        fsIdentifier = "uuid";
         ## "nodev" for efi only 
         ## /dev/vda
         device = "nodev";
