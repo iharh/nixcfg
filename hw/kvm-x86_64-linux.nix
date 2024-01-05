@@ -21,14 +21,14 @@
     # efi.canTouchEfiVariables = true;
     grub = {
       enable = true;
-      mirroredBoots = [{
-        path = "/nix/boot";
-        devices = [ "/dev/vda" ];
-      }];
+      # mirroredBoots = [{
+      #  path = "/nix/boot";
+      #  devices = [ "/dev/vda" ];
+      #}];
       ## "nodev" for efi only 
 #     ## /dev/vda
       ## device = "nodev";
-      #devices = [ "nodev" ];
+      devices = [ "/dev/vda" ];
       efiSupport = true;
       # useOSProber = true;
       efiInstallAsRemovable = true;

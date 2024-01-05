@@ -372,6 +372,7 @@ Failed to get blkid info (returned 512) for  on  at /nix/store/lp1mv1r919ncwm3f2
 installation finished!
 ```
 https://github.com/NixOS/nixpkgs/issues/130125
+https://discourse.nixos.org/t/solved-mirroredboots-with-on-tmpfs-build-error-failed-to-get-blkid-info-for-on-tmpfs-at-install-grub-pl/14065
 
 ## Other
 
