@@ -23,7 +23,7 @@
       enable = true;
       # "nodev" for efi only 
 #     # /dev/vda
-      device = "nodev";
+      # device = "nodev";
       devices = [ "nodev" ];
       efiSupport = true;
       # useOSProber = true;

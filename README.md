@@ -358,24 +358,20 @@ installation finished!
 ```
 boot.loader.efi.canTouchEfiVariables = true;
 
-```
-installing the boot loader...
-setting up /etc...
-updating GRUB 2 menu...
-installing the GRUB 2 boot loader into /boot...
-Installing for x86_64-efi platform.
-EFI variables are not supported on this system.
-EFI variables are not supported on this system.
-/nix/store/bjxcfnv97fi6flnkyj1dha5p4h5072qd-grub-2.12/sbin/grub-install: error: efibootmgr failed to register the boot entry: No such file or directory.
-/nix/store/lp1mv1r919ncwm3f23apvxxb728zi6i9-install-grub.pl: installation of GRUB EFI into /boot failed: No such file or directory
-installation finished!
-```
-
 ## problems
 
 https://community.synology.com/enu/forum/1/post/151326
 Stops at "Booting from hard disk..."
 Resolved the issue, changed BIOS from legacy to UEFI.
+
+```
+installing the boot loader...
+setting up /etc...
+updating GRUB 2 menu...
+Failed to get blkid info (returned 512) for  on  at /nix/store/lp1mv1r919ncwm3f23apvxxb728zi6i9-install-grub.pl line 208.
+installation finished!
+```
+https://github.com/NixOS/nixpkgs/issues/130125
 
 ## Other
 
