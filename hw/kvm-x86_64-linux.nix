@@ -23,6 +23,7 @@
       # efi.canTouchEfiVariables = true;
       grub = {
         enable = true;
+        version = 2;
         # "uuid", "label", "provided"
         fsIdentifier = "provided";
         ## "nodev" for efi only 
