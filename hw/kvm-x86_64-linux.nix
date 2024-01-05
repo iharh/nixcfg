@@ -12,10 +12,11 @@
 
 
   boot = {
+    # kvm-intel kvm-amd
+    kernelModules = [ "kvm-amd" ];
     initrd = {
       availableKernelModules = [ "ahci" "xhci_pci" "virtio_pci" "sr_mod" "virtio_blk" ];
-      # kvm-intel kvm-amd
-      kernelModules = [ "kvm-amd"];
+      kernelModules = [ ];
     };
     loader = {
       timeout = 60;
