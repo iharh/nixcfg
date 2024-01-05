@@ -12,8 +12,6 @@
 
 
   boot = {
-    # "uuid", "label", "provided"
-    fsIdentifier = "provided";
     # kvm-intel kvm-amd
     kernelModules = [ "kvm-amd" ];
     initrd = {
@@ -25,6 +23,8 @@
       # efi.canTouchEfiVariables = true;
       grub = {
         enable = true;
+        # "uuid", "label", "provided"
+        fsIdentifier = "provided";
         ## "nodev" for efi only 
         ## /dev/vda
         device = "nodev";
