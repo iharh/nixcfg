@@ -14,6 +14,7 @@
   boot = {
     # kvm-intel kvm-amd
     kernelModules = [ "kvm-amd" ];
+    extraModulePackages = [ ];
     initrd = {
       availableKernelModules = [ "ahci" "xhci_pci" "virtio_pci" "sr_mod" "virtio_blk" ];
       kernelModules = [ ];
@@ -56,13 +57,16 @@
   fileSystems = {
     "/" = {
       device = "/dev/disk/by-label/nixos";
+      # device = "/dev/disk/by-uuid/c42266c5-b7e9-4d2b-a782-6681d3d1cfc7";
       fsType = "ext4";
     };
     "/boot" = {
       device = "/dev/disk/by-label/boot";
+      # device = "/dev/disk/by-uuid/6DF1-2681";
       fsType = "vfat";
     };
   };
+
 
   users.users.iharh = {
     initialPassword = "pwd";
