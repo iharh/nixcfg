@@ -30,3 +30,8 @@ sudo nix run github:nix-community/disko \
     --mode zap_create_mount \
     "nixos/$TARGET_HOST/disks.nix"
 ```
+
+# by disko
+
+/dev/vda2: UUID="7ab8de55-f35e-441a-9736-d251285b2683" BLOCK_SIZE="4096" TYPE="ext4" PARTLABEL="disk-vda-root" PARTUUID="e5e6ca68-ef74-4e4a-a56f-1875056d4fa6"
+/dev/vda1: SEC_TYPE="msdos" UUID="B26D-3581" BLOCK_SIZE="512" TYPE="vfat" PARTLABEL="disk-vda-ESP" PARTUUID="0fac23be-dbfb-4572-a244-ed2182972439"
