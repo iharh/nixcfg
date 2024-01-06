@@ -25,15 +25,15 @@
       grub = {
         enable = true;
         # "uuid", "label", "provided"
-        fsIdentifier = "provided";
+        # !!! fsIdentifier = "provided";
+
         ## "nodev" for efi only 
         ## /dev/vda
         device = "nodev";
         efiSupport = true;
         # useOSProber = true;
         # efiInstallAsRemovable = true;
-        # efiInstallAsRemovable = true;
-        # copyKernels = true;
+        copyKernels = true;
       };
       # Use the systemd-boot EFI boot loader.
       # systemd-boot.enable = true;
@@ -42,15 +42,17 @@
 
   # hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
-  # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
-  # (the default) this is the recommended approach. When using systemd-networkd it's
-  # still possible to use this option, but it's recommended to use it in conjunction
-  # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
-  networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.enp1s0.useDHCP = lib.mkDefault true;
+  networking = {
+    # TODO: reuse in some way
+    hostName = "ih-nixos";
 
-  # TODO: reuse in some way
-  networking.hostName = "ih-nixos";
+    # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
+    # (the default) this is the recommended approach. When using systemd-networkd it's
+    # still possible to use this option, but it's recommended to use it in conjunction
+    # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
+    useDHCP = lib.mkDefault true;
+    # networking.interfaces.enp1s0.useDHCP = lib.mkDefault true;
+  };
 
   swapDevices = [ ];
 
@@ -66,7 +68,6 @@
       fsType = "vfat";
     };
   };
-
 
   users.users.iharh = {
     initialPassword = "pwd";
