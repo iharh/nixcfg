@@ -17,7 +17,7 @@ sudo nix run github:nix-community/disko \
     --no-write-lock-file \
     -- \
     --mode zap_create_mount \
-    disks.nix
+    ./disks.nix
 
 # sudo umount -q $DEVICE2
 # sudo umount -q $DEVICE1
