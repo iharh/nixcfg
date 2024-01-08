@@ -132,12 +132,17 @@ tune2fs: Bad magic number in super-block while trying to open /dev/nvme0n1p3
 I expect you have to perform tune2fs on this /dev/mapper/xxx-xxx, there is the visible ext4 filesystem.
 
 l /dev/disk/by-label
+good
+    luks@ ⇒ ../../nvme0n1p2
+    root@ ⇒ ../../nvme0n1p1
+bad
     NO_LABEL@ ⇒ ../../nvme0n1p1
 
 https://forum.endeavouros.com/t/how-to-create-new-uuid-for-external-drive/43391/5
 https://unix.stackexchange.com/questions/12858/how-to-change-filesystem-uuid-2-same-uuid
 https://unix.stackexchange.com/questions/257652/change-encrypted-partition-uuid
     For changing the file system UUID you have to decrypt /dev/sda1
+        sudo cryptsetup luksOpen /dev/disk/by-uuid/788e6b7d-18de-4c73-973a-27126348c4cb luks-788e6b7d-18de-4c73-973a-27126348c4cb
     and then run tune2fs on the decrypted device mapper device.
 
     To change the UUID of the LUKS volume, use cryptsetup luksUUID --uuid=<the new UUID> /dev/sda1.
