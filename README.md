@@ -122,8 +122,7 @@ https://github.com/Icy-Thought/Snowflake
 https://github.com/justinlime/dotfiles/blob/main/flake.nix
     !!! good abstractions and hyprland
 
-Labeling FS:
-*  sudo tune2fs -L "<label>" /dev/sd<N>
+## Labeling FS:
 
 sudo tune2fs -L luks /dev/nvme0n1p3
 sudo tune2fs -L luks /dev/dm-0
@@ -154,6 +153,8 @@ after (by uuid)
     blkid
         /dev/mapper/luks-...: UUID="..." BLOCK_SIZE="4096" TYPE="ext4"
 
+???
+/dev/disk/by-partlabel
 
 https://forum.endeavouros.com/t/how-to-create-new-uuid-for-external-drive/43391/5
 https://unix.stackexchange.com/questions/12858/how-to-change-filesystem-uuid-2-same-uuid
@@ -163,6 +164,15 @@ https://unix.stackexchange.com/questions/257652/change-encrypted-partition-uuid
     and then run tune2fs on the decrypted device mapper device.
 
     To change the UUID of the LUKS volume, use cryptsetup luksUUID --uuid=<the new UUID> /dev/sda1.
+
+https://superuser.com/questions/1393014/change-partitions-labels-only-on-dolphin-or-change-label-on-not-mounted-luks-pa
+    sudo cryptsetup status /dev/mapper/luks-788e6b7d-18de-4c73-973a-27126348c4cb
+        ...
+        type: LUKS1
+        ...
+    sudo cryptsetup convert /dev/nvme0n1p3 --type luks2 --debug
+    sudo cryptsetup config /dev/nvme0n1p3 --label luks
+
 
 ## LUKS
 
