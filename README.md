@@ -126,6 +126,8 @@ Labeling FS:
 *  sudo tune2fs -L "<label>" /dev/sd<N>
 
 sudo tune2fs -L luks /dev/nvme0n1p3
+sudo tune2fs -L luks /dev/dm-0
+
 tune2fs: Bad magic number in super-block while trying to open /dev/nvme0n1p3
 /dev/nvme0n1p3 contains a crypto_LUKS file system
 ...
@@ -141,12 +143,17 @@ bad
 l /dev/mapper
 before
     control
-after
-     luks@ ⇒ ../dm-0
+after (by label)
+    luks@ ⇒ ../dm-0
     and after that it is available:
         /dev/dm-0
     blkid
         /dev/nvme0n1p2: UUID="..." LABEL="luks" TYPE="crypto_LUKS" PARTUUID="..."
+after (by uuid)
+    luks-788e6b7d-18de-4c73-973a-27126348c4cb@ ⇒ ../dm-0
+    blkid
+        /dev/mapper/luks-...: UUID="..." BLOCK_SIZE="4096" TYPE="ext4"
+
 
 https://forum.endeavouros.com/t/how-to-create-new-uuid-for-external-drive/43391/5
 https://unix.stackexchange.com/questions/12858/how-to-change-filesystem-uuid-2-same-uuid
