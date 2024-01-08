@@ -125,6 +125,31 @@ https://github.com/justinlime/dotfiles/blob/main/flake.nix
 Labeling FS:
 *  sudo tune2fs -L "<label>" /dev/sd<N>
 
+sudo tune2fs -L luks /dev/nvme0n1p3
+tune2fs: Bad magic number in super-block while trying to open /dev/nvme0n1p3
+/dev/nvme0n1p3 contains a crypto_LUKS file system
+...
+I expect you have to perform tune2fs on this /dev/mapper/xxx-xxx, there is the visible ext4 filesystem.
+
+l /dev/disk/by-label
+    NO_LABEL@ ⇒ ../../nvme0n1p1
+
+https://forum.endeavouros.com/t/how-to-create-new-uuid-for-external-drive/43391/5
+https://unix.stackexchange.com/questions/12858/how-to-change-filesystem-uuid-2-same-uuid
+https://unix.stackexchange.com/questions/257652/change-encrypted-partition-uuid
+    For changing the file system UUID you have to decrypt /dev/sda1
+    and then run tune2fs on the decrypted device mapper device.
+
+    To change the UUID of the LUKS volume, use cryptsetup luksUUID --uuid=<the new UUID> /dev/sda1.
+
+## LUKS
+
+https://fedoraproject.org/wiki/Disk_Encryption_User_Guide
+https://geekpeek.net/disk-encryption-on-centos-linux/
+
+https://julien.coubronne.net/en/2017/02/03/luks-backups-and-headers/
+https://dradis.com/support/guides/customization/auto-unlock-luks-encrypted-drive.html
+
 Taraday - macos
 * https://www.tweag.io/blog/2023-02-09-nixos-vm-on-macos/
 
