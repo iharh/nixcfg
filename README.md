@@ -122,27 +122,20 @@ https://github.com/Icy-Thought/Snowflake
 https://github.com/justinlime/dotfiles/blob/main/flake.nix
     !!! good abstractions and hyprland
 
-## LUKS
+## misc
 
-https://fedoraproject.org/wiki/Disk_Encryption_User_Guide
-https://geekpeek.net/disk-encryption-on-centos-linux/
+set console font size
+* setfont ter-v32n t
 
-https://julien.coubronne.net/en/2017/02/03/luks-backups-and-headers/
-https://dradis.com/support/guides/customization/auto-unlock-luks-encrypted-drive.html
-
-Taraday - macos
-* https://www.tweag.io/blog/2023-02-09-nixos-vm-on-macos/
+* https://nixos.org/manual/nixos/stable/#sec-installation-manual
+* https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/image/repart.nix
 
 Inst via ssh
 * https://joshrosso.com/c/nix-k8s/
 * [nixos-bisect](https://euank.com/2022/05/11/nixos-bisect.html)
 
-set console font size
-* setfont ter-v32n t
-
-misc
-* https://nixos.org/manual/nixos/stable/#sec-installation-manual
-* https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/image/repart.nix
+Taraday - macos
+* https://www.tweag.io/blog/2023-02-09-nixos-vm-on-macos/
 
 ## UEFI shell
 
