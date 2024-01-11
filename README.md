@@ -47,11 +47,28 @@ So, I decided to start from the ground up and move slowly to the modern state of
 * [flake-parts](https://flake.parts)
 * flake-utils and flake-utils-plus ?
 * [kvm](https://github.com/iharh/notes/tree/main/devops/virt/kvm)
+* [flake-templates](https://github.com/rencire/flake-templates)
 
 find https://github.com/search?q=%22nix+flake+new%22&type=code
-* https://github.com/rencire/flake-templates
 
-Eric Tossel Sample Config
+## Wimpy Config
+* [dots](https://github.com/wimpysworld/nix-config/blob/main/flake.nix)
+* [inst-script](https://github.com/wimpysworld/nix-config/blob/main/scripts/install.sh)
+* [vm](https://github.com/wimpysworld/nix-config/tree/main/nixos/vm)
+* [vm-disks](https://github.com/wimpysworld/nix-config/blob/main/nixos/vm/disks.nix)
+* [vm-cfg](https://github.com/wimpysworld/nix-config/blob/main/nixos/vm/default.nix)
+* [boot](https://github.com/wimpysworld/nix-config/blob/main/nixos/default.nix)
+* [systemd-boot](https://github.com/wimpysworld/nix-config/blob/main/nixos/_mixins/hardware/systemd-boot.nix)
+* [qemu-guest](https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/profiles/qemu-guest.nix)
+
+nixos/$TARGET_HOST/disks.nix
+
+https://github.com/wimpysworld/nix-config/blob/main/nixos/_mixins/users/root/default.nix
+
+https://github.com/wimpysworld/nix-config/blob/main/nixos/brix/default.nix
+https://github.com/wimpysworld/nix-config/blob/main/nixos/brix/disks.nix
+
+## Eric Tossel Sample Config
 * [dots](https://github.com/erictossell/nixflakes)
 * [minimal-install-no-flakes](https://github.com/erictossell/nixflakes/blob/main/docs/minimal-install.md)
 * [usage-flake-templates](https://github.com/erictossell/nixflakes/blob/main/docs/usage.md)
