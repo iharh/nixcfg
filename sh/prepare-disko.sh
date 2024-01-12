@@ -15,3 +15,5 @@ sudo nix run github:nix-community/disko \
     ./disks.nix
 
 lsblk
+
+sudo nixos-generate-config --root /mnt
