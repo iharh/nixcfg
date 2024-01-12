@@ -402,12 +402,26 @@ Stops at "Booting from hard disk..."
 Resolved the issue, changed BIOS from legacy to UEFI.
 
 ```
-installing the boot loader...
-setting up /etc...
-updating GRUB 2 menu...
-Failed to get blkid info (returned 512) for  on  at /nix/store/lp1mv1r919ncwm3f23apvxxb728zi6i9-install-grub.pl line 208.
+Initializing machine ID from VM UUID.
+Created "/boot/EFI".
+Created "/boot/EFI/systemd".
+Created "/boot/EFI/BOOT".
+Created "/boot/loader".
+Created "/boot/loader/entries".
+Created "/boot/EFI/Linux".
+Copied "/nix/store/iidxwcyp8pqhrq3iji17shs4m6gin0kv-systemd-254.6/lib/systemd/boot/efi/systemd-bootx64.efi" to "/boot/EFI/systemd/systemd-bootx64.efi".
+Copied "/nix/store/iidxwcyp8pqhrq3iji17shs4m6gin0kv-systemd-254.6/lib/systemd/boot/efi/systemd-bootx64.efi" to "/boot/EFI/BOOT/BOOTX64.EFI".
+⚠️ Mount point '/boot' which backs the random seed file is world accessible, which is a security hole! ⚠️
+⚠️ Random seed file '/boot/loader/.#bootctlrandom-seeda6a88170cb703d9f' is world accessible, which is a security hole! ⚠️
+Random seed file /boot/loader/random-seed successfully written (32 bytes).
+Not booted with EFI, skipping EFI variable setup.
+Not booted with EFI, skipping EFI variable setup.
++ [[ -z 1 ]]
++ echo 'installation finished!'
 installation finished!
++ rm -rf /mnt/tmp.xQ1JIgfE1P
 ```
+
 https://github.com/NixOS/nixpkgs/issues/130125
 https://discourse.nixos.org/t/solved-mirroredboots-with-on-tmpfs-build-error-failed-to-get-blkid-info-for-on-tmpfs-at-install-grub-pl/14065
 https://gist.github.com/byrongibson/ff2a6befdf53b94d9ea50fc8441fd35d
