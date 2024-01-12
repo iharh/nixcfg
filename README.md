@@ -329,9 +329,11 @@ export GH_TOKEN=...your-own-token...
 gh repo clone iharh/nixcfg
 cd nixcfg
 gh repo sync
-sh/prepare-all.sh <vda|...>
+# sh/prepare-all.sh <vda|...>
+sh/prepare-disko.sh
 cat /mnt/etc/nixos/hardware-configuration.nix
 cat /mnt/etc/nixos/configuration.nix
+sh/inst-ih-nixos.sh
 ```
 ## Installing kaku
 
