@@ -335,6 +335,9 @@ cat /mnt/etc/nixos/hardware-configuration.nix
 cat /mnt/etc/nixos/configuration.nix
 sh/inst-ih-nixos.sh
 ```
+
+https://github.com/nix-community/disko/blob/master/docs/quickstart.md
+
 ## Installing kaku
 
 https://github.com/linuxmobile/kaku/
