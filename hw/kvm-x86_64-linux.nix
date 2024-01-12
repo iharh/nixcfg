@@ -6,25 +6,40 @@
 {
   imports =
     [ (modulesPath + "/profiles/qemu-guest.nix")
+      (import ./disks.nix { })
     ];
-
-  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
   nix.settings.experimental-features = [ "flakes" "nix-command" ];
 
+  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+
+  #swapDevices = [{
+  #  device = "/swap";
+  #  size = 1024;
+  #}];
+
   boot = {
+    kernelPackages = pkgs.linuxPackages_latest;
     # kvm-intel kvm-amd
     kernelModules = [ "kvm-amd" ];
     extraModulePackages = [ ];
     initrd = {
+      # "xhci_pci" "ohci_pci" "ehci_pci" "virtio_pci" "ahci" "usbhid" "sr_mod" "virtio_blk"
       availableKernelModules = [ "ahci" "xhci_pci" "virtio_pci" "sr_mod" "virtio_blk" ];
       kernelModules = [ ];
     };
     loader = {
       timeout = 60;
-      # efi.canTouchEfiVariables = true;
-      grub = {
+      
+      efi.canTouchEfiVariables = true;
+
+      systemd-boot = {
         enable = true;
+        configurationLimit = 10;
+        memtest86.enable = true;
+      };
+      grub = {
+        enable = false;
         # "uuid", "label", "provided"
         # !!! fsIdentifier = "provided";
 
@@ -36,8 +51,6 @@
         # efiInstallAsRemovable = true;
         copyKernels = true;
       };
-      # Use the systemd-boot EFI boot loader.
-      # systemd-boot.enable = true;
     };
   };
 
