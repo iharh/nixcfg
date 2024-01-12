@@ -5,6 +5,9 @@
     # -22.11
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    disko.url = "github:nix-community/disko";
+    disko.inputs.nixpkgs.follows = "nixpkgs";
+
     # Home manager
     # home-manager.url = "github:nix-community/home-manager";
     # home-manager.inputs.nixpkgs.follows = "nixpkgs";

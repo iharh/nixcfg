@@ -6,6 +6,7 @@
 {
   imports =
     [ (modulesPath + "/profiles/qemu-guest.nix")
+      #"${builtins.fetchTarball "https://github.com/nix-community/disko/archive/master.tar.gz"}/module.nix"
       (import ../disks.nix { })
     ];
 
