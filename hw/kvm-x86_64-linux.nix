@@ -6,7 +6,7 @@
 {
   imports =
     [ (modulesPath + "/profiles/qemu-guest.nix")
-      "${builtins.fetchTarball "https://github.com/nix-community/disko/archive/master.tar.gz"}/module.nix"
+      # "${builtins.fetchTarball "https://github.com/nix-community/disko/archive/master.tar.gz"}/module.nix"
       (import ../disks.nix { })
     ];
 
@@ -71,6 +71,7 @@
 
   swapDevices = [ ];
 
+  /*
   fileSystems = {
     "/" = {
       device = "/dev/disk/by-label/nixos";
@@ -83,6 +84,7 @@
       fsType = "vfat";
     };
   };
+  */
 
   users.users.iharh = {
     initialPassword = "pwd";
