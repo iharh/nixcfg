@@ -41,6 +41,7 @@
 
         # > Our main nixos configuration file <
         modules = [
+          disko.nixosModules.disko
           ./hw/kvm-x86_64-linux.nix
         ];
       };

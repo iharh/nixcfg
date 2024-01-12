@@ -336,6 +336,7 @@ cat /mnt/etc/nixos/configuration.nix
 sh/inst-ih-nixos.sh
 ```
 
+https://github.com/nix-community/disko/blob/master/docs/HowTo.md#installing-nixos-module
 https://github.com/nix-community/disko/blob/master/docs/quickstart.md
 
 ## Installing kaku
