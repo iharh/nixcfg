@@ -86,6 +86,16 @@
   };
   */
 
+  fileSystems."/" =
+    { device = "/dev/disk/by-uuid/2d95130e-d7f3-4819-82c7-7b302d61789d";
+      fsType = "xfs";
+    };
+
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/CC7C-5F8D";
+      fsType = "vfat";
+    };
+
   users.users.iharh = {
     initialPassword = "pwd";
     # ???
