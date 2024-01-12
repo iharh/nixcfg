@@ -421,6 +421,14 @@ Not booted with EFI, skipping EFI variable setup.
 installation finished!
 + rm -rf /mnt/tmp.xQ1JIgfE1P
 ```
+https://bbs.archlinux.org/viewtopic.php?id=170868
+https://www.reddit.com/r/archlinux/comments/3ykggu/issue_with_bootctl_install/
+    ! check EFI files:
+    find . /mnt/boot
+https://github.com/NixOS/nixpkgs/issues/32590
+    ! enable EFI in BIOS
+? use grub
+
 
 https://github.com/NixOS/nixpkgs/issues/130125
 https://discourse.nixos.org/t/solved-mirroredboots-with-on-tmpfs-build-error-failed-to-get-blkid-info-for-on-tmpfs-at-install-grub-pl/14065
