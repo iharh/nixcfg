@@ -293,7 +293,7 @@ https://libvirt.org/formatdomain.html
 
 Outside of vm
 ```
-sh/prepare-all.sh
+sh/prepare-virt.sh
 ```
 
 Inside vm
@@ -303,7 +303,6 @@ nix-env -iA nixos.ripgrep nixos.nixFlakes nixos.gitMinimal nixos.gh nixos.neovim
 gh repo clone iharh/nixcfg
 cd nixcfg
 gh repo sync
-# sh/prepare-all.sh <vda|...>
 sh/prepare-disko.sh
 cat /mnt/etc/nixos/hardware-configuration.nix
 cat /mnt/etc/nixos/configuration.nix
@@ -327,6 +326,18 @@ https://github.com/nix-community/disko/blob/master/docs/HowTo.md#installing-nixo
 https://github.com/nix-community/disko/blob/master/docs/quickstart.md
 
 virsh vol-delete nixos.qcow2 --pool images
+
+## Inside VM
+
+```
+export GH_TOKEN=...your-own-token...
+nix-env -iA nixos.ripgrep nixos.nixFlakes nixos.gitMinimal nixos.gh nixos.neovim
+gh repo clone iharh/nixcfg
+cd nixcfg
+gh repo sync
+sudo mkdir /mnt
+sh/inst-ih-nixos.sh
+```
 
 ## Getting help
 
