@@ -308,6 +308,7 @@ sh/prepare-disko.sh
 cat /mnt/etc/nixos/hardware-configuration.nix
 cat /mnt/etc/nixos/configuration.nix
 sh/inst-ih-nixos.sh
+find /mnt/boot
 sudo poweroff
 ```
 
