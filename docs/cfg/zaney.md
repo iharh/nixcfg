@@ -11,3 +11,4 @@ https://gitlab.com/Zaney/zaneyos/-/blob/main/laptop/hardware-configuration.nix
     hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
 [Updating My NixOS Flake Live] (https://www.youtube.com/watch?v=FAze1mPeNTQ)
+[A Beginners Introduction To My NixOS System] (https://www.youtube.com/watch?v=GpBBYxOUwBA)

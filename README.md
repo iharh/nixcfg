@@ -339,6 +339,10 @@ sudo mkdir /mnt
 sh/inst-ih-nixos.sh
 ```
 
+cat /run/current-system/sw/bin/nixos-install
+...
++ NIXOS_CONFIG=/mnt/etc/nixos/configuration.nix
+
 ## Getting help
 
 ```
