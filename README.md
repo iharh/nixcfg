@@ -335,13 +335,8 @@ nix-env -iA nixos.ripgrep nixos.nixFlakes nixos.gitMinimal nixos.gh nixos.neovim
 gh repo clone iharh/nixcfg
 cd nixcfg
 gh repo sync
-sudo mkdir /mnt
-sh/inst-ih-nixos.sh
+sudo nixos-rebuild switch --flake '.#ih-nixos'
 ```
-
-cat /run/current-system/sw/bin/nixos-install
-...
-+ NIXOS_CONFIG=/mnt/etc/nixos/configuration.nix
 
 ## Getting help
 
