@@ -71,26 +71,6 @@ https://github.com/wimpysworld/nix-config/blob/main/nixos/_mixins/users/root/def
 https://github.com/wimpysworld/nix-config/blob/main/nixos/brix/default.nix
 https://github.com/wimpysworld/nix-config/blob/main/nixos/brix/disks.nix
 
-## Eric Tossel Sample Config
-
-* [dots](https://github.com/erictossell/nixflakes)
-* [minimal-install-no-flakes](https://github.com/erictossell/nixflakes/blob/main/docs/minimal-install.md)
-* [usage-flake-templates](https://github.com/erictossell/nixflakes/blob/main/docs/usage.md)
-
-## Zaney config (Tyler Kelley)
-
-https://gitlab.com/Zaney/zaneyos
-
-https://gitlab.com/Zaney/zaneyos/-/blob/main/workstation/configuration.nix
-https://gitlab.com/Zaney/zaneyos/-/blob/main/workstation/hardware-configuration.nix
-https://gitlab.com/Zaney/zaneyos/-/blob/main/laptop/configuration.nix
-https://gitlab.com/Zaney/zaneyos/-/blob/main/laptop/hardware-configuration.nix
-    ! luks stuff
-    hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-    hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-
-[Updating My NixOS Flake Live] (https://www.youtube.com/watch?v=FAze1mPeNTQ)
-
 ## My Steps
 
 nix --extra-experimental-features "nix-command flakes" flake new -t 'github:erictossell/nixflakes' ./nixflakes && cd nixflakes
@@ -265,7 +245,7 @@ TBD: describe
 
 ## Starting up the VM
 
-TBD: describe
+virsh start nixos
 
 # System Preparation
 
@@ -309,27 +289,17 @@ https://libvirt.org/formatdomain.html
   </os>
 ```
 
-In order to execute all preparational steps before installation, execute 
+## Preparing environment
+
+Outside of vm
 ```
 sh/prepare-all.sh
 ```
 
-## Getting help
-
-```
-nixos-help
-```
-
-## Preparing environment
-
-```
-nix-env -iA nixos.ripgrep nixos.nixFlakes nixos.gitMinimal nixos.gh nixos.neovim
-```
-
-## Cloning this configuration repository
-
+Inside vm
 ```
 export GH_TOKEN=...your-own-token...
+nix-env -iA nixos.ripgrep nixos.nixFlakes nixos.gitMinimal nixos.gh nixos.neovim
 gh repo clone iharh/nixcfg
 cd nixcfg
 gh repo sync
@@ -337,11 +307,27 @@ gh repo sync
 sh/prepare-disko.sh
 cat /mnt/etc/nixos/hardware-configuration.nix
 cat /mnt/etc/nixos/configuration.nix
+sudo poweroff
+```
+
+Then - outside of
+```
+sh/prepare-final.sh
+```
+
+Then - inside
+```
 sh/inst-ih-nixos.sh
 ```
 
 https://github.com/nix-community/disko/blob/master/docs/HowTo.md#installing-nixos-module
 https://github.com/nix-community/disko/blob/master/docs/quickstart.md
+
+## Getting help
+
+```
+nixos-help
+```
 
 ## Grub stuff
 
@@ -409,10 +395,6 @@ https://gist.github.com/byrongibson/ff2a6befdf53b94d9ea50fc8441fd35d
 https://stackoverflow.com/questions/10373100/blkid-not-giving-output-in-linux-when-run-in-file
 blkid -o export /dev/vda
 ? https://discourse.nixos.org/t/nixos-rebuild-switch-is-failing-to-install-grub-boot-partition-disappeared/30773
-
-
-sudo grub-install /dev/vda
-grub-install: error: /nix/store/3wqpdkgms96f36n1sgnps6hvwcdinrwy-grub-2.12/lib/grub/x86_64-efi/modinfo.sh doesn't exist. Please specify --target or --directory.
 
 ## Other
 
