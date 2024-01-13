@@ -307,17 +307,19 @@ gh repo sync
 sh/prepare-disko.sh
 cat /mnt/etc/nixos/hardware-configuration.nix
 cat /mnt/etc/nixos/configuration.nix
+sh/inst-ih-nixos.sh
 sudo poweroff
 ```
 
-Then - outside of
+Then - at the host system
 ```
-sh/prepare-final.sh
-```
+virsh undefine nixos --snapshots-metadata --checkpoints-metadata
 
-Then - inside
-```
-sh/inst-ih-nixos.sh
+virsh pool-list # images, nixos
+virsh vol-list images # nixos.qcow2
+virsh vol-list nixos # nixos-minimal-...iso
+
+sh/prepare-final.sh
 ```
 
 https://github.com/nix-community/disko/blob/master/docs/HowTo.md#installing-nixos-module
