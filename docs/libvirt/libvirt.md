@@ -61,6 +61,11 @@ TBD
 
 ## virt-install
 
+* [virt-install-examples](https://www.golinuxcloud.com/virt-install-examples-kvm-virt-commands-linux/)
+* [Creating Guests with virt-install](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/virtualization_deployment_and_administration_guide/sect-guest_virtual_machine_installation_overview-creating_guests_with_virt_install)
+* [nixos-in-libvirt-21](https://www.technicalsourcery.net/posts/nixos-in-libvirt/)
+* [ih-libvirt](https://github.com/iharh/notes/blob/main/os/linux/nixos/inst/ih/ih-libvirt.txt)
+
 https://linux.die.net/man/1/virt-install
 https://github.com/virt-manager/virt-manager/
 https://github.com/virt-manager/virt-manager/blob/main/man/virt-install.rst#--boot

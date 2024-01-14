@@ -18,34 +18,20 @@ setting up the network bridge
 
 # NixOS Installation
 
-/usr/share/virt-manager/virtinst/virtinstall.py
-
 * [Installing NixOS](https://nixos.org/manual/nixos/unstable/index.html#sec-installation)
-* [ih-libvirt](https://github.com/iharh/notes/blob/main/os/linux/nixos/inst/ih/ih-libvirt.txt)
-* [my-nixos](https://github.com/iharh/notes/blob/main/os/linux/nixos/inst/ih/my-nixos.txt)
-* [Creating Guests with virt-install](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/virtualization_deployment_and_administration_guide/sect-guest_virtual_machine_installation_overview-creating_guests_with_virt_install)
-* [nixos-in-libvirt-21](https://www.technicalsourcery.net/posts/nixos-in-libvirt/)
-
-good samples to check
-* [virt-install-nixos](https://github.com/wstein/virt-install-nixos)
-* [virt-install-examples](https://www.golinuxcloud.com/virt-install-examples-kvm-virt-commands-linux/)
-
-https://www.youtube.com/watch?v=fDxhkSnFSPw
-* customize configuration before install
-* firmware - UEFI
-* boot device order -> SATA CDROM 1
-
-
-But it lacks a some modern/advanced features, listed below.
-So, I decided to start from the ground up and move slowly to the modern state of the art approaches, like:
 * [flakes](https://github.com/NixOS/nix/blob/master/src/nix/flake.md)
 * modularity
 * [flake-parts](https://flake.parts)
 * flake-utils and flake-utils-plus ?
 * [kvm](https://github.com/iharh/notes/tree/main/devops/virt/kvm)
 * [flake-templates](https://github.com/rencire/flake-templates)
+* [nix flake new] (https://github.com/search?q=%22nix+flake+new%22&type=code)
+* /usr/share/virt-manager/virtinst/virtinstall.py
 
-find https://github.com/search?q=%22nix+flake+new%22&type=code
+https://www.youtube.com/watch?v=fDxhkSnFSPw
+* customize configuration before install
+* firmware - UEFI
+* boot device order -> SATA CDROM 1
 
 ## Keys
 
@@ -120,75 +106,6 @@ https://github.com/Icy-Thought/Snowflake
 https://github.com/justinlime/dotfiles/blob/main/flake.nix
     !!! good abstractions and hyprland
 
-## UEFI shell
-
-* S-F12 - to exit capture cursor mode
-* https://superuser.com/questions/1412403/how-to-scroll-up-and-down-in-efi-shell
-* help -b
-* PgUp, S-PgUp
-* mode col row
-* drivers
-* drvcfg
-* drvdiag
-* devices
-* devtree
-* dh -b
-* cd
-* ls -r -a ... blkN:
-* map
-* getmtc - display current monotonic counter value
-* bcfg boot dump -v
-* reset -w | -s | -c  -- reboot
-
-fs0:
-cd EFI
-cd BOOT
-BOOTX64.EFI
-
-https://habr.com/ru/articles/680270/
-https://habr.com/ru/articles/314412/
-https://www.rodsbooks.com/efi-bootloaders/installation.html
-https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot
-
-## virsh
-
-* list --all
-* edit <domain>
-* dumpxml <domain>
-* domblklist --domain <domain>
-* change-media <domain> --path sda --eject
-* change-media <domain> --path sda --source $ISO --insert --config
-* attach-disk --driver file --type cdrom --mode readonly --domain guest01 --source /root/disc1.iso --target hdc --config
-* start <domain>
-* net-dhcp-leases default
-* console <domain>
-* undefine --nvram <domain>
-* destroy
-
-virt-manager --connect qemu:///system --show-domain-console <domain>
-
-/dev/vda
-
-SATA CDROM 1 - no media selected
-https://superuser.com/questions/239870/change-cd-rom-via-virsh
-https://github.com/cockpit-project/cockpit/issues/13454
-
-```
-<disk type="file" device="cdrom">
-  <driver name="qemu" type="raw"/>
-  <source file="/home/iharh/Downloads/dist/nixos/nixos-minimal-23.11.2413.32f63574c85f-x86_64-linux.iso" index="1"/>
-  <backingStore/>
-  <target dev="sda" bus="sata"/>
-  <readonly/>
-  <alias name="sata0-0-0"/>
-  <address type="drive" controller="0" bus="0" target="0" unit="0"/>
-</disk>
-```
-
-To log in over ssh you must set a password for either "nixos" or "root" with `passwd`
-(prefix with `sudo` for "root"), or add your public key to
-/home/nixos/.ssh/authorized_keys or /root/.ssh/authorized_keys.
-
 # Obtaining installation medium
 
 Feel free to skip not-suitable steps to your specific case
@@ -242,17 +159,17 @@ sh/prepare-virt.sh
 https://libvirt.org/formatdomain.html
 
 ```
-    <bootmenu enable='yes' timeout='3000'/>
+<bootmenu enable='yes' timeout='3000'/>
 
-  <os firmware="efi">
+<os firmware="efi">
     <type arch="x86_64" machine="pc-q35-8.1">hvm</type>
     <firmware>
-      <feature enabled="yes" name="enrolled-keys"/>
-      <feature enabled="yes" name="secure-boot"/>
+        <feature enabled="yes" name="enrolled-keys"/>
+        <feature enabled="yes" name="secure-boot"/>
     </firmware>
     <loader readonly="yes" secure="yes" type="pflash">/usr/share/OVMF/OVMF_CODE_4M.ms.fd</loader>
     <nvram template="/usr/share/OVMF/OVMF_VARS_4M.ms.fd">/var/lib/libvirt/qemu/nvram/nixos_VARS.fd</nvram>
-  </os>
+</os>
 ```
 
 ## Preparing environment
@@ -324,22 +241,12 @@ https://www.howtoforge.com/enable-uefi-support-on-kvm-virtualization/
 https://serverfault.com/questions/899290/kvm-gets-stuck-at-booting-from-hard-disk
 
 boot.loader.grub.efiInstallAsRemovable = true;
-```
-installing the boot loader...
-setting up /etc...
-updating GRUB 2 menu...
-installing the GRUB 2 boot loader into /boot...
-Installing for x86_64-efi platform.
-Installation finished. No error reported.
-installation finished!
-```
 boot.loader.efi.canTouchEfiVariables = true;
 
 ## Other
 
 https://ubuntuforums.org/archive/index.php/t-2448929.html
 https://forum.endeavouros.com/t/installation-failed-due-to-a-grub-installation-issue/33639/18
-
 
 https://nixos.wiki/wiki/Bootloader
 https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/installer/tools/nixos-install.sh
@@ -384,6 +291,12 @@ sh/inst-ih-nixos.sh
 sudo nixos-install -v --show-trace --flake .#ih-nixos
 sudo nixos-install -v --show-trace --no-root-passwd --flake .#ih-nixos
 ```
+
+## cache
+
+* https://nixos.wiki/wiki/Maintainers:Fastly
+* https://www.channable.com/tech/setting-up-a-private-nix-cache-for-fun-and-profit
+* https://mcwhirter.com.au/craige/blog/2019/NixOS%5FAppears%5Fto%5Fbe%5FAlways%5FBuilding%5FFrom%5FSource/
 
 ## misc
 
