@@ -20,8 +20,6 @@ setting up the network bridge
 
 /usr/share/virt-manager/virtinst/virtinstall.py
 
-One day I realized, that it would be good to have step-by-step tutorial for installing NixOS.
-Of cause, the standard one is a pretty good starting, point:
 * [Installing NixOS](https://nixos.org/manual/nixos/unstable/index.html#sec-installation)
 * [ih-libvirt](https://github.com/iharh/notes/blob/main/os/linux/nixos/inst/ih/ih-libvirt.txt)
 * [my-nixos](https://github.com/iharh/notes/blob/main/os/linux/nixos/inst/ih/my-nixos.txt)
