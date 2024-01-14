@@ -52,23 +52,6 @@ find https://github.com/search?q=%22nix+flake+new%22&type=code
 * Ctrl+Alt  Host key at virt-viewer
 * C-]       To exit the console, hold the CTRL key and press ], then press Enter.
 
-## Wimpy Config
-* [dots](https://github.com/wimpysworld/nix-config/blob/main/flake.nix)
-* [inst-script](https://github.com/wimpysworld/nix-config/blob/main/scripts/install.sh)
-* [vm](https://github.com/wimpysworld/nix-config/tree/main/nixos/vm)
-* [vm-disks](https://github.com/wimpysworld/nix-config/blob/main/nixos/vm/disks.nix)
-* [vm-cfg](https://github.com/wimpysworld/nix-config/blob/main/nixos/vm/default.nix)
-* [boot](https://github.com/wimpysworld/nix-config/blob/main/nixos/default.nix)
-* [systemd-boot](https://github.com/wimpysworld/nix-config/blob/main/nixos/_mixins/hardware/systemd-boot.nix)
-* [qemu-guest](https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/profiles/qemu-guest.nix)
-
-nixos/$TARGET_HOST/disks.nix
-
-https://github.com/wimpysworld/nix-config/blob/main/nixos/_mixins/users/root/default.nix
-
-https://github.com/wimpysworld/nix-config/blob/main/nixos/brix/default.nix
-https://github.com/wimpysworld/nix-config/blob/main/nixos/brix/disks.nix
-
 ## My Steps
 
 nix --extra-experimental-features "nix-command flakes" flake new -t 'github:erictossell/nixflakes' ./nixflakes && cd nixflakes
@@ -136,21 +119,6 @@ https://github.com/enchanted-coder/nix-config/blob/main/nixos/configuration.nix
 https://github.com/Icy-Thought/Snowflake
 https://github.com/justinlime/dotfiles/blob/main/flake.nix
     !!! good abstractions and hyprland
-
-## misc
-
-set console font size
-* setfont ter-v32n t
-
-* https://nixos.org/manual/nixos/stable/#sec-installation-manual
-* https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/image/repart.nix
-
-Inst via ssh
-* https://joshrosso.com/c/nix-k8s/
-* [nixos-bisect](https://euank.com/2022/05/11/nixos-bisect.html)
-
-Taraday - macos
-* https://www.tweag.io/blog/2023-02-09-nixos-vm-on-macos/
 
 ## UEFI shell
 
@@ -367,62 +335,8 @@ installation finished!
 ```
 boot.loader.efi.canTouchEfiVariables = true;
 
-## problems
-
-https://community.synology.com/enu/forum/1/post/151326
-Stops at "Booting from hard disk..."
-Resolved the issue, changed BIOS from legacy to UEFI.
-
-```
-Initializing machine ID from VM UUID.
-Created "/boot/EFI".
-Created "/boot/EFI/systemd".
-Created "/boot/EFI/BOOT".
-Created "/boot/loader".
-Created "/boot/loader/entries".
-Created "/boot/EFI/Linux".
-Copied "/nix/store/iidxwcyp8pqhrq3iji17shs4m6gin0kv-systemd-254.6/lib/systemd/boot/efi/systemd-bootx64.efi" to "/boot/EFI/systemd/systemd-bootx64.efi".
-Copied "/nix/store/iidxwcyp8pqhrq3iji17shs4m6gin0kv-systemd-254.6/lib/systemd/boot/efi/systemd-bootx64.efi" to "/boot/EFI/BOOT/BOOTX64.EFI".
-⚠️ Mount point '/boot' which backs the random seed file is world accessible, which is a security hole! ⚠️
-⚠️ Random seed file '/boot/loader/.#bootctlrandom-seeda6a88170cb703d9f' is world accessible, which is a security hole! ⚠️
-Random seed file /boot/loader/random-seed successfully written (32 bytes).
-Not booted with EFI, skipping EFI variable setup.
-Not booted with EFI, skipping EFI variable setup.
-+ [[ -z 1 ]]
-+ echo 'installation finished!'
-installation finished!
-+ rm -rf /mnt/tmp.xQ1JIgfE1P
-```
-https://bbs.archlinux.org/viewtopic.php?id=170868
-https://www.reddit.com/r/archlinux/comments/3ykggu/issue_with_bootctl_install/
-    ! check EFI files:
-    find . /mnt/boot
-https://github.com/NixOS/nixpkgs/issues/32590
-    ! enable EFI in BIOS
-? use grub
-
-
-https://github.com/NixOS/nixpkgs/issues/130125
-https://discourse.nixos.org/t/solved-mirroredboots-with-on-tmpfs-build-error-failed-to-get-blkid-info-for-on-tmpfs-at-install-grub-pl/14065
-https://gist.github.com/byrongibson/ff2a6befdf53b94d9ea50fc8441fd35d
-https://stackoverflow.com/questions/10373100/blkid-not-giving-output-in-linux-when-run-in-file
-blkid -o export /dev/vda
-? https://discourse.nixos.org/t/nixos-rebuild-switch-is-failing-to-install-grub-boot-partition-disappeared/30773
-
 ## Other
 
-https://forums.opensuse.org/t/grub2-install-error-with-efi-on-raid1-error-at-boot-verification-requested-but-nobody-cares/143506/23
-https://www.linux.org.ru/forum/general/16404940
-    mount -t efivarfs efivarfs /sys/firmware/efi/efivars
-https://bbs.archlinux.org/viewtopic.php?id=279445
-    https://www.rodsbooks.com/efi-bootloaders/fallback.html
-    https://uefi.org/sites/default/files/resources/UEFI_Spec_2_8_final.pdf
-    https://wiki.debian.org/UEFI
-https://www.linux.org.ru/forum/linux-install/16089446
-    –efi-directory=/efi
-    https://www.youtube.com/watch?v=Wssy2tz2k90
-https://superuser.com/questions/1738694/linux-from-scratch-efi-variables-are-not-supported-on-this-system
-https://forum.endeavouros.com/t/install-failure/11781/12
 https://ubuntuforums.org/archive/index.php/t-2448929.html
 https://forum.endeavouros.com/t/installation-failed-due-to-a-grub-installation-issue/33639/18
 
@@ -470,3 +384,18 @@ sh/inst-ih-nixos.sh
 sudo nixos-install -v --show-trace --flake .#ih-nixos
 sudo nixos-install -v --show-trace --no-root-passwd --flake .#ih-nixos
 ```
+
+## misc
+
+set console font size
+* setfont ter-v32n t
+
+* https://nixos.org/manual/nixos/stable/#sec-installation-manual
+* https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/image/repart.nix
+
+Inst via ssh
+* https://joshrosso.com/c/nix-k8s/
+* [nixos-bisect](https://euank.com/2022/05/11/nixos-bisect.html)
+
+Taraday - macos
+* https://www.tweag.io/blog/2023-02-09-nixos-vm-on-macos/
