@@ -6,18 +6,11 @@
 {
   imports =
     [ (modulesPath + "/profiles/qemu-guest.nix")
-      # "${builtins.fetchTarball "https://github.com/nix-community/disko/archive/master.tar.gz"}/module.nix"
-      # (import ../disks.nix { })
     ];
 
   nix.settings.experimental-features = [ "flakes" "nix-command" ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-
-  #swapDevices = [{
-  #  device = "/swap";
-  #  size = 1024;
-  #}];
 
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
@@ -41,15 +34,8 @@
       };
       grub = {
         enable = false;
-        # "uuid", "label", "provided"
-        # !!! fsIdentifier = "provided";
-
-        ## "nodev" for efi only 
-        ## /dev/vda
         device = "nodev";
         efiSupport = true;
-        # useOSProber = true;
-        # efiInstallAsRemovable = true;
         copyKernels = true;
       };
     };
