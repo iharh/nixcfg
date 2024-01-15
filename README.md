@@ -1,4 +1,4 @@
-# Prereq
+# Prerequisites
 
 Install the following
 * ovmf
@@ -16,161 +16,10 @@ setting up the network bridge
 * virsh net-list --all
 * brctl show
 
-# NixOS Installation
-
-* [Installing NixOS](https://nixos.org/manual/nixos/unstable/index.html#sec-installation)
-* [flakes](https://github.com/NixOS/nix/blob/master/src/nix/flake.md)
-* modularity
-* [flake-parts](https://flake.parts)
-* flake-utils and flake-utils-plus ?
-* [kvm](https://github.com/iharh/notes/tree/main/devops/virt/kvm)
-* [flake-templates](https://github.com/rencire/flake-templates)
-* [nix flake new] (https://github.com/search?q=%22nix+flake+new%22&type=code)
-* /usr/share/virt-manager/virtinst/virtinstall.py
-
-https://www.youtube.com/watch?v=fDxhkSnFSPw
-* customize configuration before install
-* firmware - UEFI
-* boot device order -> SATA CDROM 1
-
 ## Keys
 
 * Ctrl+Alt  Host key at virt-viewer
 * C-]       To exit the console, hold the CTRL key and press ], then press Enter.
-
-## My Steps
-
-nix --extra-experimental-features "nix-command flakes" flake new -t 'github:erictossell/nixflakes' ./nixflakes && cd nixflakes
-chmod +x sh/build.sh
-sudo sh/build.sh
-git init
-git add .
-nix --extra-experimental-features "nix-command flakes" flake check
-sudo nixos-rebuild switch --flake '.#hostname'
-sudo nixos-rebuild switch --flake '.#ihnixos'
-sudo nixos-rebuild switch --flake .
-
-https://github.com/NixOS/nix/issues/9165
-    --show-trace
-https://github.com/NixOS/nix/issues/3872#issuecomment-1637052258
-
-! with flake-parts !
-https://github.com/hercules-ci/flake-parts
-    https://github.com/hercules-ci/flake-parts/tree/main/template/default
-
-https://github.com/moni-dz/nix-config
-    https://github.com/moni-dz/nix-config/tree/master/modules/parts
-https://github.com/fufexan/dotfiles
-    https://github.com/fufexan/dotfiles/blob/main/hosts/default.nix
-
-! with-hyprland
-https://github.com/wochap/nix-config
-    https://github.com/wochap/nix-config/blob/main/flake.nix#L117
-
-!! other templatized flakes
-https://github.com/Misterio77/nix-starter-configs
-    git init nixaaa
-    cd nixaaa
-    nix --extra-experimental-features "nix-command flakes" flake init -t github:misterio77/nix-starter-config#minimal
-    ...
-    edit flake.nix
-    nixos-generate-config --root /mnt
-https://github.com/cruel-intentions/devshell-files
-    nix develop github:cruel-intentions/devshell-files --build
-https://github.com/konradmalik/dotfiles
-https://github.com/ivi-vink/flake/blob/master/templates/rust/flake.nix
-https://github.com/alex007sirois/nix-config
-https://github.com/dojo-developpement-paris/dojo-developpement-paris.github.io/blob/main/2023/12/22/molkky/flake.nix
-https://github.com/schromp/nixconfig
-https://github.com/schromp/nixconfig/blob/master/flake.nix
-    ! ypr, ..
-https://github.com/LongerHV/nixos-configuration
-https://github.com/colemickens/nixos-flake-example
-    ! old, but using nixos-rebuild
-    sh <(curl -L https://nixos.org/nix/install) --no-daemon
-https://github.com/adfaure/nix_configuration
-    ! not templates
-https://github.com/dmadisetti/.dots/tree/template
-    ! templating via github
-    https://github.com/dmadisetti/.dots/blob/template/nix/machines/momento.nix
-    https://github.com/dmadisetti/.dots/actions/workflows/iso.yml
-https://github.com/MCotocel/nixdots/tree/master/hosts/lithium#installing
-https://github.com/chadcat7/crystal
-    https://github.com/chadcat7/crystal/blob/main/flake.nix
-    ! simple
-https://github.com/johnk1917/nixrland
-    ! flakes, but no good readme
-https://github.com/enchanted-coder/nix-config/blob/main/nixos/configuration.nix
-    ! mini
-https://github.com/Icy-Thought/Snowflake
-https://github.com/justinlime/dotfiles/blob/main/flake.nix
-    !!! good abstractions and hyprland
-
-# Obtaining installation medium
-
-Feel free to skip not-suitable steps to your specific case
-
-## Downloading the latest unstable minimal nixos ISO
-
-TBD: describe
-
-## Burning ISO to a flash
-
-TBD: describe
-
-# Preparing the VM
-
-Feel free to skip this section if you are going to use real hardware.
-
-## Setting up KVM VM
-
-TBD: describe
-
-## Starting up the VM
-
-virsh start nixos
-
-# System Preparation
-
-## Preparing disks
-
-https://access.redhat.com/documentation/ru-ru/red_hat_enterprise_linux/7/html/virtualization_deployment_and_administration_guide/sect-guest_virtual_machine_installation_overview-creating_guests_with_virt_install
-    virt-install --option=?
-https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/system/boot/loader/grub/grub.nix
-https://nixos.wiki/wiki/Bootloader
-https://discourse.nixos.org/t/systemd-boot-keeps-starting-even-if-grub-is-installed/23065
-
-!!!
-https://unix.stackexchange.com/questions/671966/booting-from-real-uefi-disk-image-on-qemu
-     -machine type=q35,accel=kvm \
-
-https://www.technicalsourcery.net/posts/nixos-in-libvirt/
-
-https://github.com/gabyx/dotfiles/blob/main/nixos/hosts/vm/boot.nix
-https://github.com/gabyx/dotfiles/blob/main/nixos/hosts/desktop/boot.nix
-https://github.com/gabyx/nixos-configuration/blob/main/configuration-desktop-init.nix
-    boot.loader.grub.enable = true;
-    boot.loader.grub.version = 2;
-
-systemd
-https://github.com/erictossell/nixflakes/blob/main/modules/boot/systemd/default.nix
-
-sh/prepare-virt.sh
-https://libvirt.org/formatdomain.html
-
-```
-<bootmenu enable='yes' timeout='3000'/>
-
-<os firmware="efi">
-    <type arch="x86_64" machine="pc-q35-8.1">hvm</type>
-    <firmware>
-        <feature enabled="yes" name="enrolled-keys"/>
-        <feature enabled="yes" name="secure-boot"/>
-    </firmware>
-    <loader readonly="yes" secure="yes" type="pflash">/usr/share/OVMF/OVMF_CODE_4M.ms.fd</loader>
-    <nvram template="/usr/share/OVMF/OVMF_VARS_4M.ms.fd">/var/lib/libvirt/qemu/nvram/nixos_VARS.fd</nvram>
-</os>
-```
 
 ## Preparing environment
 
@@ -221,45 +70,47 @@ gh repo sync
 sudo nixos-rebuild switch --flake '.#ih-nixos'
 ```
 
-## Getting help
+# System Preparation
 
-```
-nixos-help
-```
+## Preparing disks
 
-## Grub stuff
-
-https://unix.stackexchange.com/questions/612813/virt-manager-change-firmware-after-installation
-    --boot uefi
-    https://superuser.com/questions/1571326/how-to-boot-a-uefi-image-from-a-kvm-virtual-machine-without-virt-manager-e-g
-    https://andreaskaris.github.io/blog/linux/libvirt-uefi-without-secureboot/
-    https://docs.fedoraproject.org/en-US/quick-docs/uefi-with-qemu/
-    https://www.howtoforge.com/enable-uefi-support-on-kvm-virtualization/
-
-https://www.howtoforge.com/enable-uefi-support-on-kvm-virtualization/
-    --boot uefi
-https://serverfault.com/questions/899290/kvm-gets-stuck-at-booting-from-hard-disk
-
-boot.loader.grub.efiInstallAsRemovable = true;
-boot.loader.efi.canTouchEfiVariables = true;
-
-## Other
-
-https://ubuntuforums.org/archive/index.php/t-2448929.html
-https://forum.endeavouros.com/t/installation-failed-due-to-a-grub-installation-issue/33639/18
-
+https://access.redhat.com/documentation/ru-ru/red_hat_enterprise_linux/7/html/virtualization_deployment_and_administration_guide/sect-guest_virtual_machine_installation_overview-creating_guests_with_virt_install
+    virt-install --option=?
+https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/system/boot/loader/grub/grub.nix
 https://nixos.wiki/wiki/Bootloader
-https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/installer/tools/nixos-install.sh
-    sudo nixos-rebuild --install-bootloader boot
-https://github.com/NixOS/nixpkgs/issues/244643
-https://docs.fedoraproject.org/en-US/quick-docs/grub2-bootloader/
+https://discourse.nixos.org/t/systemd-boot-keeps-starting-even-if-grub-is-installed/23065
 
 !!!
-https://github.com/mcdonc/.nixconfig/tree/master/hosts/profiles/grub
-https://github.com/mcdonc/.nixconfig/blob/master/hosts/profiles/grub/efi.nix
-https://github.com/mcdonc/.nixconfig/blob/master/videos/ardour/configuration.nix
-https://github.com/mcdonc/.nixconfig/blob/master/flake.nix
-https://github.com/mcdonc/.nixconfig/blob/master/prepsystem.sh
+https://unix.stackexchange.com/questions/671966/booting-from-real-uefi-disk-image-on-qemu
+     -machine type=q35,accel=kvm \
+
+https://www.technicalsourcery.net/posts/nixos-in-libvirt/
+
+https://github.com/gabyx/dotfiles/blob/main/nixos/hosts/vm/boot.nix
+https://github.com/gabyx/dotfiles/blob/main/nixos/hosts/desktop/boot.nix
+https://github.com/gabyx/nixos-configuration/blob/main/configuration-desktop-init.nix
+    boot.loader.grub.enable = true;
+    boot.loader.grub.version = 2;
+
+systemd
+https://github.com/erictossell/nixflakes/blob/main/modules/boot/systemd/default.nix
+
+sh/prepare-virt.sh
+https://libvirt.org/formatdomain.html
+
+```
+<bootmenu enable='yes' timeout='3000'/>
+
+<os firmware="efi">
+    <type arch="x86_64" machine="pc-q35-8.1">hvm</type>
+    <firmware>
+        <feature enabled="yes" name="enrolled-keys"/>
+        <feature enabled="yes" name="secure-boot"/>
+    </firmware>
+    <loader readonly="yes" secure="yes" type="pflash">/usr/share/OVMF/OVMF_CODE_4M.ms.fd</loader>
+    <nvram template="/usr/share/OVMF/OVMF_VARS_4M.ms.fd">/var/lib/libvirt/qemu/nvram/nixos_VARS.fd</nvram>
+</os>
+```
 
 ## Generating hardware description
 
@@ -268,36 +119,6 @@ TODO: fix in order to avoid disks stuff
 ```
 sudo nixos-generate-config --root /mnt
 ```
-# Update flake
-```
-nix --extra-experimental-features "nix-command flakes" flake update
-```
-https://nixos.org/manual/nix/stable/command-ref/new-cli/nix3-flake-update
-
-??? lock --commit-lock-file
-
-# Installation itself
-
-## Dry Run
-
-```
-sudo nixos-rebuild dry-build --flake .#ih-nixos
-```
-
-## Final Installation
-
-```
-sh/inst-ih-nixos.sh
-sudo nixos-install -v --show-trace --flake .#ih-nixos
-sudo nixos-install -v --show-trace --no-root-passwd --flake .#ih-nixos
-```
-
-## cache
-
-* https://nixos.wiki/wiki/Maintainers:Fastly
-* https://www.channable.com/tech/setting-up-a-private-nix-cache-for-fun-and-profit
-* https://mcwhirter.com.au/craige/blog/2019/NixOS%5FAppears%5Fto%5Fbe%5FAlways%5FBuilding%5FFrom%5FSource/
-
 ## misc
 
 set console font size
@@ -309,6 +130,3 @@ set console font size
 Inst via ssh
 * https://joshrosso.com/c/nix-k8s/
 * [nixos-bisect](https://euank.com/2022/05/11/nixos-bisect.html)
-
-Taraday - macos
-* https://www.tweag.io/blog/2023-02-09-nixos-vm-on-macos/

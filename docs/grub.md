@@ -49,3 +49,33 @@ https://www.linux.org.ru/forum/linux-install/10505616
 https://wiki.archlinux.org/title/GRUB#Common_installation_errors
 https://github.com/NixOS/nixpkgs/issues/61718
 https://github.com/XNM1/linux-nixos-hyprland-config-dotfiles/blob/main/nixos/bootloader.nix
+
+https://unix.stackexchange.com/questions/612813/virt-manager-change-firmware-after-installation
+    --boot uefi
+    https://superuser.com/questions/1571326/how-to-boot-a-uefi-image-from-a-kvm-virtual-machine-without-virt-manager-e-g
+    https://andreaskaris.github.io/blog/linux/libvirt-uefi-without-secureboot/
+    https://docs.fedoraproject.org/en-US/quick-docs/uefi-with-qemu/
+    https://www.howtoforge.com/enable-uefi-support-on-kvm-virtualization/
+
+https://www.howtoforge.com/enable-uefi-support-on-kvm-virtualization/
+    --boot uefi
+https://serverfault.com/questions/899290/kvm-gets-stuck-at-booting-from-hard-disk
+
+boot.loader.grub.efiInstallAsRemovable = true;
+boot.loader.efi.canTouchEfiVariables = true;
+
+https://ubuntuforums.org/archive/index.php/t-2448929.html
+https://forum.endeavouros.com/t/installation-failed-due-to-a-grub-installation-issue/33639/18
+
+https://nixos.wiki/wiki/Bootloader
+https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/installer/tools/nixos-install.sh
+    sudo nixos-rebuild --install-bootloader boot
+https://github.com/NixOS/nixpkgs/issues/244643
+https://docs.fedoraproject.org/en-US/quick-docs/grub2-bootloader/
+
+!!!
+https://github.com/mcdonc/.nixconfig/tree/master/hosts/profiles/grub
+https://github.com/mcdonc/.nixconfig/blob/master/hosts/profiles/grub/efi.nix
+https://github.com/mcdonc/.nixconfig/blob/master/videos/ardour/configuration.nix
+https://github.com/mcdonc/.nixconfig/blob/master/flake.nix
+https://github.com/mcdonc/.nixconfig/blob/master/prepsystem.sh
