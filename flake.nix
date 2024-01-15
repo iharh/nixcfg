@@ -19,7 +19,8 @@
         modules = [
           disko.nixosModules.disko
           (import ./disks.nix { })
-          (modulesPath + "/profiles/qemu-guest.nix")
+          # https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/profiles/qemu-guest.nix
+          <nixpkgs/nixos/modules/profiles/qemu-guest.nix>
           ./hw/kvm-x86_64-linux.nix
         ];
       };
