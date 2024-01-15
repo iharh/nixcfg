@@ -35,7 +35,8 @@
             (import ./disks.nix { })
             # https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/profiles/qemu-guest.nix
             # error: cannot look up '<nixpkgs/nixos/modules/profiles/qemu-guest.nix>' in pure evaluation mode (use '--impure' to override)
-            <nixpkgs/nixos/modules/profiles/qemu-guest.nix>
+            # <nixpkgs/nixos/modules/profiles/qemu-guest.nix>
+            qemu-module
             ./hw/kvm-x86_64-linux.nix
           ];
         };
