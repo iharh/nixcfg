@@ -5,7 +5,7 @@
 
 {
   imports =
-    [ (modulesPath + "/profiles/qemu-guest.nix")
+    [ #(modulesPath + "/profiles/qemu-guest.nix")
     ];
 
   nix.settings.experimental-features = [ "flakes" "nix-command" ];
