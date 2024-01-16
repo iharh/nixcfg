@@ -34,7 +34,8 @@
             (import ./disks.nix { })
             qemu-module
             ./hw/kvm-x86_64-linux.nix
-            ./hw/boot.nix
+            ./hw/boot-common.nix
+            ./hw/boot-systemd.nix
           ];
         };
       };

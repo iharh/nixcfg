@@ -6,6 +6,7 @@
 
 # flakes
 
+```
   inputs = {
     # -22.11
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -25,9 +26,12 @@
     #     https://github.com/Misterio77/nix-colors
     # nix-colors.url = "github:misterio77/nix-colors";
   };
+```
 
 # console font
 * setfont ter-v32n t
 
 # inst via ssh
 * https://joshrosso.com/c/nix-k8s/
+
+swapDevices = [ ];
