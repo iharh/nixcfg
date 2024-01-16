@@ -21,12 +21,6 @@
     # networking.interfaces.enp1s0.useDHCP = lib.mkDefault true;
   };
 
-  users.users.iharh = {
-    initialPassword = "pwd";
-    isNormalUser = true;
-    extraGroups = [ "wheel" ];
-  };
-
   environment.systemPackages = with pkgs; [
     gitMinimal
     gh
