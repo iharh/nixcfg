@@ -40,7 +40,7 @@
             ./hw/system-packages.nix
             ./hw/users.nix
             ./hw/networking.nix
-            ./hw/state-version.nix
+            (import ./hw/state-version.nix { stateVersion = "23.11"; })
             #
           ];
         };

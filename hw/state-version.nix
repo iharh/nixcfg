@@ -1,5 +1,5 @@
-{ ... }:
+{ stateVersion, ... }:
 
 {
-  system.stateVersion = "23.11";
+  system.stateVersion = stateVersion;
 }
