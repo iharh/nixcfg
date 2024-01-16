@@ -30,6 +30,7 @@
           # Pass flake inputs to our config
           specialArgs = { inherit inputs; }; 
           modules = [
+            # { config, lib, pkgs, ... }:
             disko.nixosModules.disko
             (import ./disks.nix { })
             qemu-module
