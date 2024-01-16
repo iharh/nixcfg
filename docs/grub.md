@@ -79,3 +79,39 @@ https://github.com/mcdonc/.nixconfig/blob/master/hosts/profiles/grub/efi.nix
 https://github.com/mcdonc/.nixconfig/blob/master/videos/ardour/configuration.nix
 https://github.com/mcdonc/.nixconfig/blob/master/flake.nix
 https://github.com/mcdonc/.nixconfig/blob/master/prepsystem.sh
+
+https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/system/boot/loader/grub/grub.nix
+https://nixos.wiki/wiki/Bootloader
+https://discourse.nixos.org/t/systemd-boot-keeps-starting-even-if-grub-is-installed/23065
+
+!!!
+https://unix.stackexchange.com/questions/671966/booting-from-real-uefi-disk-image-on-qemu
+     -machine type=q35,accel=kvm \
+
+https://www.technicalsourcery.net/posts/nixos-in-libvirt/
+
+https://github.com/gabyx/dotfiles/blob/main/nixos/hosts/vm/boot.nix
+https://github.com/gabyx/dotfiles/blob/main/nixos/hosts/desktop/boot.nix
+https://github.com/gabyx/nixos-configuration/blob/main/configuration-desktop-init.nix
+    boot.loader.grub.enable = true;
+    boot.loader.grub.version = 2;
+
+systemd
+https://github.com/erictossell/nixflakes/blob/main/modules/boot/systemd/default.nix
+
+sh/prepare-virt.sh
+https://libvirt.org/formatdomain.html
+
+```
+<bootmenu enable='yes' timeout='3000'/>
+
+<os firmware="efi">
+    <type arch="x86_64" machine="pc-q35-8.1">hvm</type>
+    <firmware>
+        <feature enabled="yes" name="enrolled-keys"/>
+        <feature enabled="yes" name="secure-boot"/>
+    </firmware>
+    <loader readonly="yes" secure="yes" type="pflash">/usr/share/OVMF/OVMF_CODE_4M.ms.fd</loader>
+    <nvram template="/usr/share/OVMF/OVMF_VARS_4M.ms.fd">/var/lib/libvirt/qemu/nvram/nixos_VARS.fd</nvram>
+</os>
+```

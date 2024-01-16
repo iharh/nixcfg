@@ -14,6 +14,10 @@ https://computingforgeeks.com/virsh-commands-cheatsheet/
 * console <domain>
 * undefine --nvram <domain>
 * destroy
+* pool-list # images, nixos
+* vol-list images # nixos.qcow2
+* vol-list nixos # nixos-minimal-...iso
+* vol-delete <volume-name>.qcow2 --pool images
 
 virt-manager --connect qemu:///system --show-domain-console <domain>
 
