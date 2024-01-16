@@ -35,12 +35,13 @@
             (import ./disks.nix { })
             qemu-module
             ./hw/experimental-features.nix
-            ./hw/kvm-x86_64-linux.nix
             ./hw/boot-common.nix
             ./hw/boot-systemd.nix
             ./hw/system-packages.nix
             ./hw/users.nix
             ./hw/networking.nix
+            ./hw/state-version.nix
+            #
           ];
         };
       };
