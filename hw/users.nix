@@ -4,6 +4,12 @@
   users.users.iharh = {
     initialPassword = "pwd";
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ 
+      "wheel"
+      "networkmanager"
+    ];
+    # packages = with pkgs; [
+    #  firefox
+    #];
   };
 }

@@ -35,3 +35,7 @@
 * https://joshrosso.com/c/nix-k8s/
 
 swapDevices = [ ];
+
+# Tons of interesting stuff
+
+* https://github.com/wimpysworld/nix-config/blob/main/nixos/default.nix
