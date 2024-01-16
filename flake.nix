@@ -37,6 +37,7 @@
             ./hw/boot-common.nix
             ./hw/boot-systemd.nix
             ./hw/users.nix
+            ./hw/networking.nix
           ];
         };
       };
