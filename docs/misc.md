@@ -39,3 +39,16 @@ swapDevices = [ ];
 # Tons of interesting stuff
 
 * https://github.com/wimpysworld/nix-config/blob/main/nixos/default.nix
+
+* https://github.com/Mic92/dotfiles/tree/main/nixos/modules
+* https://github.com/Mic92/dotfiles/blob/main/nixos/eva/configuration.nix
+* https://github.com/Mic92/dotfiles/blob/main/nixos/bernie/configuration.nix
+* https://github.com/Mic92/dotfiles/blob/main/nixos/blob64/configuration.nix
+* https://github.com/Mic92/dotfiles/blob/main/nixos/blob64/hardware-configuration.nix
+* https://github.com/Mic92/dotfiles/blob/main/nixos/eva/modules/telegraf/krebs.nix
+* https://github.com/Mic92/dotfiles/tree/main/nixos/blob64/fancontrol
+* https://github.com/Mic92/dotfiles/blob/main/nixos/eva/modules/loki.nix
+* https://github.com/Mic92/dotfiles/tree/main/nixos/turingmachine/modules
+* https://github.com/Mic92/dotfiles/tree/main/nixos/turingmachine/modules/toggle-keyboard
+
+* https://github.com/Mic92/dotfiles/blob/main/nixos/modules/i3.nix
