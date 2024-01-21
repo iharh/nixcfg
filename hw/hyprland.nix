@@ -1,5 +1,5 @@
 { pkgs, lin, input, ... }:
 
 {
-    programs.hyperland.enable = true;
+    programs.hyprland.enable = true;
 }
