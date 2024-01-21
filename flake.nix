@@ -41,8 +41,9 @@
             ./hw/users.nix
             ./hw/networking.nix
 
-            ./hw/xserver.nix
-            ./hw/i3.nix
+            #./hw/xserver.nix
+            #./hw/i3.nix
+            ./hw/hyprland.nix
 
             (import ./hw/state-version.nix { stateVersion = "23.11"; })
             #
