@@ -36,6 +36,7 @@
             disko.nixosModules.disko
             (import ./disks.nix { })
             qemu-module
+            inputs.hyprland.nixosModules.default
             ./hw/experimental-features.nix
             ./hw/boot-common.nix
             ./hw/boot-systemd.nix
