@@ -86,6 +86,11 @@ https://nixos-and-flakes.thiscute.world/nixos-with-flakes/start-using-home-manag
 ## wayland hyprland problems
 
 * https://www.reddit.com/r/NixOS/comments/14t6mto/really_confused_about_hyprland_flakes_and/
+* https://www.reddit.com/r/NixOS/comments/14nyj0b/how_to_enable_wayland_on_nixos_or_confusion/
+* https://drakerossman.com/blog/wayland-on-nixos-confusion-conquest-triumph
+* https://github.com/AtaraxiaSjel/nixos-config/blob/master/profiles/workspace/hyprland/default.nix#L58
+
+(inside hm)
 
 https://github.com/AtaraxiaSjel/nixos-config/blob/master/profiles/workspace/hyprland/default.nix
 https://github.com/NixOS/nixpkgs/issues/57602
