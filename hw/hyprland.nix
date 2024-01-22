@@ -8,7 +8,7 @@
       enable = true;
 
       settings = {
-        exec-once = ''${startupScript}/bin/start'';
+        # exec-once = ''${startupScript}/bin/start'';
       };
     };
 }
