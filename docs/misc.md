@@ -75,3 +75,17 @@ nix-ld
 
 with wayland
 * https://github.com/Mic92/dotfiles/blob/main/nixos/modules/qtile.nix
+
+https://github.com/AtaraxiaSjel/nixos-config/tree/master
+https://code.ataraxiadev.com/AtaraxiaDev/nixos-config
+
+## home-manager
+
+https://nixos-and-flakes.thiscute.world/nixos-with-flakes/start-using-home-manager
+
+## wayland hyprland problems
+
+* https://www.reddit.com/r/NixOS/comments/14t6mto/really_confused_about_hyprland_flakes_and/
+
+https://github.com/AtaraxiaSjel/nixos-config/blob/master/profiles/workspace/hyprland/default.nix
+https://github.com/NixOS/nixpkgs/issues/57602
