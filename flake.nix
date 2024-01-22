@@ -7,6 +7,8 @@
 
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
+
+    hyprland.url = "github:hyprwm/Hyprland";
   };
 
   outputs = { nixpkgs, disko, ... }@inputs: 
