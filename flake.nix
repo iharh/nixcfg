@@ -5,6 +5,9 @@
     # -22.11
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    home-manager.url = "github:nix-community/home-manager/master";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -46,6 +49,7 @@
 
             #./hw/xserver.nix
             #./hw/i3.nix
+            ./hw/display-manager.nix
             ./hw/hyprland.nix
 
             (import ./hw/state-version.nix { stateVersion = "23.11"; })

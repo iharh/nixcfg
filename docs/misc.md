@@ -94,3 +94,11 @@ https://nixos-and-flakes.thiscute.world/nixos-with-flakes/start-using-home-manag
 
 https://github.com/AtaraxiaSjel/nixos-config/blob/master/profiles/workspace/hyprland/default.nix
 https://github.com/NixOS/nixpkgs/issues/57602
+
+## hyprland samples
+
+* https://github.com/KnutHoltet/nixos-config/blob/main/nixos/hyprland.nix
+* https://github.com/KnutHoltet/nixos-config/blob/main/nixos/display-manager.nix
+* https://github.com/KnutHoltet/nixos-config/blob/main/nixos/users.nix
+* https://github.com/KnutHoltet/nixos-config/blob/main/home-files/.config/wezterm/wezterm.lua
+
