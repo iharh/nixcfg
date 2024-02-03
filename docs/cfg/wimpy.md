@@ -1,7 +1,5 @@
 # Wimpy Config
 
-Not wayland/hyprland
-
 * [dots](https://github.com/wimpysworld/nix-config/blob/main/flake.nix)
 * [inst-script](https://github.com/wimpysworld/nix-config/blob/main/scripts/install.sh)
 * [vm](https://github.com/wimpysworld/nix-config/tree/main/nixos/vm)
