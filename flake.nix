@@ -11,6 +11,10 @@
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
 
+    sops-nix.url = "github:Mic92/sops-nix";
+    # optional, not necessary for the module
+    # sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+
     hyprland.url = "github:hyprwm/Hyprland";
   };
 
@@ -39,6 +43,7 @@
             disko.nixosModules.disko
             (import ./disks.nix { })
             qemu-module
+            inputs.sops-nix.nixosModules.sops
             inputs.hyprland.nixosModules.default
             ./hw/experimental-features.nix
             ./hw/boot-common.nix
