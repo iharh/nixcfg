@@ -10,6 +10,8 @@
 * https://www.reddit.com/r/NixOS/comments/14t6mto/really_confused_about_hyprland_flakes_and/
 * https://www.reddit.com/r/NixOS/comments/14nyj0b/how_to_enable_wayland_on_nixos_or_confusion/
 * https://www.reddit.com/r/NixOS/comments/1afquyx/cant_log_into_hyprland_when_configured_through/
+* https://drakerossman.com/blog/wayland-on-nixos-confusion-conquest-triumph
+* https://github.com/AtaraxiaSjel/nixos-config/blob/master/profiles/workspace/hyprland/default.nix#L58
 
 ## Configuration Samples
 
@@ -36,6 +38,13 @@
 * https://gitlab.com/Zaney/zaneyos/-/blob/main/config/home/hyprland.nix
 * https://gitlab.com/Zaney/zaneyos/-/blob/main/config/home/packages.nix
 
+### KnutHoltet
+
+* https://github.com/KnutHoltet/nixos-config/blob/main/nixos/hyprland.nix
+* https://github.com/KnutHoltet/nixos-config/blob/main/nixos/display-manager.nix
+* https://github.com/KnutHoltet/nixos-config/blob/main/nixos/users.nix
+* https://github.com/KnutHoltet/nixos-config/blob/main/home-files/.config/wezterm/wezterm.lua
+
 sway
 * https://gitlab.com/Zaney/zaneyos/-/blob/main/config/home/swaylock.nix
 * https://gitlab.com/Zaney/zaneyos/-/blob/main/config/home/swaync.nix
@@ -58,3 +67,8 @@ writeshellscript
 starship
 * https://gitlab.com/Zaney/zaneyos/-/blob/main/config/home/files/starship.toml
 * https://gitlab.com/Zaney/zaneyos/-/blob/main/config/home/starship.nix
+
+## todo inside hm
+
+https://github.com/AtaraxiaSjel/nixos-config/blob/master/profiles/workspace/hyprland/default.nix
+https://github.com/NixOS/nixpkgs/issues/57602

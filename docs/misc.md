@@ -18,16 +18,12 @@
     # home-manager.url = "github:nix-community/home-manager";
     # home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    # TODO: Add any other flake you might need
-    # hardware.url = "github:nixos/nixos-hardware";
-
     # Shameless plug: looking for a way to nixify your themes and make
     # everything match nicely? Try nix-colors!
     #     https://github.com/Misterio77/nix-colors
     # nix-colors.url = "github:misterio77/nix-colors";
   };
 ```
-
 # console font
 * setfont ter-v32n t
 
@@ -35,10 +31,6 @@
 * https://joshrosso.com/c/nix-k8s/
 
 swapDevices = [ ];
-
-# wezterm
-
-* https://github.com/Mic92/dotfiles/blob/main/nixos/modules/wezterm.nix
 
 # Tons of interesting stuff
 
@@ -48,57 +40,9 @@ swapDevices = [ ];
 * https://github.com/m0lentum/dotfiles/blob/master/nixos/configuration-molelap.nix
 * https://github.com/m0lentum/dotfiles/blob/master/nixos/configuration-moletable.nix
 
-* https://github.com/Mic92/dotfiles/tree/main/nixos/modules
-* https://github.com/Mic92/dotfiles/blob/main/nixos/modules/nix-daemon.nix
-* https://github.com/Mic92/dotfiles/blob/main/nixos/modules/networkd.nix
-* https://github.com/Mic92/dotfiles/blob/main/nixos/modules/minimal-docs.nix
-* https://github.com/Mic92/dotfiles/blob/main/nixos/modules/make-linux-fast.nix
-* https://github.com/Mic92/dotfiles/blob/main/nixos/eva/configuration.nix
-* https://github.com/Mic92/dotfiles/blob/main/nixos/bernie/configuration.nix
-* https://github.com/Mic92/dotfiles/blob/main/nixos/blob64/configuration.nix
-* https://github.com/Mic92/dotfiles/blob/main/nixos/blob64/hardware-configuration.nix
-* https://github.com/Mic92/dotfiles/blob/main/nixos/eva/modules/telegraf/krebs.nix
-* https://github.com/Mic92/dotfiles/tree/main/nixos/blob64/fancontrol
-* https://github.com/Mic92/dotfiles/blob/main/nixos/eva/modules/loki.nix
-* https://github.com/Mic92/dotfiles/tree/main/nixos/turingmachine/modules
-* https://github.com/Mic92/dotfiles/tree/main/nixos/turingmachine/modules/toggle-keyboard
-
-
-* https://github.com/Mic92/dotfiles/blob/main/nixos/modules/i3.nix
-* https://github.com/Mic92/dotfiles/blob/main/nixos/modules/sway.nix
-
-packaging
-* https://github.com/Mic92/dotfiles/blob/main/nixos/modules/packages.nix
-
-nix-ld
-* https://github.com/Mic92/dotfiles/blob/main/nixos/modules/nix-ld.nix
-
-with wayland
-* https://github.com/Mic92/dotfiles/blob/main/nixos/modules/qtile.nix
-
 https://github.com/AtaraxiaSjel/nixos-config/tree/master
 https://code.ataraxiadev.com/AtaraxiaDev/nixos-config
 
 ## home-manager
 
 https://nixos-and-flakes.thiscute.world/nixos-with-flakes/start-using-home-manager
-
-## wayland hyprland problems
-
-* https://www.reddit.com/r/NixOS/comments/14t6mto/really_confused_about_hyprland_flakes_and/
-* https://www.reddit.com/r/NixOS/comments/14nyj0b/how_to_enable_wayland_on_nixos_or_confusion/
-* https://drakerossman.com/blog/wayland-on-nixos-confusion-conquest-triumph
-* https://github.com/AtaraxiaSjel/nixos-config/blob/master/profiles/workspace/hyprland/default.nix#L58
-
-(inside hm)
-
-https://github.com/AtaraxiaSjel/nixos-config/blob/master/profiles/workspace/hyprland/default.nix
-https://github.com/NixOS/nixpkgs/issues/57602
-
-## hyprland samples
-
-* https://github.com/KnutHoltet/nixos-config/blob/main/nixos/hyprland.nix
-* https://github.com/KnutHoltet/nixos-config/blob/main/nixos/display-manager.nix
-* https://github.com/KnutHoltet/nixos-config/blob/main/nixos/users.nix
-* https://github.com/KnutHoltet/nixos-config/blob/main/home-files/.config/wezterm/wezterm.lua
-
