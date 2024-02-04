@@ -1,6 +1,7 @@
 # Other configurations
 
 Other configurations to check:
+* [ahbk](https://github.com/ahbk/my-nixos)
 * [schromp-nixconfig](https://github.com/schromp/nixconfig)
 * [gytis-ivaskevicius](https://github.com/gytis-ivaskevicius/nixfiles)
 * [fufexan](https://github.com/fufexan/dotfiles)

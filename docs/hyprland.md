@@ -15,7 +15,13 @@
 
 ## Configuration Samples
 
+* https://github.com/Obnomus/Hyprland-V2
 * https://github.com/dedSyn4ps3/nixos_desktop_configs
+* https://www.youtube.com/watch?v=6RNaBRSy-Zs
+
+### ahbk
+
+* https://github.com/ahbk/my-nixos/blob/master/modules/hypr.nix
 
 ### NaniNoni
 
