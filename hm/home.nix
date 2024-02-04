@@ -15,9 +15,9 @@
 
     };
 
-    packages = {
+    packages = [
       pkgs.hello
-    };
+    ];
 
     sessionVariables = {
       MY_HM_VAR = "my-hm-val";
