@@ -40,7 +40,7 @@
         ih-nixos = nixpkgs.lib.nixosSystem {
           system = system;
           # Pass flake inputs to our config
-          specialArgs = { inherit inputs system; }; 
+          specialArgs = { inherit inputs system stateVersion; }; 
           modules = [
             # { config, lib, pkgs, ... }:
             disko.nixosModules.disko
@@ -63,8 +63,9 @@
 
             # TODO: parameterize
             (import ./hw/state-version.nix { stateVersion = "23.11"; })
-            (import ./hw/home-manager.nix { stateVersion = "23.11"; })
+            # (import ./hw/home-manager.nix { stateVersion = "23.11"; })
             #
+            ./hw/home-manager.nix
           ];
         };
       };
