@@ -6,7 +6,7 @@
   ];
 
   home-manager = {
-    extraSpecialArgs = { inherit inputs; }
+    extraSpecialArgs = { inherit inputs; };
     users = {
       iharh = import ./hm/home.nix;
     };
