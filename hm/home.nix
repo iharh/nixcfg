@@ -3,6 +3,8 @@
 {
   programs = {
     home-manager.enable = true;
+    # >> ~/.profile
+    # "~/.nix-profile/etc/profile.d/hm-session-vars.sh"
     bash.enable = true;
   };
 
