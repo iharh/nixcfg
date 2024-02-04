@@ -54,6 +54,8 @@
 
             #./hw/xserver.nix
             #./hw/i3.nix
+            ./hw/home-manager.nix
+
             ./hw/display-manager.nix
             ./hw/hyprland.nix
 
