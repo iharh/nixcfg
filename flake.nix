@@ -42,7 +42,10 @@
           system = system;
           # stateVersion = stateVersion;
           # Pass flake inputs to our config
-          specialArgs = { inherit inputs system ; }; 
+          specialArgs = {
+            inherit inputs system ;
+            stateVersion = "23.11";
+          }; 
           modules = [
             # { config, lib, pkgs, ... }:
             disko.nixosModules.disko
