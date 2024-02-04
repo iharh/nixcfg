@@ -5,8 +5,10 @@
     # -22.11
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    home-manager.url = "github:nix-community/home-manager/master";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager = {
+      url = "github:nix-community/home-manager/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
@@ -22,6 +24,7 @@
     let
       # TODO replace by enum from flake-utils
       system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
       qemu-module = 
         { modulesPath, ... }: {
           imports = [
@@ -37,7 +40,7 @@
         ih-nixos = nixpkgs.lib.nixosSystem {
           system = system;
           # Pass flake inputs to our config
-          specialArgs = { inherit inputs; }; 
+          specialArgs = { inherit inputs system; }; 
           modules = [
             # { config, lib, pkgs, ... }:
             disko.nixosModules.disko
@@ -54,15 +57,26 @@
 
             #./hw/xserver.nix
             #./hw/i3.nix
-            ./hw/home-manager.nix
 
             ./hw/display-manager.nix
             ./hw/hyprland.nix
 
+            # TODO: parameterize
             (import ./hw/state-version.nix { stateVersion = "23.11"; })
+            (import ./hw/home-manager.nix { stateVersion = "23.11"; })
             #
           ];
         };
       };
+      #homeConfiguration = {
+      #  # TODO: use a var here !!!
+      #  iharh = home-manager.lib.homeManagerConfiguration {
+      #    inherit pkgs;
+
+      #    modules = [
+      #      ./hm/home.nix
+      #    ];
+      #  };
+      #};
     };
 }
