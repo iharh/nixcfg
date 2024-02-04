@@ -39,6 +39,7 @@
       nixosConfigurations = {
         ih-nixos = nixpkgs.lib.nixosSystem {
           system = system;
+          stateVersion = "23.11";
           # Pass flake inputs to our config
           specialArgs = { inherit inputs system stateVersion; }; 
           modules = [
