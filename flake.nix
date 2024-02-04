@@ -40,7 +40,7 @@
       nixosConfigurations = {
         ih-nixos = nixpkgs.lib.nixosSystem {
           system = system;
-          stateVersion = stateVersion;
+          # stateVersion = stateVersion;
           # Pass flake inputs to our config
           specialArgs = { inherit inputs system ; }; 
           modules = [
