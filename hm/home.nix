@@ -14,12 +14,14 @@
 
     };
 
-    packages = [
-      pkgs.hello
+    packages = with pkgs; [
+      hello
+      tree
     ];
 
     sessionVariables = {
       MY_HM_VAR = "my-hm-val";
+      EDITOR = "nvim";
     };
   };
 }
