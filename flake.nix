@@ -53,6 +53,8 @@
             qemu-module
             inputs.sops-nix.nixosModules.sops
             inputs.hyprland.nixosModules.default
+            #.home-manager
+            inputs.home-manager.nixosModules.default
             ./hw/experimental-features.nix
             ./hw/boot-common.nix
             ./hw/boot-systemd.nix
