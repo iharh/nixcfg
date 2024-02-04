@@ -1,4 +1,4 @@
-{ inputs, config, pkgs, ... }:
+{ inputs, config, pkgs, stateVersion ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -6,7 +6,10 @@
   ];
 
   home-manager = {
-    extraSpecialArgs = { inherit inputs; };
+    extraSpecialArgs = { 
+      inherit inputs; 
+      stateVersion = stateVersion;
+    };
     users = {
       iharh = import ../hm/home.nix;
     };
