@@ -8,7 +8,6 @@
     username = "iharh";
     homeDirectory = "/home/iharh";
 
-    # stateVersion = "23.11";
     stateVersion = stateVersion;
 
     file = {
