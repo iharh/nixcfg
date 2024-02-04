@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-sudo nixos-rebuild switch --show-trace --flake '.#ih-nixos' $*
+# --show-trace
+sudo nixos-rebuild switch --flake '.#ih-nixos' $*
