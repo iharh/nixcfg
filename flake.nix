@@ -24,6 +24,7 @@
     let
       # TODO replace by enum from flake-utils
       system = "x86_64-linux";
+      stateVersion = "23.11";
       pkgs = nixpkgs.legacyPackages.${system};
       qemu-module = 
         { modulesPath, ... }: {
@@ -39,7 +40,7 @@
       nixosConfigurations = {
         ih-nixos = nixpkgs.lib.nixosSystem {
           system = system;
-          stateVersion = "23.11";
+          stateVersion = stateVersion;
           # Pass flake inputs to our config
           specialArgs = { inherit inputs system stateVersion; }; 
           modules = [
