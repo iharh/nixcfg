@@ -7,6 +7,5 @@
     vim
     neovim
     wget
-    tree
   ];
 }
