@@ -4,6 +4,12 @@
 
 * https://wiki.hyprland.org/Nix/Hyprland-on-Home-Manager/
 
+## presentations
+
+* [BazilSafronov - Hyprland Review](https://www.youtube.com/watch?v=wsDDaJ7ZLxo)
+* https://github.com/bazilsafronov/hyprdots
+* https://www.youtube.com/watch?v=ZQjfv0OptIQ
+
 ## reddit
 
 * https://www.reddit.com/r/NixOS/comments/1734ha8/hyprland_homemanager_best_practice/
