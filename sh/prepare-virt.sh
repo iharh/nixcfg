@@ -39,6 +39,15 @@ NIXOS_ISO=`find $HOME/Downloads/dist/nixos -name "nixos-*.iso"`
 # --init /bin/sh
 #
 # man ... --install ... alias
+#
+# qemu-system-x86_64 \
+#   -device virtio-vga-gl \
+#   -display gtk,gl=on \
+#   -display sdl,gl=on,show-cursor=off \
+#   -audio pa,model=hda
+#   
+# /usr/share/virt-manager/virtinst/cli.py
+# --qemu-commandline='-display gtk,gl=on'
 
 virt-install -v \
   --name=nixos \
@@ -54,6 +63,7 @@ virt-install -v \
   --graphics vnc \
   --console pty,target_type=virtio \
   --boot=cdrom,menu=on \
+  --qemu-commandline='-device virtio-vga-gl -display gtk,gl=on -audio pa,model=hda' \
   --noreboot
 
 #  --print-xml

@@ -4,6 +4,15 @@
 
 * https://wiki.hyprland.org/Nix/Hyprland-on-Home-Manager/
 
+## at qemu
+
+* https://github.com/hyprwm/Hyprland/issues/797
+* https://github.com/hyprwm/Hyprland/issues/1056
+* https://wiki.hyprland.org/Getting-Started/Quick-start/#wrapping-the-launcher-recommended
+* https://github.com/donovanglover/nix-config/blob/10ccd698facdc9306c7b15291ada968b4b9cf8c6/modules/virtualization.nix#L17-L25
+
+cat ~/.local/share/sddm/wayland-session.log
+
 ## presentations
 
 * [BazilSafronov - Hyprland Review](https://www.youtube.com/watch?v=wsDDaJ7ZLxo)
@@ -21,6 +30,7 @@
 
 ## Configuration Samples
 
+* https://github.com/donovanglover/nix-config/blob/master/home/hyprland.nix
 * https://github.com/Obnomus/Hyprland-V2
 * https://github.com/dedSyn4ps3/nixos_desktop_configs
 * https://www.youtube.com/watch?v=6RNaBRSy-Zs
