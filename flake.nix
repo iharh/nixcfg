@@ -64,7 +64,8 @@
             #./hw/i3.nix
 
             ./hw/display-manager.nix
-            ./hw/hyprland.nix
+            #./hw/hyprland.nix
+            ./hw/sway.nix
 
             # TODO: parameterize
             # (import ./hw/state-version.nix { stateVersion = "23.11"; })
