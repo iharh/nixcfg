@@ -16,7 +16,7 @@
     stateVersion = stateVersion;
 
     file = {
-      "~/my.conf".text = ''
+      "my.conf".text = ''
         #my conf
       '';
     };
@@ -25,6 +25,7 @@
       hello
       tree
       htop
+      kitty
     ];
 
     # set to the file
@@ -40,12 +41,12 @@
       enable = true;
       config = rec {
         modifier = "Mod4";
-        # Use kitty as default terminal
-        terminal = "kitty"; 
-        startup = [
-          # Launch Firefox on start
-          {command = "firefox";}
-        ];
+        # "kitty"; 
+        terminal = "alacritty"; 
+        # startup = [
+        #  # Launch Firefox on start
+        #  { command = "firefox"; }
+        # ];
       };
     };
     #hyprland.settings = {
