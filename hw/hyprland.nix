@@ -1,22 +1,20 @@
 { pkgs, lib, inputs, ... }:
 
 {
-    imports = [
-      # inputs.hyprland.nixosModules.default
-    ];
+  services.xserver.enable = true;
 
-    programs.hyprland = {
-        enable = true;
-        package = inputs.hyprland.packages."${pkgs.system}".hyprland;
-    };
+  programs.hyprland = {
+      enable = true;
+      package = inputs.hyprland.packages."${pkgs.system}".hyprland;
+  };
 
-    # https://discourse.nixos.org/t/wayland-using-home-manager/32357
+  # https://discourse.nixos.org/t/wayland-using-home-manager/32357
 
-    #wayland.windowManager.hyprland = {
-    #  enable = true;
+  #wayland.windowManager.hyprland = {
+  #  enable = true;
 
-    #  settings = {
-    #    # exec-once = ''${startupScript}/bin/start'';
-    #  };
-    #};
+  #  settings = {
+  #    # exec-once = ''${startupScript}/bin/start'';
+  #  };
+  #};
 }
