@@ -1,7 +1,13 @@
 { pkgs, lib, inputs, ... }:
 
 {
-  services.xserver.enable = true;
+  services.xserver = {
+    enable = true;
+    displayManager = {
+      sddm.enable = true;
+      defaultSession = "sddm";
+    };
+  };
 
   programs.hyprland = {
       enable = true;
