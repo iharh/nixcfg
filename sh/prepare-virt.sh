@@ -48,6 +48,15 @@ NIXOS_ISO=`find $HOME/Downloads/dist/nixos -name "nixos-*.iso"`
 #   
 # /usr/share/virt-manager/virtinst/cli.py
 # --qemu-commandline='-display gtk,gl=on'
+# --qemu-commandline='-display gtk,gl=off' \
+#
+# sudo usermod -a -G kvm <usr>
+# https://stackoverflow.com/questions/74893657/how-to-use-graphics-sdl-with-qemu
+#
+# --qemu-commandline='-device virtio-vga-gl -display gtk,gl=on -audio pa,model=hda' \
+# apt/qemu-system-gui package
+# https://wiki.archlinux.org/title/QEMU/Guest_graphics_acceleration
+# https://blog.tmm.cx/2020/05/15/passing-an-intel-gpu-to-a-linux-kvm-virtual-machine/
 
 virt-install -v \
   --name=nixos \
@@ -63,7 +72,6 @@ virt-install -v \
   --graphics vnc \
   --console pty,target_type=virtio \
   --boot=cdrom,menu=on \
-  --qemu-commandline='-device virtio-vga-gl -display gtk,gl=on -audio pa,model=hda' \
   --noreboot
 
 #  --print-xml

@@ -13,6 +13,17 @@
 
 cat ~/.local/share/sddm/wayland-session.log
 
+# greetd
+
+* https://github.com/apognu/tuigreet
+* https://man.sr.ht/%7Ekennylevinsen/greetd/
+* https://sr.ht/~kennylevinsen/greetd/
+* https://git.sr.ht/~kennylevinsen/greetd/
+* https://wiki.archlinux.org/title/Greetd
+* https://github.com/donovanglover/nix-config/blob/master/modules/greetd.nix
+
+bin/tuigreet
+
 ## presentations
 
 * [BazilSafronov - Hyprland Review](https://www.youtube.com/watch?v=wsDDaJ7ZLxo)
