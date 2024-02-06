@@ -24,6 +24,7 @@
     packages = with pkgs; [
       hello
       tree
+      htop
     ];
 
     # set to the file
