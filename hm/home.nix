@@ -16,7 +16,9 @@
     stateVersion = stateVersion;
 
     file = {
-
+      "~/my.conf".text = ''
+        #my conf
+      '';
     };
 
     packages = with pkgs; [

@@ -65,7 +65,7 @@ waybar
 * https://gitlab.com/Zaney/zaneyos/-/blob/main/config/home/style1-waybar.nix
 * https://gitlab.com/Zaney/zaneyos/-/blob/main/config/home/style2-waybar.nix
 
-sddm
+sddm theme derivation
 * https://gitlab.com/Zaney/zaneyos/-/blob/main/config/pkgs/sddm-sugar-dark.nix
 * https://gitlab.com/Zaney/zaneyos/-/blob/main/config/pkgs/sddm-tokyo-night.nix
 
