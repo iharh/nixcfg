@@ -5,7 +5,7 @@
     enable = true;
     displayManager = {
       sddm.enable = true;
-      defaultSession = "sddm";
+      defaultSession = "hyprland";
     };
   };
 
