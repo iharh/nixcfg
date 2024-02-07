@@ -25,7 +25,6 @@
       hello
       tree
       htop
-      kitty
     ];
 
     # set to the file

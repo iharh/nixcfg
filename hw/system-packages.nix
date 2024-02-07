@@ -7,5 +7,8 @@
     vim
     neovim
     wget
+    alacritty # gpu accelerated terminal
+    kitty
+    foot
   ];
 }

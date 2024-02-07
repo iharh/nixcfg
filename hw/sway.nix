@@ -53,7 +53,6 @@ in
   };
 
   environment.systemPackages = with pkgs; [
-    alacritty # gpu accelerated terminal
     dbus   # make dbus-update-activation-environment available in the path
     dbus-sway-environment
     configure-gtk
