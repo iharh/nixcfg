@@ -10,3 +10,4 @@
 * https://github.com/NixOS/nixpkgs/issues/94799
 * https://github.com/NixOS/nixpkgs/issues/102542
 * https://www.linux.org.ru/forum/desktop/17089688
+* https://www.reddit.com/r/NixOS/comments/1ag82hy/sddm_delay_in_starting
