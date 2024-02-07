@@ -44,6 +44,7 @@ bin/tuigreet
 * https://github.com/donovanglover/nix-config/blob/master/home/hyprland.nix
 * https://github.com/Obnomus/Hyprland-V2
 * https://github.com/dedSyn4ps3/nixos_desktop_configs
+* https://github.com/AviiNL/dotfiles/blob/main/home-manager/desktop/wayland/hyprland.nix
 * https://www.youtube.com/watch?v=6RNaBRSy-Zs
 
 ### ahbk
