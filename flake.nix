@@ -63,7 +63,7 @@
             #./hw/xserver.nix
             #./hw/i3.nix
 
-            ./hw/display-manager.nix
+            ./hw/greetd.nix
             #./hw/hyprland.nix
             ./hw/sway.nix
 

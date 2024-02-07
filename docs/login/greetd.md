@@ -1,7 +1,7 @@
 # greetd
 
 ```
-nix services.greetd = {
+services.greetd = {
   enable = true;
   settings = {
     default_session = {
