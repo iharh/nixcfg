@@ -40,8 +40,8 @@
       enable = true;
       config = rec {
         modifier = "Mod4";
-        # "kitty"; 
-        terminal = "alacritty"; 
+        # "kitty" "alacritty" "foot"
+        terminal = "foot"; 
         # startup = [
         #  # Launch Firefox on start
         #  { command = "firefox"; }
