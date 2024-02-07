@@ -8,6 +8,10 @@
 * https://itsfoss.com/things-to-do-after-installing-nixos/
 * https://itsfoss.com/home-manager-nixos/
 
+## options
+
+* https://mipmip.github.io/home-manager-option-search/
+
 ## sessionVars
 
 ~/.nix-profile -> .local/state/nix/profiles/profile

@@ -1,5 +1,12 @@
 # greetd
 
+## wiki
+
+* https://nixos.wiki/wiki/Greetd
+* https://wiki.archlinux.org/title/Greetd
+
+## cfg
+
 ```
 services.greetd = {
   enable = true;
@@ -10,3 +17,6 @@ services.greetd = {
   };
 };
 ```
+
+* [with-wrapper](https://github.com/ymatsiuk/nixos-config/blob/main/greetd.nix)
+* https://github.com/sjcobb2022/nixos-config/blob/main/hosts/common/optional/greetd.nix

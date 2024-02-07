@@ -41,6 +41,17 @@ let
 
 in
 {
+  # for hm
+  security.polkit.enable = true;
+  # when using QEMU KVM
+  hardware.opengl.enable = true;
+
+  # enable sway window manager
+  programs.sway = {
+    enable = true;
+    wrapperFeatures.gtk = true;
+  };
+
   environment.systemPackages = with pkgs; [
     alacritty # gpu accelerated terminal
     dbus   # make dbus-update-activation-environment available in the path
@@ -61,12 +72,6 @@ in
     wdisplays # tool to configure displays
   ];
 
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    pulse.enable = true;
-  };
-
   # xdg-desktop-portal works by exposing a series of D-Bus interfaces
   # known as portals under a well-known name
   # (org.freedesktop.portal.Desktop) and object path
@@ -74,19 +79,11 @@ in
   # The portal interfaces include APIs for file access, opening URIs,
   # printing and others.
   services.dbus.enable = true;
+
   xdg.portal = {
     enable = true;
     wlr.enable = true;
     # gtk portal needed to make gtk apps happy
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
-
-  # enable sway window manager
-  programs.sway = {
-    enable = true;
-    wrapperFeatures.gtk = true;
-  };
-
-  # for hm
-  security.polkit.enable = true;
 }
