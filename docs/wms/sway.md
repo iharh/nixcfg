@@ -110,3 +110,7 @@ Failed to preset unit, file "/etc/systemd/system/display-manager.service" alread
 
 * https://regolith-desktop.com/
 * https://github.com/regolith-linux
+
+## wayland
+
+* https://www.baeldung.com/linux/display-server-xorg-wayland
