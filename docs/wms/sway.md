@@ -33,11 +33,16 @@
 * https://wiki.gentoo.org/wiki/Greetd
 * https://github.com/kennylevinsen/greetd/tree/master
 * https://raw.githubusercontent.com/bqv/rc/nixos/profiles/wayland.nix
+* https://manpages.ubuntu.com/manpages/noble/en/man5/greetd.5.html
 
 ## regreet
 
 * https://github.com/rharish101/ReGreet
 * https://mephisto.cc/en/tech/greetd-regreet/
+
+greetd pwd
+greetd ls
+
 
 ## display managers wayland support
 
