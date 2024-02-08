@@ -20,10 +20,19 @@
 ## display/login managers
 
 * https://www.baeldung.com/linux/display-managers-install-uninstall
+* https://github.com/apognu/tuigreet
 
 ??? lightdm-gtk-greeter
 ? other greeters
 ? no tuigreet
+
+## greetd
+
+* https://wiki.archlinux.org/title/Greetd
+* https://wiki.archlinux.org/title/User:Ev/Greetd
+* https://wiki.gentoo.org/wiki/Greetd
+* https://github.com/kennylevinsen/greetd/tree/master
+* https://raw.githubusercontent.com/bqv/rc/nixos/profiles/wayland.nix
 
 ## regreet
 
@@ -47,6 +56,7 @@
 apt/greetd
 
 ```
+
 $ sudo systemctl status greetd.service
   greetd.service - Greeter daemon
      Loaded: loaded (/lib/systemd/system/greetd.service; disabled; preset: enabled)
@@ -88,6 +98,30 @@ sudo dpkg-reconfigure sddm
 sudo dpkg-reconfigure greetd
 Failed to preset unit, file "/etc/systemd/system/display-manager.service" already exists and is a symlink to "/lib/systemd/system/lightdm.service".
 /usr/bin/deb-systemd-helper: error: systemctl preset failed on greetd.service: No such file or directory
+    systemctl --system --preset-mode=enable-only preset greetd.service
+    systemctl --root=/ --system --preset-mode=enable-only preset greetd.service
+        Failed to preset unit, file "/etc/systemd/system/display-manager.service" already exists and is a symlink to "/lib/systemd/system/lightdm.service".
+
+systemctl disable lightdm.service
+systemctl enable --now greetd.service
+    -//-
+
+cat /lib/systemd/system/greetd.service
+    Exec=greetd
+```
+
+```
+    debug "Using systemctl preset to enable $scriptname";
+    my $systemd_root = '/';
+    if ($dpkg_root ne '') {
+        $systemd_root = $dpkg_root;
+    }
+    system("systemctl",
+           "--root=$systemd_root",
+           $instance eq "user" ? "--global" : "--system",
+           "--preset-mode=enable-only",
+           "preset", $scriptname) == 0
+        or error("systemctl preset failed on $scriptname: $!");
 ```
 
 ## super
