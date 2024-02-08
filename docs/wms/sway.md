@@ -64,6 +64,21 @@ wlgreet
 /usr/share/doc/wlgreet/copyright
 ```
 
+```
+etc/greetd/config.toml
+/etc/needrestart/conf.d/50_greetd.conf
+/etc/pam.d/greetd-greeter
+/lib/systemd/system/greetd.service
+/usr/sbin/agreety
+/usr/sbin/greetd
+/usr/share/doc/greetd/changelog.Debian.gz
+/usr/share/doc/greetd/copyright
+/usr/share/man/man1/agreety.1.gz
+/usr/share/man/man1/greetd.1.gz
+/usr/share/man/man5/greetd.5.gz
+/usr/share/man/man7/greetd-ipc.7.gz
+```
+
 * https://www.simplified.guide/ubuntu/switch-to-gdm
 
 ```
