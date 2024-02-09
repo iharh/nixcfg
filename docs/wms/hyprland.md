@@ -29,6 +29,7 @@ bin/tuigreet
 * [BazilSafronov - Hyprland Review](https://www.youtube.com/watch?v=wsDDaJ7ZLxo)
 * https://github.com/bazilsafronov/hyprdots
 * https://www.youtube.com/watch?v=ZQjfv0OptIQ
+* https://www.youtube.com/watch?v=qb1jrTY72gw
 
 ## reddit
 

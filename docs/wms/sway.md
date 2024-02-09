@@ -4,6 +4,10 @@
 
 * https://drakerossman.com/blog/wayland-on-nixos-confusion-conquest-triumph
 
+## presentation
+
+* https://www.youtube.com/watch?v=E-OXixxpTbk
+
 ## wiki
 
 * https://wiki.archlinux.org/title/sway
