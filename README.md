@@ -30,6 +30,8 @@ sh/prepare-virt.sh
 
 # installing from ISO (inside vm)
 ```
+create ~/.config/sops/age/keys.txt
+
 export GH_TOKEN=...your-own-token...
 nix-env -iA nixos.ripgrep nixos.nixFlakes nixos.gitMinimal nixos.gh nixos.neovim
 gh repo clone iharh/nixcfg
