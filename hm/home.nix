@@ -22,6 +22,8 @@
     };
 
     packages = with pkgs; [
+      sops
+
       hello
       tree
       htop

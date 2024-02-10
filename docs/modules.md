@@ -40,3 +40,11 @@ can be referenced:
 config.sops.secrets.dns-provider-token.path
 
 * https://github.com/serokell/website-deployment-example/blob/master/website/services.nix
+
+## specialArgs
+
+3:00 of 12:29
+* https://www.youtube.com/watch?v=hlytf6Uxf4E
+
+we can pass arbitrary stuff into a list of modules (modules [ ... ]) with specialArgs,
+extraSpecialArgs - for hm.

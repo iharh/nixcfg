@@ -46,3 +46,8 @@ path = "/etc/ssh/ssh_host_ed25519_key";
 ## Misterio77
 
 * https://github.com/Misterio77/nix-config/blob/main/hosts/common/users/misterio/default.nix
+
+## my steps
+
+cat .config/sops/age/keys.txt
+copy to target host
