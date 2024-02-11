@@ -8,10 +8,12 @@
     age.keyFile = "/home/${myuser}/.config/sops/age/keys.txt";
 
     secrets = {
-      gh_token = { };
-      "myservice/my_subdir/my_secret" = {
+      gh_token = {
         # TODO: parameterize
         owner = config.users.users.iharh.name; 
+      };
+      "myservice/my_subdir/my_secret" = {
+        owner = config.users.${myuser}.iharh.name; 
       };
     };
   };
