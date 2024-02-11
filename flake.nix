@@ -2,8 +2,7 @@
   description = "iharh nix config";
 
   inputs = {
-    # -22.11
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable"; # -22.11
 
     home-manager = {
       url = "github:nix-community/home-manager/master";
@@ -14,8 +13,6 @@
     disko.inputs.nixpkgs.follows = "nixpkgs";
 
     sops-nix.url = "github:Mic92/sops-nix";
-    # optional, not necessary for the module
-    # sops-nix.inputs.nixpkgs.follows = "nixpkgs";
 
     hyprland.url = "github:hyprwm/Hyprland";
   };
@@ -32,27 +29,26 @@
             "${modulesPath}/profiles/qemu-guest.nix"
             # "${modulesPath}/virtualisation/qemu-vm.nix"
           ];
-          # virtualisation.forwardPorts = [{ from = "host"; host.port = 2022; guest.port = 22; }];
           # virtualisation.graphics = false;
+          # virtualisation.forwardPorts = [{ from = "host"; host.port = 2022; guest.port = 22; }];
         };
     in {
       nixosConfigurations = {
         ih-nixos = nixpkgs.lib.nixosSystem {
           system = system;
-          # Pass flake inputs to our config
           specialArgs = {
             inherit inputs system ;
             stateVersion = "23.11";
           }; 
           modules = [
-            # { config, lib, pkgs, ... }:
             disko.nixosModules.disko
             (import ./disks.nix { })
+
             qemu-module
             inputs.sops-nix.nixosModules.sops
             inputs.hyprland.nixosModules.default
-            #.home-manager
             inputs.home-manager.nixosModules.default
+
             ./hw/experimental-features.nix
             ./hw/boot-common.nix
             ./hw/boot-systemd.nix
@@ -67,23 +63,13 @@
             #./hw/hyprland.nix
             ./hw/sway.nix
 
-            # TODO: parameterize
-            # (import ./hw/state-version.nix { stateVersion = "23.11"; })
+            ./hw/sops.nix
+
             ./hw/state-version.nix
-            #
+
             ./hw/home-manager.nix
           ];
         };
       };
-      #homeConfiguration = {
-      #  # TODO: use a var here !!!
-      #  iharh = home-manager.lib.homeManagerConfiguration {
-      #    inherit pkgs;
-
-      #    modules = [
-      #      ./hm/home.nix
-      #    ];
-      #  };
-      #};
     };
 }

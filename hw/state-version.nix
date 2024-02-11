@@ -1,3 +1,4 @@
+# stateVersion passed throught the specialArgs
 { stateVersion, ... }:
 
 {
