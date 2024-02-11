@@ -10,7 +10,7 @@
 
     secrets = {
       # example-key = { };
-      "myservice/my_subdir/my_secret" = {
+      "myservice1/my_subdir/my_secret" = {
         # TODO: parameterize
         owner = config.users.users.iharh.name; 
       };
