@@ -9,8 +9,7 @@
 
     secrets = {
       gh_token = {
-        # TODO: parameterize
-        owner = config.users.users.iharh.name; 
+        owner = config.users.users.${myuser}.name; 
       };
       "myservice/my_subdir/my_secret" = {
         owner = config.users.users.${myuser}.name;
