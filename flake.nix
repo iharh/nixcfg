@@ -39,6 +39,7 @@
           specialArgs = {
             inherit inputs system ;
             stateVersion = "23.11";
+            myuser = "iharh"
           }; 
           modules = [
             disko.nixosModules.disko

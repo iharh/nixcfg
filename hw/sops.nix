@@ -1,15 +1,14 @@
-{ config, ... }:
+{ config, myuser, ... }:
 
 {
   sops = {
     defaultSopsFile = ../secrets/secrets.yaml;
     defaultSopsFormat = "yaml";
   
-    # TODO: parameterize
-    age.keyFile = "/home/iharh/.config/sops/age/keys.txt";
+    age.keyFile = "/home/${myuser}/.config/sops/age/keys.txt";
 
     secrets = {
-      example_key = { };
+      gh_token = { };
       "myservice/my_subdir/my_secret" = {
         # TODO: parameterize
         owner = config.users.users.iharh.name; 

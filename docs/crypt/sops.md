@@ -51,8 +51,6 @@ path = "/etc/ssh/ssh_host_ed25519_key";
 
 cat .config/sops/age/keys.txt
 copy to target host
-
-/nix/store/rshygzr5hfsd5cgn3fgv7gysk29jglma-sops-install-secrets-0.0.1/bin/sops-install-secrets:
-    Manifest is not valid: secret myservice1/my_subdir/my_secret in 
-        /nix/store/9k6msnhy3zihk8i83l48zgsqr3ckjnbs-secrets.yaml is not valid:
-        The key 'myservice1' cannot be found
+...
+ls -la /run/secrets
+    -> /run/secrets.d/1/
