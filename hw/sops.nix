@@ -6,7 +6,7 @@
     defaultSopsFormat = "yaml";
   
     # TODO: parameterize
-    age.keyFile = "/home/user/iharh/.config/sops/age/keys.txt";
+    age.keyFile = "/home/iharh/.config/sops/age/keys.txt";
 
     secrets = {
       example_key = { };
