@@ -34,6 +34,8 @@
     sessionVariables = {
       MY_HM_VAR = "my-hm-val";
       EDITOR = "nvim";
+      # G_TOKEN=$(cat /$XDG_RUNTIME_DIR/secrets/gh_token)
+      G_TOKEN=$(cat /run/secrets/gh_token)
     };
   };
 

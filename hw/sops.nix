@@ -15,4 +15,7 @@
       };
     };
   };
+
+    export GITHUB_TOKEN=$(cat /$XDG_RUNTIME_DIR/secrets/gh_token)
+
 }

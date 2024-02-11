@@ -54,3 +54,29 @@ copy to target host
 ...
 ls -la /run/secrets
     -> /run/secrets.d/1/
+
+?
+sops.secrets.gh-token.owner = "hello-world";
+services.cleanup = {
+  enable = true;
+  tokenFile = config.sops.secrets.gh-token.path;
+  profiles.hello-world = {
+    repo = "hello-world-app";
+    user = "hewllo-world";
+  };
+};
+
+sops.secrets.gh_token = {
+  sopsFile = ../../secrets/github.yaml ;
+  path = "%r/gh-token" ;
+  owner = dave.name ;
+  group = dave.group ;
+};
+
+home-manager
+
+ls -l $XDG_RUNTIME_DIR/secrets/
+
+programs.bash.initExtra = ''
+  export GITHUB_TOKEN=$(cat /$XDG_RUNTIME_DIR/secrets/gh_token)
+'';
