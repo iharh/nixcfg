@@ -13,7 +13,7 @@
         owner = config.users.users.iharh.name; 
       };
       "myservice/my_subdir/my_secret" = {
-        owner = "config.users.users.${myuser}.name";
+        owner = config.users.users.${myuser}.name;
       };
     };
   };
