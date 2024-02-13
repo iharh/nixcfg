@@ -47,8 +47,18 @@ NIXOS_ISO=`find $HOME/Downloads/dist/nixos -name "nixos-*.iso"`
 #   -audio pa,model=hda
 #   
 # /usr/share/virt-manager/virtinst/cli.py
-# --qemu-commandline='-display gtk,gl=on'
-# --qemu-commandline='-display gtk,gl=off' \
+#   --qemu-commandline='-display gtk,gl=on'
+#   --qemu-commandline='-display gtk,gl=off' \
+#???
+#   -M q35
+#   -enable-kvm
+#   -smp cores=2,threads=2
+#   -boot menu=on
+#   -bios /usr/share/edk2/x64/OVMF_CODE.fd
+#   -vga virtio
+#   -display sdl,gl=on
+#   -device intel-hda
+#   -device hda-duplex
 #
 # sudo usermod -a -G kvm <usr>
 # https://stackoverflow.com/questions/74893657/how-to-use-graphics-sdl-with-qemu
