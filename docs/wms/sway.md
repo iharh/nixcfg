@@ -55,6 +55,7 @@ greetd ls
 
 ## sway with greetd
 
+* https://github.com/swaywm/sway/wiki/Useful-add-ons-for-sway#login-managers
 * https://gist.github.com/p00f/5c0dd4539669806676677653cd7a5e40
 * https://git.sr.ht/%7Ekennylevinsen/gtkgreet
 * https://man.sr.ht/~kennylevinsen/greetd/
