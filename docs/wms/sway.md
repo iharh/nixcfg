@@ -99,27 +99,6 @@ etc/greetd/config.toml
 /usr/share/man/man7/greetd-ipc.7.gz
 ```
 
-* https://www.simplified.guide/ubuntu/switch-to-gdm
-
-```
-sudo dpkg-reconfigure lightdm
-sudo dpkg-reconfigure sddm
-
-sudo dpkg-reconfigure greetd
-Failed to preset unit, file "/etc/systemd/system/display-manager.service" already exists and is a symlink to "/lib/systemd/system/lightdm.service".
-/usr/bin/deb-systemd-helper: error: systemctl preset failed on greetd.service: No such file or directory
-    systemctl --system --preset-mode=enable-only preset greetd.service
-    systemctl --root=/ --system --preset-mode=enable-only preset greetd.service
-        Failed to preset unit, file "/etc/systemd/system/display-manager.service" already exists and is a symlink to "/lib/systemd/system/lightdm.service".
-
-systemctl disable lightdm.service
-systemctl enable --now greetd.service
-    -//-
-
-cat /lib/systemd/system/greetd.service
-    Exec=greetd
-```
-
 ```
     debug "Using systemctl preset to enable $scriptname";
     my $systemd_root = '/';
