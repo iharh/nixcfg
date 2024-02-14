@@ -108,3 +108,9 @@ starship
 
 https://github.com/AtaraxiaSjel/nixos-config/blob/master/profiles/workspace/hyprland/default.nix
 https://github.com/NixOS/nixpkgs/issues/57602
+
+## app launchers
+
+* https://wiki.hyprland.org/Useful-Utilities/App-Launchers/
+* https://github.com/philj56/tofi
+* https://www.youtube.com/watch?v=4O3D5TIt_0Q
