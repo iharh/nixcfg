@@ -16,6 +16,10 @@ sudo mkdir /var/cache/tuigreet
 sudo chown _greetd:_greetd /var/cache/tuigreet
 sudo chmod 0755 /var/cache/tuigreet
 
+sudo -u _greetd id
+# need to have a video
+sudo usermod -a -G video _greetd
+
 
 cat `/etc/greetd/config.toml`
 
