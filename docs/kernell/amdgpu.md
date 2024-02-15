@@ -36,6 +36,67 @@ Processing triggers for man-db (2.12.0-3) ...
 
 * https://amdgpu-install.readthedocs.io/en/latest/
 
+## detection
+
+* https://wiki.archlinux.org/title/Xorg#AMD
+
+```
+sudo lspci -v > ~/Downloads/lspci-out.txt
+
+05:00.0 VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] Cezanne [Radeon Vega Series / Radeon Vega Mobile Series] (rev c8) (prog-if 00 [VGA controller])
+	Subsystem: Advanced Micro Devices, Inc. [AMD/ATI] Cezanne [Radeon Vega Series / Radeon Vega Mobile Series]
+	Flags: bus master, fast devsel, latency 0, IRQ 5
+	Memory at d0000000 (64-bit, prefetchable) [size=256M]
+	Memory at e0000000 (64-bit, prefetchable) [size=2M]
+	I/O ports at e000 [size=256]
+	Memory at fcc00000 (32-bit, non-prefetchable) [size=512K]
+	Expansion ROM at 000c0000 [virtual] [disabled] [size=128K]
+	Capabilities: [48] Vendor Specific Information: Len=08 <?>
+	Capabilities: [50] Power Management version 3
+	Capabilities: [64] Express Legacy Endpoint, MSI 00
+	Capabilities: [a0] MSI: Enable- Count=1/4 Maskable- 64bit+
+	Capabilities: [c0] MSI-X: Enable- Count=4 Masked-
+	Capabilities: [100] Vendor Specific Information: ID=0001 Rev=1 Len=010 <?>
+	Capabilities: [270] Secondary PCI Express
+	Capabilities: [2b0] Address Translation Service (ATS)
+	Capabilities: [2c0] Page Request Interface (PRI)
+	Capabilities: [2d0] Process Address Space ID (PASID)
+	Capabilities: [400] Data Link Feature <?>
+	Capabilities: [410] Physical Layer 16.0 GT/s <?>
+	Capabilities: [440] Lane Margining at the Receiver <?>
+	Kernel modules: amdgpu
+...
+05:00.2 Encryption controller: Advanced Micro Devices, Inc. [AMD] Family 17h (Models 10h-1fh) Platform Security Processor
+	Subsystem: Advanced Micro Devices, Inc. [AMD] Family 17h (Models 10h-1fh) Platform Security Processor
+	Flags: bus master, fast devsel, latency 0, IRQ 29
+	Memory at fcb00000 (32-bit, non-prefetchable) [size=1M]
+	Memory at fcc8c000 (32-bit, non-prefetchable) [size=8K]
+	Capabilities: [48] Vendor Specific Information: Len=08 <?>
+	Capabilities: [50] Power Management version 3
+	Capabilities: [64] Express Endpoint, MSI 00
+	Capabilities: [a0] MSI: Enable- Count=1/2 Maskable- 64bit+
+	Capabilities: [c0] MSI-X: Enable+ Count=2 Masked-
+	Capabilities: [100] Vendor Specific Information: ID=0001 Rev=1 Len=010 <?>
+	Kernel driver in use: ccp
+	Kernel modules: ccp
+```
+
+```
+lsmod | grep amd
+
+edac_mce_amd AMD MCE Decoder
+gpio_amdpt AMD Promontory GPIO Driver
+amdxcp AMD XCP PLATFORM DEVICES
+
+# after installing driver
+amddrm_ttm_helper
+amdttm
+amddrm_buddy
+amdxcp
+amd_sched
+amdkcl
+```
+
 ## usual
 
 * https://askubuntu.com/questions/1432449/how-to-install-amd-gpu-drivers-ubuntu-22-04-lts
