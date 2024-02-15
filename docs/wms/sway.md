@@ -141,3 +141,7 @@ etc/greetd/config.toml
 
 * https://github.com/WillPower3309/swayfx
 * https://github.com/MubinMuhammad/MinimalSwayFX
+
+## issues
+
+XDG_RUNTIME_DIR is not set in the environment. Aborting.
