@@ -47,7 +47,6 @@
 greetd pwd
 greetd ls
 
-
 ## display managers wayland support
 
 * https://wiki.archlinux.org/title/wayland#Display_managers
