@@ -137,3 +137,8 @@ etc/greetd/config.toml
 ## wayland
 
 * https://www.baeldung.com/linux/display-server-xorg-wayland
+
+## swayfx
+
+* https://github.com/WillPower3309/swayfx
+* https://github.com/MubinMuhammad/MinimalSwayFX

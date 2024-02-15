@@ -1,6 +1,13 @@
 # kaku
 
-https://github.com/linuxmobile/kaku/
+* https://github.com/linuxmobile/kaku/
+uses flake-parts
+
+* https://github.com/linuxmobile/nvchad-v2
+forked from NvChad/example_config
+
+* https://github.com/linuxmobile/kaku/blob/main/hosts/aesthetic/default.nix#L10C4-L10C32
+boot.kernelModules = ["amdgpu"];
 
 ## Installing kaku
 
