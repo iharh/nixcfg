@@ -145,3 +145,12 @@ etc/greetd/config.toml
 ## issues
 
 XDG_RUNTIME_DIR is not set in the environment. Aborting.
+
+* https://www.reddit.com/r/freebsd/comments/lryw8a/xdg_runtime_dir_is_not_set_in_the_environment/
+* https://github.com/swaywm/sway/issues/7202
+* https://forums.gentoo.org/viewtopic-t-1074932-start-0.html
+* https://forums.freebsd.org/threads/i-cant-turn-on-hikari-and-sway.84775/
+
+prepare sway config
+
+don't run sway as a root
