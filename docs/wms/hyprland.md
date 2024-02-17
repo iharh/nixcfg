@@ -244,7 +244,7 @@ Feb 17 07:18:59 ih-nixos systemd-coredump[1266]: Process 1236 (.Hyprland-wrapp) 
 ```
 
 * https://github.com/hyprwm/Hyprland/issues/3978
-systemd-cat --identifier hyprland Hyprland
+
 
 ?
 * https://github.com/hyprwm/Hyprland/issues/3978
@@ -252,5 +252,16 @@ systemd-cat --identifier hyprland Hyprland
 cat /tmp/hypr/$(ls -t /tmp/hypr/ | head -n 1)/hyprland.log
 cat /tmp/hypr/$(ls -t /tmp/hypr/ | head -n 2 | tail -n 1)/hyprland.log
 
+```
+[LOG] Creating the ConfigManager!
+[LOG] NOTE: further logs to stdout / logfile are disabled by default. Use debug:disable_logs and debug:enable_stdout_logs to override this.
+```
 * https://wiki.hyprland.org/Useful-Utilities/Hyprland-desktop-portal/
 * https://github.com/hyprwm/xdg-desktop-portal-hyprland/issues/141
+
+## diagnostics
+
+systemd-cat --identifier hyprland Hyprland
+
+for running hyprland
+hyprctl systeminfo

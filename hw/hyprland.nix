@@ -1,18 +1,6 @@
-{ pkgs, lib, inputs, ... }:
+{ pkgs, inputs, ... }:
 
 {
-  services.xserver = {
-    enable = true;
-    displayManager = {
-      sddm = {
-        enable = true;
-        wayland.enable = true;
-        autoLogin.relogin = true;
-      };
-      # defaultSession = "hyprland";
-    };
-  };
-
   programs.hyprland = {
       enable = true;
       package = inputs.hyprland.packages."${pkgs.system}".hyprland;
