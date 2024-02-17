@@ -81,6 +81,7 @@ virt-install -v \
   --disk /var/lib/libvirt/images/nixos.qcow2,size=50,bus=virtio \
   --graphics vnc \
   --console pty,target_type=virtio \
+  --qemu-commandline='-display sdl,gl=on' \
   --boot=cdrom,menu=on \
   --noreboot
 

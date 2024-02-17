@@ -53,8 +53,9 @@ sh/prepare-final.sh
 
 # rebiulding (inside vm)
 ```
-export GH_TOKEN=...your-own-token...
 nix-env -iA nixos.ripgrep nixos.nixFlakes nixos.gitMinimal nixos.gh nixos.neovim
+create ~/.config/sops/age/keys.txt
+export GH_TOKEN=...your-own-token... or 
 gh repo clone iharh/nixcfg
 cd nixcfg
 gh repo sync
