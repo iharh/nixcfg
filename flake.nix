@@ -60,9 +60,9 @@
             #./hw/xserver.nix
             #./hw/i3.nix
 
-            ./hw/greetd.nix
+            # ./hw/greetd.nix
             ./hw/hyprland.nix
-            #./hw/sway.nix
+            ./hw/sway.nix
 
             ./hw/sops.nix
 
