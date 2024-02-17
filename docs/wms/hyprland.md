@@ -115,6 +115,10 @@ https://github.com/NixOS/nixpkgs/issues/57602
 * https://github.com/philj56/tofi
 * https://www.youtube.com/watch?v=4O3D5TIt_0Q
 
+## Crashes-and-Bugs
+
+* https://wiki.hyprland.org/Crashes-and-Bugs/
+
 ## inst log
 
 ```
@@ -238,3 +242,15 @@ Feb 17 07:18:59 ih-nixos systemd-coredump[1266]: Process 1236 (.Hyprland-wrapp) 
                                                  #5  0x00007f0e4b842efc __clone3 (libc.so.6 + 0x10defc)
                                                  ELF object binary architecture: AMD x86-64
 ```
+
+* https://github.com/hyprwm/Hyprland/issues/3978
+systemd-cat --identifier hyprland Hyprland
+
+?
+* https://github.com/hyprwm/Hyprland/issues/3978
+
+cat /tmp/hypr/$(ls -t /tmp/hypr/ | head -n 1)/hyprland.log
+cat /tmp/hypr/$(ls -t /tmp/hypr/ | head -n 2 | tail -n 1)/hyprland.log
+
+* https://wiki.hyprland.org/Useful-Utilities/Hyprland-desktop-portal/
+* https://github.com/hyprwm/xdg-desktop-portal-hyprland/issues/141

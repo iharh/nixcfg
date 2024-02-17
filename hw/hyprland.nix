@@ -9,7 +9,7 @@
         wayland.enable = true;
         autoLogin.relogin = true;
       };
-      defaultSession = "hyprland";
+      # defaultSession = "hyprland";
     };
   };
 

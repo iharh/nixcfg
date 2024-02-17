@@ -52,6 +52,10 @@ greetd ls
 * https://wiki.archlinux.org/title/wayland#Display_managers
 * https://github.com/canonical/lightdm/issues/267
 
+## polkit
+
+  security.polkit.enable = true;
+
 ## sway with greetd
 
 * https://github.com/swaywm/sway/wiki/Useful-add-ons-for-sway#login-managers
