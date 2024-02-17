@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, myuser, ... }:
 
 {
   # Enable Display Manager
@@ -6,9 +6,9 @@
     enable = true;
     settings = {
       default_session = {
+        user = myuser;
         # TODO: parameterize
-        user = "iharh";
-        # Hyprland
+        # sway Hyprland
         command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --time-format '%I:%M %p | %a • %h | %F' --cmd sway";
       };
     };
