@@ -5,6 +5,10 @@
 * [nixos-in-libvirt-21](https://www.technicalsourcery.net/posts/nixos-in-libvirt/)
 * [ih-libvirt](https://github.com/iharh/notes/blob/main/os/linux/nixos/inst/ih/ih-libvirt.txt)
 
+virt-install
+    --osinfo list
+
+
 https://linux.die.net/man/1/virt-install
 https://github.com/virt-manager/virt-manager/
 https://github.com/virt-manager/virt-manager/blob/main/man/virt-install.rst#--boot
