@@ -1,5 +1,25 @@
 # sway
 
+* https://manpages.ubuntu.com/manpages/jammy/en/man5/sway.5.html
+
+## ubuntu-sway
+
+* https://ubuntusway.com/
+* https://github.com/Ubuntu-Sway
+* https://github.com/Ubuntu-Sway/Ubuntu-Sway-Remix
+
+* https://github.com/Ubuntu-Sway/Ubuntu-Sway-Remix/wiki
+* https://github.com/Ubuntu-Sway/Ubuntu-Sway-Remix/wiki/FAQ
+* https://github.com/Ubuntu-Sway/Ubuntu-Sway-Remix/wiki/Configuration#config-files
+* https://github.com/Ubuntu-Sway/Ubuntu-Sway-Remix/wiki/Virtualization#qemukvm
+
+* https://github.com/Ubuntu-Sway/ubuntu-sway-default-settings
+* https://github.com/Ubuntu-Sway/ubuntu-sway-default-settings/blob/noble/common/usr/share/wayland-sessions/ubuntusway.desktop
+* https://github.com/Ubuntu-Sway/ubuntu-sway-default-settings/blob/noble/data/ubuntusway/bin/start-sway
+
+* https://www.opennet.ru/opennews/art.shtml?num=60017
+* https://github.com/Ubuntu-Sway/ubuntu-sway-meta
+
 ## articles
 
 * https://drakerossman.com/blog/wayland-on-nixos-confusion-conquest-triumph
@@ -39,10 +59,7 @@
 * https://raw.githubusercontent.com/bqv/rc/nixos/profiles/wayland.nix
 * https://manpages.ubuntu.com/manpages/noble/en/man5/greetd.5.html
 
-## regreet
-
-* https://github.com/rharish101/ReGreet
-* https://mephisto.cc/en/tech/greetd-regreet/
+## ???
 
 greetd pwd
 greetd ls
@@ -79,16 +96,15 @@ $ sudo systemctl status greetd.service
 wlgreet
 
 ```
+/usr/sbin/wlgreet
 /etc/greetd/sway-config
 /etc/greetd/sway-config.d
 /etc/greetd/wlgreet.toml
-/usr/sbin/wlgreet
-/usr/share/doc/wlgreet/changelog.Debian.gz
-/usr/share/doc/wlgreet/copyright
 ```
 
 ```
 etc/greetd/config.toml
+
 /etc/needrestart/conf.d/50_greetd.conf
 /etc/pam.d/greetd-greeter
 /lib/systemd/system/greetd.service
@@ -124,13 +140,6 @@ etc/greetd/config.toml
 
 * https://www.dwarmstrong.org/sway/
 * https://llandy3d.github.io/sway-on-ubuntu/simple_install/
-
-## Ubuntu-sway
-
-* https://www.opennet.ru/opennews/art.shtml?num=60017
-* https://github.com/Ubuntu-Sway/ubuntu-sway-meta
-* https://github.com/Ubuntu-Sway/Ubuntu-Sway-Remix
-* https://github.com/Ubuntu-Sway/Ubuntu-Sway-Remix/wiki/FAQ
 
 ## regolith-desktop
 

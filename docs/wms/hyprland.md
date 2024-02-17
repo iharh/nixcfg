@@ -22,7 +22,9 @@ cat ~/.local/share/sddm/wayland-session.log
 * https://wiki.archlinux.org/title/Greetd
 * https://github.com/donovanglover/nix-config/blob/master/modules/greetd.nix
 
-bin/tuigreet
+## articles
+
+* https://jagotekno.com/cara-install-hyprland-nixos/
 
 ## presentations
 
