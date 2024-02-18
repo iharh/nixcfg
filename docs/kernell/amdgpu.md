@@ -1,6 +1,33 @@
 # amdgpu
 
+* https://github.com/ROCm/ROCm
+* https://github.com/ROCm/ROCm/blob/develop/CHANGELOG.md
+* https://rocm.docs.amd.com/en/latest/
 * https://rocm.docs.amd.com/en/latest/what-is-rocm.html
+* https://rocm.docs.amd.com/en/latest/about/release-notes.html
+* https://rocm.docs.amd.com/en/latest/conceptual/cmake-packages.html
+* https://rocm.docs.amd.com/projects/radeon/en/latest/index.html
+
+## prerequisites
+
+* https://rocm.docs.amd.com/projects/install-on-linux/en/latest/how-to/prerequisites.html
+* https://rocm.docs.amd.com/projects/install-on-linux/en/latest/reference/system-requirements.html
+
+```
+uname -srmv
+groups
+sudo usermod -a -G render,video $LOGNAME
+# no render,video at /etc/group
+
+echo 'ADD_EXTRA_GROUPS=1' | sudo tee -a /etc/adduser.conf
+echo 'EXTRA_GROUPS=video' | sudo tee -a /etc/adduser.conf
+echo 'EXTRA_GROUPS=render' | sudo tee -a /etc/adduser.conf
+```
+
+## install with package manager
+
+* https://rocm.docs.amd.com/projects/install-on-linux/en/latest/tutorial/install-overview.html
+* https://rocm.docs.amd.com/projects/install-on-linux/en/latest/tutorial/quick-start.html
 * https://rocm.docs.amd.com/projects/install-on-linux/en/latest/how-to/native-install/ubuntu.html
 amdgpu-dkms
 
@@ -32,9 +59,63 @@ update-initramfs: Generating /boot/initrd.img-6.5.5-060505-generic
 Processing triggers for man-db (2.12.0-3) ...
 ```
 
+## manual installer
+
+* https://rocm.docs.amd.com/projects/install-on-linux/en/latest/tutorial/quick-start.html#amdgpu-installer
+
+```
+sudo apt update
+wget https://repo.radeon.com/amdgpu-install/6.0.2/ubuntu/jammy/amdgpu-install_6.0.60002-1_all.deb
+sudo apt install ./amdgpu-install_6.0.60002-1_all.deb
+sudo amdgpu-install --usecase=graphics,rocm
+
+$ dpkg -L amdgpu-install
+/etc/amdgpu-install/amdgpu-setup.conf
+    BASEURL=https://repo.radeon.com
+    RELEASE=6.0.2
+/etc/apt/preferences.d/repo-radeon-pin-600
+    Package: *
+    Pin: release o=repo.radeon.com
+    Pin-Priority: 600
+/etc/apt/sources.list.d/amdgpu.list
+/etc/apt/sources.list.d/rocm.list
+/etc/apt/trusted.gpg.d/rocm-keyring.gpg
+/usr/bin/amdgpu-install
+/usr/bin/amdgpu-setup
+/usr/share/amdgpu-install/amdgpu.list.template
+/usr/share/amdgpu-install/orig/amdgpu.list
+/usr/share/amdgpu-install/orig/rocm.list
+/usr/share/amdgpu-install/rocm.list.template
+```
+
+## post install
+
 * https://rocm.docs.amd.com/projects/install-on-linux/en/latest/how-to/native-install/post-install.html
 
 * https://amdgpu-install.readthedocs.io/en/latest/
+
+## rocm problem
+
+```
+$ sudo apt install rocm
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Some packages could not be installed. This may mean that you have
+requested an impossible situation or if you are using the unstable
+distribution that some required packages have not yet been created
+or been moved out of Incoming.
+The following information may help to resolve the situation:
+
+The following packages have unmet dependencies:
+ rocm-gdb : Depends: libtinfo5 but it is not installable
+            Depends: libncurses5 but it is not installable
+            Depends: libpython3.10 but it is not installable or
+                     libpython3.8 but it is not installable
+E: Unable to correct problems, you have held broken packages.
+```
+
+* https://github.com/ROCm/ROCm/issues/1236
 
 ## detection
 
@@ -95,6 +176,19 @@ amddrm_buddy
 amdxcp
 amd_sched
 amdkcl
+```
+
+## journal problems
+
+* https://www.reddit.com/r/linuxquestions/comments/qu8n5d/error_installing_amd_rocm/
+
+```
+systemd-udevd[xxx]: /etc/udev/rules.d/70-amdgpu.rules:1 Invalid operator for GROUP
+
+$ cat /etc/udev/rules.d/70-amdgpu.rules
+KERNEL=="kfd", GROUP=="video", MODE="0660"
+=>
+KERNEL=="kfd", GROUP="video", MODE="0660"
 ```
 
 ## usual

@@ -1,0 +1,5 @@
+# inxi
+
+```
+$ inxi -Fxxxmprz
+```
