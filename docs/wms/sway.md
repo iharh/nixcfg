@@ -20,6 +20,39 @@
 * https://www.opennet.ru/opennews/art.shtml?num=60017
 * https://github.com/Ubuntu-Sway/ubuntu-sway-meta
 
+## wlprop
+
+* https://github.com/NixOS/nixpkgs/blob/master/pkgs/tools/wayland/wlprop/default.nix
+
+## manual
+
+* https://github.com/NixOS/nixpkgs/tree/master/nixos/doc/manual/configuration
+* https://github.com/NixOS/nixpkgs/blob/master/nixos/doc/manual/configuration/wayland.chapter.md
+
+## nixpkgs
+
+* https://github.com/NixOS/nixpkgs/tree/master/pkgs/by-name/sw
+* https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/sw/sway/package.nix
+
+* https://github.com/NixOS/nixpkgs/tree/master/pkgs/by-name/sw/sway-unwrapped
+* https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/sw/sway-unwrapped/package.nix
+* https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/sw/sway-unwrapped/fix-paths.patch
+* https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/sw/sway-unwrapped/sway-config-nixos-paths.patch
+
+* https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/misc/sway-contrib/default.nix
+
+* https://github.com/NixOS/nixpkgs/tree/master/nixos/modules/programs/wayland
+* https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/programs/wayland/sway.nix
+* https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/programs/wayland/wayland-session.nix
+
+* https://github.com/NixOS/nixpkgs/blob/master/nixos/tests/sway.nix
+* https://github.com/NixOS/nixpkgs/blob/master/nixos/tests/all-tests.nix
+
+## nwg-wrapper
+
+* https://github.com/nwg-piotr/nwg-wrapper/
+* https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/misc/nwg-wrapper/default.nix
+
 ## articles
 
 * https://drakerossman.com/blog/wayland-on-nixos-confusion-conquest-triumph
@@ -154,6 +187,11 @@ etc/greetd/config.toml
 
 * https://github.com/WillPower3309/swayfx
 * https://github.com/MubinMuhammad/MinimalSwayFX
+
+## sway-launcher-desktop
+
+* https://github.com/Biont/sway-launcher-desktop
+* https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/misc/sway-launcher-desktop/default.nix
 
 ## issues
 

@@ -13,3 +13,4 @@ https://gitlab.com/Zaney/zaneyos/-/blob/main/laptop/hardware-configuration.nix
 [Updating My NixOS Flake Live] (https://www.youtube.com/watch?v=FAze1mPeNTQ)
 [A Beginners Introduction To My NixOS System] (https://www.youtube.com/watch?v=GpBBYxOUwBA)
 [Making My NixOS Flake Better For Everyone] (https://www.youtube.com/watch?v=cyAiLLq_0GE)
+[How To Install My NixOS] (https://www.youtube.com/watch?v=ay0OcWWOm5k)

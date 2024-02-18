@@ -4,6 +4,11 @@
 
 * https://wiki.hyprland.org/Nix/Hyprland-on-Home-Manager/
 
+## nixpkgs
+
+* https://github.com/NixOS/nixpkgs/tree/master/pkgs/applications/window-managers/hyprwm
+* https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/programs/wayland/hyprland.nix
+
 ## at qemu
 
 * https://github.com/hyprwm/Hyprland/issues/797

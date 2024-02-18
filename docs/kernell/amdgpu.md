@@ -116,6 +116,7 @@ E: Unable to correct problems, you have held broken packages.
 ```
 
 * https://github.com/ROCm/ROCm/issues/1236
+* https://www.reddit.com/r/rhinolinux/comments/1atpno3/admgpu_video_driver/
 
 ## detection
 
@@ -210,3 +211,7 @@ KERNEL=="kfd", GROUP="video", MODE="0660"
 ## kvm/qemu driver passthrough
 
 * https://www.youtube.com/watch?v=ID3dlVHDl0c
+
+## misc
+
+* https://gitlab.com/Oglo12/rebos-config/-/blob/main/imports/gpu_drivers/amd.toml
