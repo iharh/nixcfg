@@ -206,3 +206,7 @@ KERNEL=="kfd", GROUP="video", MODE="0660"
 ## ubuntu-drivers
 
 * https://linuxconfig.org/how-to-install-the-nvidia-drivers-on-ubuntu-22-04
+
+## kvm/qemu driver passthrough
+
+* https://www.youtube.com/watch?v=ID3dlVHDl0c
