@@ -52,7 +52,9 @@
         # ];
       };
     };
-    #hyprland.settings = {
+    #hyprland = {
+    # eanbled = true;
+    # settings = {
     #  "$mod" = "SUPER";
     #  bind =
     #    [
@@ -76,6 +78,6 @@
     #        10)
     #    );
     #};
+    #};
   };
-
 }
