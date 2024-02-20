@@ -31,6 +31,10 @@ sh/nix/prepare-virt.sh
 # installing from ISO (inside vm)
 ```
 create ~/.config/sops/age/keys.txt
+???
+https://github.com/disassembler/network
+ssh root@host "cat /etc/ssh/ssh_host_rsa_key" | ssh-to-pgp -o nixos/secrets/keys/host.asc
+???
 
 export GH_TOKEN=...your-own-token...
 nix-env -iA nixos.ripgrep nixos.nixFlakes nixos.gitMinimal nixos.gh nixos.neovim
