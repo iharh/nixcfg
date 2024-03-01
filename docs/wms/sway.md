@@ -6,6 +6,8 @@
 
 * https://ubuntusway.com/
 * https://github.com/Ubuntu-Sway
+* https://github.com/orgs/Ubuntu-Sway/repositories
+
 * https://github.com/Ubuntu-Sway/Ubuntu-Sway-Remix
 
 * https://github.com/Ubuntu-Sway/Ubuntu-Sway-Remix/wiki
@@ -13,12 +15,65 @@
 * https://github.com/Ubuntu-Sway/Ubuntu-Sway-Remix/wiki/Configuration#config-files
 * https://github.com/Ubuntu-Sway/Ubuntu-Sway-Remix/wiki/Virtualization#qemukvm
 
+* https://github.com/Ubuntu-Sway/calamares-settings-ubuntu-sway
+* https://github.com/Ubuntu-Sway/ubuntu-sway-meta
+* https://github.com/Ubuntu-Sway/ubuntu-sway-meta/blob/noble/debootstrap-version
+* https://github.com/Ubuntu-Sway/ubuntu-sway-meta/blob/noble/minimal-amd64
+no sway
+* https://github.com/Ubuntu-Sway/ubuntu-sway-meta/blob/noble/desktop-amd64
+list of packages with sway
+
+* https://github.com/Ubuntu-Sway/seeds
+* https://github.com/Ubuntu-Sway/seeds/blob/noble/live
+* https://github.com/Ubuntu-Sway/seeds/blob/noble/desktop
+
+* https://github.com/Ubuntu-Sway/ubuntu-sway-welcome
+* https://github.com/Ubuntu-Sway/ubuntu-sway-welcome/blob/main/setup.py
+
+author='Aleksey Samoilov'
+author_email='samoilov.lex@gmail.com'
+
+? 2yo
+* https://github.com/Ubuntu-Sway/platform
+
 * https://github.com/Ubuntu-Sway/ubuntu-sway-default-settings
+
+* https://github.com/Ubuntu-Sway/ubuntu-sway-default-settings/blob/noble/common/etc/environment.d/90ubuntu-sway.conf
+* https://github.com/Ubuntu-Sway/ubuntu-sway-default-settings/tree/noble/common/etc/skel
+* https://github.com/Ubuntu-Sway/ubuntu-sway-default-settings/tree/noble/common/etc/skel/.config
+* https://github.com/Ubuntu-Sway/ubuntu-sway-default-settings/blob/noble/common/etc/skel/.config/mpv/mpv.conf
+* https://github.com/Ubuntu-Sway/ubuntu-sway-default-settings/tree/noble/common/etc/skel/.config/sway
+* https://github.com/Ubuntu-Sway/ubuntu-sway-default-settings/blob/noble/common/etc/skel/.config/sway/config
+* https://github.com/Ubuntu-Sway/ubuntu-sway-default-settings/blob/noble/common/etc/skel/.config/sway/config.d/XX-keyboard.conf.example
+* https://github.com/Ubuntu-Sway/ubuntu-sway-default-settings/blob/noble/common/etc/skel/.azotebg
+* https://github.com/Ubuntu-Sway/ubuntu-sway-default-settings/tree/noble/common/etc/sway
+* https://github.com/Ubuntu-Sway/ubuntu-sway-default-settings/blob/noble/common/etc/sway/variables
+* https://github.com/Ubuntu-Sway/ubuntu-sway-default-settings/tree/noble/common/etc/sway/config.d
+* https://github.com/Ubuntu-Sway/ubuntu-sway-default-settings/blob/noble/common/etc/sway/config.d/30-applications-defaults.conf
+* https://github.com/Ubuntu-Sway/ubuntu-sway-default-settings/blob/noble/common/etc/sway/config.d/40-autostart-applications.conf
+* https://github.com/Ubuntu-Sway/ubuntu-sway-default-settings/tree/noble/common/etc/xdg
+* https://github.com/Ubuntu-Sway/ubuntu-sway-default-settings/blob/noble/common/etc/xdg/swayr/config.toml
+
+* https://github.com/Ubuntu-Sway/ubuntu-sway-default-settings/tree/noble/common/usr/share
+* https://github.com/Ubuntu-Sway/ubuntu-sway-default-settings/tree/noble/common/usr/share/sway/scripts
 * https://github.com/Ubuntu-Sway/ubuntu-sway-default-settings/blob/noble/common/usr/share/wayland-sessions/ubuntusway.desktop
+Exec=/usr/bin/start-sway
+* https://github.com/Ubuntu-Sway/ubuntu-sway-default-settings/blob/noble/common/etc/xdg/xdg-ubuntusway/mimeapps.list
+
+* https://github.com/Ubuntu-Sway/ubuntu-sway-default-settings/blob/noble/data
+* https://github.com/Ubuntu-Sway/ubuntu-sway-default-settings/tree/noble/data/ubuntusway
 * https://github.com/Ubuntu-Sway/ubuntu-sway-default-settings/blob/noble/data/ubuntusway/bin/start-sway
+* https://github.com/Ubuntu-Sway/ubuntu-sway-default-settings/blob/noble/data/ubuntusway/skel/.config/autostart/ubuntu-sway-welcome.desktop
 
 * https://www.opennet.ru/opennews/art.shtml?num=60017
 * https://github.com/Ubuntu-Sway/ubuntu-sway-meta
+
+* https://github.com/Ubuntu-Sway/iso-builder
+
+/usr/bin/start-sway
+* https://github.com/Ubuntu-Sway/ubuntu-sway-default-settings/blob/noble/data/ubuntusway/bin/start-sway
+
+??? who owns, dpkg -L ...
 
 ## wlprop
 
