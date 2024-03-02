@@ -2,7 +2,33 @@
 
 * https://manpages.ubuntu.com/manpages/jammy/en/man5/sway.5.html
 
+## tile-os
+
+* https://linuxoidblog.blogspot.com/2023/06/tileos.html
+* https://gitlab.com/tile-os
+* https://gitlab.com/tile-os/iso-builder
+* https://gitlab.com/tile-os/iso-builder/-/blob/t-rex/etc/swayfx/auto/config?ref_type=heads
+
+* https://github.com/riverwm/river
+* https://github.com/riverwm/river/blob/master/example/init
+* https://www.youtube.com/watch?v=MwnK6arB2Rc
+* https://www.youtube.com/watch?v=iKCP9lOZlZs
+* https://wiki.archlinux.org/title/River
+* https://wiki.gentoo.org/wiki/River
+
+## live-build
+
+* https://dquinton.github.io/debian-install/netinstall/live-build.html
+
 ## ubuntu-sway
+
+* https://linuxoidblog.blogspot.com/
+* https://linuxoidblog.blogspot.com/2022/06/ubuntu-sway-remix-2022.html
+
+to-check
+* https://github.com/Ubuntu-Sway/Ubuntu-Sway-Remix/wiki/Configuration
+* https://github.com/Ubuntu-Sway/Ubuntu-Sway-Remix/wiki/FAQ
+* https://www.youtube.com/watch?v=hMQbF4TMeBE
 
 * https://ubuntusway.com/
 * https://github.com/Ubuntu-Sway
@@ -70,10 +96,58 @@ Exec=/usr/bin/start-sway
 
 * https://github.com/Ubuntu-Sway/iso-builder
 
+iharh@epbygomw0024t3:/etc/greetd$ cat environments
+```
+ubuntusway
+```
+
+iharh@epbygomw0024t3:/etc/greetd$ cat config.toml
+```
+[terminal]
+vt = "next"
+
+[default_session]
+command = "tuigreet --remember --time --issue --asterisks --cmd start-sway"
+user = "_greetd"
+```
+
+iharh@epbygomw0024t3:~$ which start-sway
+```
 /usr/bin/start-sway
+```
+
 * https://github.com/Ubuntu-Sway/ubuntu-sway-default-settings/blob/noble/data/ubuntusway/bin/start-sway
 
-??? who owns, dpkg -L ...
+iharh@epbygomw0024t3:~$ dpkg -S /usr/bin/tuigreet
+```
+greetd-tuigreet: /usr/bin/tuigreet
+...
+Maintainer: Aleksey Samoilov <samoilov.lex@gmail.com>
+APT-Sources: https://ppa.launchpadcontent.net/ubuntusway-dev/stable/ubuntu mantic/main amd64 Packages
+
+
+$ cat /etc/apt/sources.list.d/mozillateam.list
+deb https://ppa.launchpadcontent.net/mozillateam/ppa/ubuntu mantic main
+
+$ cat ubuntusway.list
+deb https://ppa.launchpadcontent.net/ubuntusway-dev/stable/ubuntu mantic main
+```
+
+* https://answers.launchpad.net/~ubuntusway-dev/+archive/ubuntu/dev
+* https://answers.launchpad.net/~ubuntusway-dev/+archive/ubuntu/dev/+packages
+
+```
+sudo add-apt-repository ppa:ubuntusway-dev/dev
+```
+/usr/bin/tuigreet
+
+$ cat /usr/lib/tmpfiles.d/tuigreet.conf
+```
+d /var/cache/tuigreet 0755 _greetd _greetd -
+```
+
+/usr/share/wayland-sessions/
+    sway.desktop
 
 ## wlprop
 
@@ -132,11 +206,6 @@ Exec=/usr/bin/start-sway
 ## display/login managers
 
 * https://www.baeldung.com/linux/display-managers-install-uninstall
-* https://github.com/apognu/tuigreet
-
-??? lightdm-gtk-greeter
-? other greeters
-? no tuigreet
 
 ## greetd
 
