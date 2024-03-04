@@ -20,3 +20,9 @@ sudo systemctl enable --now greetd.service
 cat /lib/systemd/system/greetd.service
     Exec=greetd
 ```
+
+## no login manager
+
+startx /path/to/session
+
+unicorn-session
