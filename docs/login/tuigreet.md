@@ -152,7 +152,32 @@ StartLimitInterval=30
 [Install]
 Alias=display-manager.service
 ```
+## list sessions
 
+* https://github.com/apognu/tuigreet/issues/1
+
+/usr/share/xsessions
+    $ cat xmonad.desktop
+    [Desktop Entry]
+    Encoding=UTF-8
+    Name=xmonad
+    Comment=This session starts xmonad
+    Exec=/usr/local/bin/xmonad
+    Type=Application
+
+    * https://github.com/apognu/tuigreet/blob/master/README.md
+    The available sessions are fetched from `desktop` files in `/usr/share/xsessions` and `/usr/share/wayland-sessions`. If you want to provide custom directories, you can set the `--sessions` arguments with a colon-separated list of directories for `tuigreet` to fetch session definitions some other place.
+
+/usr/share/wayland-sessions
+
+    $ cat sway.desktop
+    [Desktop Entry]
+    Name=Sway
+    Comment=An i3-compatible Wayland compositor
+    Exec=sway
+    Type=Application
+    DesktopNames=sway
+        
 TOLOOK:
 https://rgoswami.me/posts/revisiting-wayland-2021-archlinux/
     /usr/local/bin/sway-run.sh, /usr/local/bin/wayland_enablement.sh
