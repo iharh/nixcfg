@@ -215,3 +215,4 @@ KERNEL=="kfd", GROUP="video", MODE="0660"
 ## misc
 
 * https://gitlab.com/Oglo12/rebos-config/-/blob/main/imports/gpu_drivers/amd.toml
+* https://www.reddit.com/r/NixOS/comments/1b92uwo/am_i_adding_modularity_the_right_way/
