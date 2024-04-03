@@ -7,6 +7,7 @@
 * https://rocm.docs.amd.com/en/latest/about/release-notes.html
 * https://rocm.docs.amd.com/en/latest/conceptual/cmake-packages.html
 * https://rocm.docs.amd.com/projects/radeon/en/latest/index.html
+* https://www.amd.com/en/support/kb/release-notes/rn-radpro-lin-16-40
 
 ## prerequisites
 
